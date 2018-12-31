@@ -1,0 +1,57 @@
+{
+  "name": "pinterest-node-api",
+  "version": "0.0.1",
+  "description": "pinterest api wrapper",
+  "keywords": [
+    "pinterest",
+    "pinterest node",
+    "pinterest node API",
+    "pinterest API",
+    "pinterest sdk",
+    "pinterest users API",
+    "pinterest boards API",
+    "pinterest pins API",
+    "pinterest sections API",
+    "pinterest-node",
+    "pinterest-node-api",
+    "pinterest-client",
+    "pinterest-sdk"
+  ],
+  "homepage": "https://github.com/vijaypatoliya/pinterest-node-api",
+  "author": "Vijay Patoliya<osi.vijay@gmail.com>",
+  "contributors": [
+    "Vijay Patoliya (osi.vijay@gmail.com)"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vijaypatoliya/pinterest-node-api.git"
+  },
+  "engines": {
+    "node": ">= v0.10.0"
+  },
+  "main": "index.js",
+  "directories": {
+    "example": "examples",
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "lint": "jshint ./",
+    "test": "npm run lint",
+    "test.mocha": "npm run lint && mocha"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.5.3",
+    "chai": "^4.2.0",
+    "debug": "^4.1.0",
+    "iconv-lite": "^0.4.24",
+    "lodash": "^4.17.11",
+    "mocha": "^5.2.0",
+    "qs": "^6.6.0",
+    "xml2js": "^0.4.19"
+  },
+  "devDependencies": {
+    "jshint": "^2.9.7"
+  }
+}
