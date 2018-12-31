@@ -29,7 +29,7 @@
   "engines": {
     "node": ">= v0.10.0"
   },
-  "main": "index.js",
+  "main": "lib/index.js",
   "directories": {
     "example": "examples",
     "lib": "lib",
