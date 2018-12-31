@@ -35,6 +35,26 @@ declare class Boards extends BaseClient {
 
 }
 
+declare class Pins extends BaseClient {
+
+  createPin(params: any): Promise<any>;
+  getPin(pin: string): Promise<any>;
+  getBoardPins(board: string): Promise<any>;
+  getUserPins(params: any): Promise<any>;
+  updatePin(pin: string, params: any): Promise<any>;
+  deletePin(pin: string): Promise<any>;
+
+}
+
+declare class Sections extends BaseClient {
+
+  createBoardSection(board: string, params: any): Promise<any>;
+  getBoardSections(board: string): Promise<any>;
+  getBoardSectionPins(section: string): Promise<any>;
+  deleteBoardSection(section: string): Promise<any>;
+
+}
+
 declare class pinterestNodeClient {
 
   constructor()
@@ -47,6 +67,8 @@ declare class pinterestNodeClient {
 
   users: Users;
   boards: Boards;
+  pins: Pins;
+  sections: Sections;
 }
 
 declare namespace pinterestNodeClient {
