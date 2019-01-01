@@ -3,7 +3,7 @@
 
 This API supported Pinterest standard REST API that accepts/returns JSON requests. Here is the [API reference] (https://developers.pinterest.com/docs/api/overview/)
 
-You can find [examples of JavaScript](https://github.com/vijaypatoliya/pinterest-node-api/tree/master/examples). This will help you for faster implementation of Pinterest APIs.
+You can find [examples of JavaScript And TypeScript](https://github.com/vijaypatoliya/pinterest-node-api/tree/master/examples). This will help you for faster implementation of Pinterest APIs.
 
 ##### It does supports EcmaScript 5, EcmaScript 6,  EcmaScript 8, TypeScript, async-await, Promises, Callback!!!
 ##### It does also supports for AWS Lambda like serverless cloud function call.
@@ -30,6 +30,13 @@ export PINTEREST_USER_TOKEN=ACCESS_TOKEN
 
 ```js
 var pinterest = require('pinterest-node-api')('YOUR_ACCESS_TOKEN');
+```
+
+## Configuration Using TypeScript
+```js
+import * as PinterestAPI from 'pinterest-node-api';
+const pinterest = new PinterestAPI();
+pinterest.setUserToken('YOUR_ACCESS_TOKEN');
 ```
 
 ## Test Cases
