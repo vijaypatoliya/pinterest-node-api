@@ -9,8 +9,9 @@ const pinterest = new PinterestAPI();
 const sectionsRequest = async function () {
   pinterest.setUserToken(userToken);
 
-  const section = 'pideveloper/board-2/lighting';
-  const response = await pinterest.sections.getBoardSectionPins(section).catch(error => {
+  var board = "867787490638395104";
+  var section = "5277099961081714743";
+  const response = await pinterest.sections.getBoardSectionPins(board, section).catch(error => {
     if (error) {
       return;
     }

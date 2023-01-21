@@ -15,7 +15,9 @@ var usersRequest = async function () {
   var data = {};
   try {
     var response = await pinterest.users.getUserOwnInfo(data);
+    console.log(response)
   } catch (error) {
+    console.log('error', error)
     return;
   }
 };

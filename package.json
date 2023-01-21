@@ -38,7 +38,7 @@
   "scripts": {
     "lint": "jshint ./",
     "test": "npm run lint",
-    "test.mocha": "npm run lint && mocha"
+    "test.mocha": "mocha"
   },
   "license": "MIT",
   "dependencies": {

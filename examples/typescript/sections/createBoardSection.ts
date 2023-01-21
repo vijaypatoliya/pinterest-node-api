@@ -11,8 +11,7 @@ const sectionsRequest = async function () {
 
   const board = '806144470738408510';
   const data = {
-    title: 'test section',
-    // initial_pins: '806144402026288820'
+    name: 'test section'
   };
   const response = await pinterest.sections.createBoardSection(board, data).catch(error => {
     if (error) {

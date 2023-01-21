@@ -78,58 +78,6 @@ Originally by [Vijay Patoliya](https://github.com/vijaypatoliya) (osi.vijay@gmai
         return;
     }
     -------------------------------------------------------------------------------------
-    Get board suggestions list
-    /* Return Board suggestions for the logged in user */
-
-    pinterest.setUserToken(userToken);
-    var data = {
-      pin: '806144402026290934'
-    };
-    try {
-        var response = pinterest.users.getUserBoardSuggestions(data);
-    } catch (error) {
-        return;
-    }
-    -------------------------------------------------------------------------------------
-    Get user's pins
-    /* Return the logged in user's Pins */
-
-    pinterest.setUserToken(userToken);
-    var data = {};
-    try {
-        var response = pinterest.users.getUserPins(data);
-    } catch (error) {
-        return;
-    }
-    -------------------------------------------------------------------------------------
-    Search user's boards
-    /* Search the logged in user's Boards */
-
-    pinterest.setUserToken(userToken);
-    var data = {
-      query: 'board 1',
-      fields: 'counts,id,name,url'
-    };
-    try {
-        var response = pinterest.users.searchUserBoards(data);
-    } catch (error) {
-        return;
-    }
-    -------------------------------------------------------------------------------------
-    Search user's pins
-    /* Search the logged in user's Pins */
-
-    pinterest.setUserToken(userToken);
-    var data = {
-      query: 'test',
-      fields: 'id,board,link,note,url'
-    };
-    try {
-        var response = pinterest.users.searchUserPins(data);
-    } catch (error) {
-        return;
-    }
-    -------------------------------------------------------------------------------------
     Follow a Board
     /* Follow a Board */
 
@@ -142,96 +90,7 @@ Originally by [Vijay Patoliya](https://github.com/vijaypatoliya) (osi.vijay@gmai
     } catch (error) {
         return;
     }
-    -------------------------------------------------------------------------------------
-    Follow a user
-    /* Follow a user */
 
-    pinterest.setUserToken(userToken);
-    var data = {
-      user: '4teebeat'
-    };
-    try {
-        var response = pinterest.users.followUser(data);
-    } catch (error) {
-        return;
-    }
-    -------------------------------------------------------------------------------------
-    Get user's followers
-    /* Return the users that follow the logged in user */
-
-    pinterest.setUserToken(userToken);
-    var data = {};
-    try {
-        var response = pinterest.users.getUserFollowers(data);
-    } catch (error) {
-        return;
-    }
-    -------------------------------------------------------------------------------------
-    Get user's following boards
-    /* Get the Boards that the logged in user follows */
-
-    pinterest.setUserToken(userToken);
-    var data = {};
-    try {
-        var response = pinterest.users.getUserFollowingBoards(data);
-    } catch (error) {
-        return;
-    }
-    -------------------------------------------------------------------------------------
-    Get user's following interested topics
-    /* Return the Interests the logged in user follows */
-
-    pinterest.setUserToken(userToken);
-    var data = {};
-    try {
-        var response = pinterest.users.getUserFollowingInterests(data);
-    } catch (error) {
-        return;
-    }
-    -------------------------------------------------------------------------------------
-    Get user's following users list
-    /* Return the users that the logged in user follows */
-
-    pinterest.setUserToken(userToken);
-    var data = {};
-    try {
-        var response = pinterest.users.getUserFollowingUsers(data);
-    } catch (error) {
-        return;
-    }
-    -------------------------------------------------------------------------------------
-    Unfollow a board
-    /* Unfollow a Board */
-
-    pinterest.setUserToken(userToken);
-    var board = '4teebeat/bodybuilding-t-shirts'
-    try {
-        var response = pinterest.users.unfollowBoard(board);
-    } catch (error) {
-        return;
-    }
-    -------------------------------------------------------------------------------------
-    Unfollow a user
-    /* Unfollow a User */
-
-    pinterest.setUserToken(userToken);
-    var user = '4teebeat'
-    try {
-        var response = pinterest.users.unfollowUser(user);
-    } catch (error) {
-        return;
-    }
-    -------------------------------------------------------------------------------------
-    Get user's information
-    /* Return a user's information */
-
-    pinterest.setUserToken(userToken);
-    var user = '4teebeat'
-    try {
-        var response = pinterest.users.getUserInfo(user);
-    } catch (error) {
-        return;
-    }
 
   #### Boards
     Create a Board
@@ -345,33 +204,6 @@ Originally by [Vijay Patoliya](https://github.com/vijaypatoliya) (osi.vijay@gmai
         return;
     }
     -------------------------------------------------------------------------------------
-    Get user's pins
-    /* Return the logged in user's Pins */
-
-    pinterest.setUserToken(userToken);
-    var data = {};
-    try {
-        var response = pinterest.pins.getUserPins(data);
-    } catch (error) {
-        return;
-    }
-    -------------------------------------------------------------------------------------
-    Edit a Pin
-    /* Edit a Pin's information */
-
-    pinterest.setUserToken(userToken);
-    var pin = '806144402027821208';
-    var data = {
-      board: 'pideveloper/board-2',
-      note: 'it\'s a aerospace test pin.',
-      link: 'https://aerospace.org/'
-    };
-    try {
-        var response = pinterest.pins.updatePin(pin, data);
-    } catch (error) {
-        return;
-    }
-    -------------------------------------------------------------------------------------
     Delete a Pin
     /* Delete a Pin */
 
@@ -390,8 +222,7 @@ Originally by [Vijay Patoliya](https://github.com/vijaypatoliya) (osi.vijay@gmai
     pinterest.setUserToken(userToken);
     var board = '806144470738408510';
     var data = {
-      title: 'test section',
-      // initial_pins: '806144402026288820'
+      name: 'test section'
     };
     try {
         var response = pinterest.sections.createBoardSection(board, data);
@@ -414,9 +245,10 @@ Originally by [Vijay Patoliya](https://github.com/vijaypatoliya) (osi.vijay@gmai
     /* Gets the pins for a board section */
 
     pinterest.setUserToken(userToken);
-    var section = 'pideveloper/board-2/lighting';
+    var board = "board_id";
+    var section = "section_id";
     try {
-        var response = pinterest.sections.getBoardSectionPins(section);
+        var response = pinterest.sections.getBoardSectionPins(board, section);
     } catch (error) {
         return;
     }
@@ -425,9 +257,10 @@ Originally by [Vijay Patoliya](https://github.com/vijaypatoliya) (osi.vijay@gmai
     /* Deletes a board section */
 
     pinterest.setUserToken(userToken);
+    var board = '867787490638395104';
     var section = '5007816082331826124';
     try {
-        var response = pinterest.sections.deleteBoardSection(section);
+        var response = pinterest.sections.deleteBoardSection(board, section);
     } catch (error) {
         return;
     }

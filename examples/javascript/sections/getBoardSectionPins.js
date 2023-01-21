@@ -11,9 +11,10 @@ var sectionsRequest = async function () {
    * 
    * section (required) (The section name in the format: <username>/<board_name>/<section_name>)
    */
-  var section = 'pideveloper/board-2/lighting';
+  var board = "867787490638395104";
+  var section = "5277099961081714743";
   try {
-    var response = await pinterest.sections.getBoardSectionPins(section);
+    var response = await pinterest.sections.getBoardSectionPins(board, section);
   } catch (error) {
     return;
   }

@@ -9,8 +9,9 @@ const pinterest = new PinterestAPI();
 const sectionsRequest = async function () {
   pinterest.setUserToken(userToken);
 
+  const board = '867787490638395104';
   const section = '5007816082331826124';
-  const response = await pinterest.sections.deleteBoardSection(section).catch(error => {
+  const response = await pinterest.sections.deleteBoardSection(board, section).catch(error => {
     if (error) {
       return;
     }
