@@ -1,3 +1,6 @@
+0.0.4 January 23, 2023
+  - Initial release with v5 support
+
 0.0.3 January 01, 2019
   - Added support for typescript with examples
 

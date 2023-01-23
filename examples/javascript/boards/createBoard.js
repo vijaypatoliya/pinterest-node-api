@@ -1,23 +1,25 @@
-'use strict';
+"use strict";
 
 var userToken = process.env.PINTEREST_USER_TOKEN;
 
-var pinterest = require('../../../lib')(userToken);
+var pinterest = require("../../../lib")(userToken);
 
 var boardsRequest = async function () {
   /**
-   * passing parameters 
+   * passing parameters
    * -------------------
-   * 
+   *
    * name
    * description
-   * 
+   *
    * (optional)
-   * fields (counts, created_at, creator, description, id, image, name, privacy, reason, url)
+   * fields (
+   *    privacy: Enum ["PUBLIC" "SECRET"]
+   * )
    */
   var data = {
-    name: 'test board',
-    description: 'it\'s a test board'
+    name: "your board name",
+    description: "your board description",
   };
   try {
     var response = await pinterest.boards.createBoard(data);

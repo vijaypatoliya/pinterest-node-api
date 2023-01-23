@@ -1,7 +1,7 @@
 {
   "name": "pinterest-node-api",
-  "version": "0.0.3",
-  "description": "pinterest api wrapper",
+  "version": "0.0.4",
+  "description": "pinterest v5 api wrapper",
   "keywords": [
     "pinterest",
     "pinterest node",
@@ -38,7 +38,7 @@
   "scripts": {
     "lint": "jshint ./",
     "test": "npm run lint",
-    "test.mocha": "mocha"
+    "test.mocha": "npm run lint && mocha"
   },
   "license": "MIT",
   "dependencies": {

@@ -8,13 +8,9 @@ var boardsRequest = async function () {
   /**
    * passing parameters 
    * -------------------
-   * 
-   * board (The board name in the format: <username>/<board_name>)
-   * 
-   * (optional)
-   * fields (attribution, board, color, counts, created_at, creator, id, image, link, media, metadata, note, original_link, url)
+   * board (The board id)
    */
-  var board = 'pideveloper/test-board';
+  var board = 'your board id';
   try {
     var response = await pinterest.boards.getBoardPins(board);
   } catch (error) {

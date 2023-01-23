@@ -9,9 +9,9 @@ var boardsRequest = async function () {
    * passing parameters 
    * -------------------
    * 
-   * board (The board name in the format: <username>/<board_name>)
+   * board (The board id)
    */
-  var board = 'pideveloper/board-11';
+  var board = 'your board id';
   try {
     var response = await pinterest.boards.deleteBoard(board);
   } catch (error) {

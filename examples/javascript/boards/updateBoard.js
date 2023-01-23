@@ -5,6 +5,7 @@ var userToken = process.env.PINTEREST_USER_TOKEN;
 var pinterest = require('../../../lib')(userToken);
 
 var boardsRequest = async function () {
+
   /**
    * passing parameters 
    * -------------------
@@ -14,13 +15,16 @@ var boardsRequest = async function () {
    * description
    * 
    * (optional)
-   * fields (counts, created_at, creator, description, id, image, name, privacy, reason, url)
+   * fields (privacy: Enum ["PUBLIC" "SECRET"])
    */
+
   var data = {
-    name: 'Board 11',
-    description: 'it\'s a board no 11.'
+    name: 'your board name',
+    description: 'your board description'
   };
-  var board = 'pideveloper/test-board';
+
+  var board = 'your board id';
+
   try {
     var response = await pinterest.boards.updateBoard(board, data);
   } catch (error) {

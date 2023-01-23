@@ -1,20 +1,28 @@
 'use strict';
 
-const userToken = process.env.PINTEREST_USER_TOKEN;
+var userToken = process.env.PINTEREST_USER_TOKEN;
 
 import * as PinterestAPI from 'pinterest-node-api';
 
 const pinterest = new PinterestAPI();
 
-const boardsRequest = async function () {
+var boardsRequest = async function () {
+  
   pinterest.setUserToken(userToken);
-
-  const board = 'pideveloper/test-board';
-  const response = await pinterest.boards.getBoardPins(board).catch(error => {
-    if (error) {
-      return;
-    }
-  });
+  
+  /**
+   * passing parameters 
+   * -------------------
+   * board (The board id)
+   */
+  
+  var board = 'your board id';
+  
+  try {
+    var response = await pinterest.boards.getBoardPins(board);
+  } catch (error) {
+    return;
+  }
 };
 
 boardsRequest();

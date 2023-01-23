@@ -1,20 +1,16 @@
-'use strict';
+"use strict";
 
 var userToken = process.env.PINTEREST_USER_TOKEN;
 
-var pinterest = require('../../../lib')(userToken);
+var pinterest = require("../../../lib")(userToken);
 
 var boardsRequest = async function () {
   /**
-   * passing parameters 
+   * passing parameters
    * -------------------
-   * 
-   * board (The board name in the format: <username>/<board_name>)
-   * 
-   * (optional)
-   * fields (counts, created_at, creator, description, id, image, name, privacy, reason, url)
+   * board (The board id)
    */
-  var board = 'pideveloper/test-board';
+  var board = "your board id";
   try {
     var response = await pinterest.boards.getBoard(board);
   } catch (error) {
