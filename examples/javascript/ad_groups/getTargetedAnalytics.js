@@ -5,36 +5,12 @@ var userToken = process.env.PINTEREST_USER_TOKEN;
 var pinterest = require("../../../lib")(userToken);
 
 var pinsRequest = async function () {
-  /**
-   * passing parameters
-   * -------------------
-   *
-   * link
-   * title
-   * description
-   * board_id (required) (The board id)
-   * note (required)
-   * dominant_color
-   * board_section_id
-   * alt_text
-   * media_source.source_type
-   * media_source.content_type
-   * media_source.data (The link of a Base64 encoded image)
-   * parent_pin_id
-   *
-   * (optional)
-   * fields (link)
-   */
-
-  var data = {
-    board: "pideveloper/board-2",
-    note: "it's a test pin desc.",
-    image_url:
-      "https://www.birmingham.ac.uk/Images/College-EPS-only/outreach/engineering/aerospace-engineering.jpg",
-  };
+  var ad_account_id = 12345;
   try {
-    var response = await pinterest.pins.createPin(data);
+    var response = await pinterest.ad_groups.getBidFloors(ad_account_id);
+    console.log(response);
   } catch (error) {
+    console.log(error);
     return;
   }
 };

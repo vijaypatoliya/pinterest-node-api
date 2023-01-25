@@ -13,9 +13,9 @@ var boardsRequest = async function () {
    * -------------------
    * board (The board id)
    */
-  var board = "your board id";
+  var board_id = "board_id";
   try {
-    var response = await pinterest.boards.getBoard(board);
+    var response = await pinterest.boards.getBoard(board_id);
   } catch (error) {
     return;
   }

@@ -6,7 +6,10 @@ var userToken = config.USER_TOKEN;
 var chai = require("chai");
 var expect = chai.expect;
 
-var pinterest = require("../../../lib")(userToken);
+import * as PinterestAPI from 'pinterest-node-api';
+
+const pinterest = new PinterestAPI();
+pinterest.setUserToken(userToken);
 
 var base64Encoded = require('../data.json').base64Encoded;
 

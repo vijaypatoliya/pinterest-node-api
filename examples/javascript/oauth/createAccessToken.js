@@ -5,18 +5,21 @@ var userToken = process.env.PINTEREST_USER_TOKEN;
 var pinterest = require('../../../lib')(userToken);
 
 var pinsRequest = async function () {
-  /**
-   * passing parameters 
-   * -------------------
-   * 
-   * board (The board name in the format: <username>/<board_name>)
-   * 
-   * (optional)
-   * fields (attribution, board, color, counts, created_at, creator, id, image, link, media, metadata, note, original_link, url)
-   */
-  var board = 'pideveloper/test-board';
+  const refresh_token_payload = {
+    username: 'username',
+    password: 'password',
+    grant_type: 'refresh_token',
+    refresh_token: 'your refresh token'
+  }
+  const authorization_code_payload = {
+    username: 'username',
+    password: 'password',
+    grant_type: 'authorization_code',
+    code: 'code',
+    redirect_uri: 'redirect_uri'
+  }
   try {
-    var response = await pinterest.pins.getBoardPins(board);
+    var response = await pinterest.oauth.createAccessToken(authorization_code_payload || refresh_token_payload);
   } catch (error) {
     return;
   }

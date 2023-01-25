@@ -8,35 +8,51 @@ const pinterest = new PinterestAPI();
 pinterest.setUserToken(userToken);
 
 var pinsRequest = async function () {
-  /**
-   * passing parameters
-   * -------------------
-   *
-   * link
-   * title
-   * description
-   * board_id (required) (The board id)
-   * note (required)
-   * dominant_color
-   * board_section_id
-   * alt_text
-   * media_source.source_type
-   * media_source.content_type
-   * media_source.data (The link of a Base64 encoded image)
-   * parent_pin_id
-   *
-   * (optional)
-   * fields (link)
-   */
-
-  var data = {
-    board: "pideveloper/board-2",
-    note: "it's a test pin desc.",
-    image_url:
-      "https://www.birmingham.ac.uk/Images/College-EPS-only/outreach/engineering/aerospace-engineering.jpg",
+  var ad_account_id = "ad_account_id";
+  var body = {
+    data: [
+      {
+        event_name: "checkout",
+        action_source: "app_ios",
+        event_time: 1451431341,
+        event_id: "eventId0001",
+        event_source_url: "https://example.org/",
+        opt_out: false,
+        partner_name: "string",
+        user_data: {
+          em: ["string"],
+        },
+        custom_data: {
+          currency: "USD",
+          value: "425325.89",
+          content_ids: ["string"],
+          contents: [
+            {
+              item_price: "1325.12",
+              quantity: 0,
+            },
+          ],
+          num_items: 0,
+          order_id: "string",
+          search_string: "string",
+          opt_out_type: "LDP",
+          np: "string",
+        },
+        app_id: "string",
+        app_name: "string",
+        app_version: "string",
+        device_brand: "string",
+        device_carrier: "string",
+        device_model: "string",
+        device_type: "string",
+        os_version: "string",
+        wifi: false,
+        language: "en",
+      },
+    ],
   };
   try {
-    var response = await pinterest.pins.createPin(data);
+    var response = await pinterest.conversion_events.send(ad_account_id, data);
   } catch (error) {
     return;
   }

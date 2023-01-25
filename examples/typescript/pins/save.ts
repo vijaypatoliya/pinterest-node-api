@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 var userToken = process.env.PINTEREST_USER_TOKEN;
 
@@ -8,18 +8,13 @@ const pinterest = new PinterestAPI();
 pinterest.setUserToken(userToken);
 
 var pinsRequest = async function () {
-  /**
-   * passing parameters 
-   * -------------------
-   * 
-   * board (The board name in the format: <username>/<board_name>)
-   * 
-   * (optional)
-   * fields (attribution, board, color, counts, created_at, creator, id, image, link, media, metadata, note, original_link, url)
-   */
-  var board = 'pideveloper/test-board';
+  var pin_id = "pin_id";
+  var payload = {
+    board_id: "string",
+    board_section_id: "string",
+  };
   try {
-    var response = await pinterest.pins.getBoardPins(board);
+    var response = await pinterest.pins.save(pin_id, payload);
   } catch (error) {
     return;
   }

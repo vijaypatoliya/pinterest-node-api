@@ -1,22 +1,29 @@
-'use strict';
+"use strict";
 
 var userToken = process.env.PINTEREST_USER_TOKEN;
 
-var pinterest = require('../../../lib')(userToken);
+var pinterest = require("../../../lib")(userToken);
 
 var pinsRequest = async function () {
-  /**
-   * passing parameters 
-   * -------------------
-   * 
-   * board (The board name in the format: <username>/<board_name>)
-   * 
-   * (optional)
-   * fields (attribution, board, color, counts, created_at, creator, id, image, link, media, metadata, note, original_link, url)
-   */
-  var board = 'pideveloper/test-board';
+  var feed_id = "feed_id";
+  var data = {
+    default_availability: "IN_STOCK",
+    default_currency: "USD",
+    name: "string",
+    format: "TSV",
+    credentials: {
+      password: "pa$$word",
+      username: "string",
+    },
+    location: "string",
+    preferred_processing_schedule: {
+      time: "02:59",
+      timezone: "Africa/Abidjan",
+    },
+    status: "ACTIVE",
+  };
   try {
-    var response = await pinterest.pins.getBoardPins(board);
+    var response = await pinterest.catalogs.updateFeed(feed_id, data);
   } catch (error) {
     return;
   }

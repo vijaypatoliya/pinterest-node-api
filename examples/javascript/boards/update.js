@@ -23,10 +23,10 @@ var boardsRequest = async function () {
     description: 'your board description'
   };
 
-  var board = 'your board id';
+  var board_id = 'board_id';
 
   try {
-    var response = await pinterest.boards.updateBoard(board, data);
+    var response = await pinterest.boards.update(board_id, data);
   } catch (error) {
     return;
   }

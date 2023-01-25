@@ -8,35 +8,11 @@ const pinterest = new PinterestAPI();
 pinterest.setUserToken(userToken);
 
 var pinsRequest = async function () {
-  /**
-   * passing parameters
-   * -------------------
-   *
-   * link
-   * title
-   * description
-   * board_id (required) (The board id)
-   * note (required)
-   * dominant_color
-   * board_section_id
-   * alt_text
-   * media_source.source_type
-   * media_source.content_type
-   * media_source.data (The link of a Base64 encoded image)
-   * parent_pin_id
-   *
-   * (optional)
-   * fields (link)
-   */
 
-  var data = {
-    board: "pideveloper/board-2",
-    note: "it's a test pin desc.",
-    image_url:
-      "https://www.birmingham.ac.uk/Images/College-EPS-only/outreach/engineering/aerospace-engineering.jpg",
-  };
+  var ad_account_id = 'ad_account_id'
+  var bulk_request_id = 'bulk_request_id'
   try {
-    var response = await pinterest.pins.createPin(data);
+    var response = await pinterest.bulk.download(ad_account_id, bulk_request_id);
   } catch (error) {
     return;
   }

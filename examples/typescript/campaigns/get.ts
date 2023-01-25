@@ -8,18 +8,10 @@ const pinterest = new PinterestAPI();
 pinterest.setUserToken(userToken);
 
 var pinsRequest = async function () {
-  /**
-   * passing parameters 
-   * -------------------
-   * 
-   * board (The board name in the format: <username>/<board_name>)
-   * 
-   * (optional)
-   * fields (attribution, board, color, counts, created_at, creator, id, image, link, media, metadata, note, original_link, url)
-   */
-  var board = 'pideveloper/test-board';
+  var ad_account_id = 'ad_account_id'
+  var campaign_id = 'campaign_id'
   try {
-    var response = await pinterest.pins.getBoardPins(board);
+    var response = await pinterest.campaigns.get(ad_account_id, campaign_id);
   } catch (error) {
     return;
   }

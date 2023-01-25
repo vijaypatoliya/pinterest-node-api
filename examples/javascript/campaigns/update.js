@@ -5,15 +5,9 @@ var userToken = process.env.PINTEREST_USER_TOKEN;
 var pinterest = require('../../../lib')(userToken);
 
 var pinsRequest = async function () {
-  /**
-   * passing parameters 
-   * -------------------
-   * 
-   * pin (pin ID)
-   */
-  var pin = '806144402027821208';
+  var ad_account_id = 'ad_account_id'
   try {
-    var response = await pinterest.pins.deletePin(pin);
+    var response = await pinterest.campaigns.get(ad_account_id);
   } catch (error) {
     return;
   }

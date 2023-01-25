@@ -8,19 +8,13 @@ const pinterest = new PinterestAPI();
 pinterest.setUserToken(userToken);
 
 var usersRequest = async function () {
-  /**
-   * passing parameters 
-   * -------------------
-   * 
-   * (optional)
-   * fields (account_type, bio, counts, created_at, first_name, id, image, last_name, url, username)
-   */
-  var data = {};
+  var ad_account_id = 'ad_account_id'
+  var product_group_promotion_id = 'product_group_promotion_id'
   try {
-    var response = await pinterest.users.getUserOwnInfo(data);
-    console.log(response)
+    var response = await pinterest.product_group_promotions.get(ad_account_id, product_group_promotion_id);
+    console.log(response);
   } catch (error) {
-    console.log('error', error)
+    console.log("error", error);
     return;
   }
 };

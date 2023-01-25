@@ -14,9 +14,10 @@ var boardsRequest = async function () {
    * 
    * board (The board id)
    */
-  var board = 'your board id';
+  var board_id = 'board_id';
+  var section_id = 'section_id'
   try {
-    var response = await pinterest.boards.deleteBoard(board);
+    var response = await pinterest.boards.deleteSection(board_id, section_id);
   } catch (error) {
     return;
   }

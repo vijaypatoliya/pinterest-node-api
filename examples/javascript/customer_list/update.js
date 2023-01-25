@@ -1,19 +1,22 @@
-'use strict';
+"use strict";
 
 var userToken = process.env.PINTEREST_USER_TOKEN;
 
-var pinterest = require('../../../lib')(userToken);
+var pinterest = require("../../../lib")(userToken);
 
 var pinsRequest = async function () {
-  /**
-   * passing parameters 
-   * -------------------
-   * 
-   * pin (pin ID)
-   */
-  var pin = '806144402027821208';
+  var ad_account_id = "ad_account_id";
+  var customer_list_id = 'customer_list_id';
+  var data = {
+    records: "email2@pinterest.com,email6@pinterest.com,",
+    operation_type: "REMOVE",
+    exceptions: {
+      code: 2,
+      message: "Advertiser not found.",
+    },
+  };
   try {
-    var response = await pinterest.pins.deletePin(pin);
+    var response = await pinterest.customer_lists.update(ad_account_id, customer_list_id, data);
   } catch (error) {
     return;
   }

@@ -8,24 +8,13 @@ const pinterest = new PinterestAPI();
 pinterest.setUserToken(userToken);
 
 var boardsRequest = async function () {
-  /**
-   * passing parameters
-   * -------------------
-   *
-   * name
-   * description
-   *
-   * (optional)
-   * fields (
-   *    privacy: Enum ["PUBLIC" "SECRET"]
-   * )
-   */
   var data = {
-    name: "your board name",
-    description: "your board description",
+    name: "Summer Recipes",
+    description: "My favorite summer recipes",
+    privacy: "PUBLIC",
   };
   try {
-    var response = await pinterest.boards.createBoard(data);
+    var response = await pinterest.boards.create(data);
   } catch (error) {
     return;
   }
