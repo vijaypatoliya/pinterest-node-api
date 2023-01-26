@@ -11,8 +11,15 @@ var boardsRequest = async function () {
    * board (The board id)
    */
   try {
-    var response = await pinterest.boards.getAll({});
+    var response = await pinterest.boards.getAll({
+      query: {
+        page_size: 1,
+        privacy: 'PROTECTED'
+      }
+    });
+    console.log(response)
   } catch (error) {
+    console.log(error)
     return;
   }
 };
