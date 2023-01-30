@@ -11,7 +11,7 @@ var boardsRequest = async function () {
    * 
    * board (The board id)
    */
-  var board_id = 'board_id';
+  var board_id = String();
   try {
     var response = await pinterest.boards.delete(board_id);
   } catch (error) {

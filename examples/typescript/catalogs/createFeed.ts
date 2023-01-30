@@ -8,7 +8,7 @@ const pinterest = new PinterestAPI();
 pinterest.setUserToken(userToken);
 
 var pinsRequest = async function () {
-  var data = {
+  var payload = {
     default_country: "US",
     default_availability: "IN_STOCK",
     default_currency: "USD",
@@ -25,8 +25,11 @@ var pinsRequest = async function () {
       timezone: "Africa/Abidjan",
     },
   };
+  var query = {
+    ad_account_id: String()
+  }
   try {
-    var response = await pinterest.catalogs.createFeed(data);
+    var response = await pinterest.catalogs.createFeed({ query }, payload);
   } catch (error) {
     return;
   }

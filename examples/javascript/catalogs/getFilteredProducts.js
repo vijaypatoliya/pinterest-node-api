@@ -6,7 +6,7 @@ var pinterest = require("../../../lib")(userToken);
 
 var pinsRequest = async function () {
   try {
-    var data = {
+    var payload = {
       feed_id: "2680059592705",
       filters: {
         any_of: [
@@ -20,7 +20,12 @@ var pinsRequest = async function () {
         ],
       },
     };
-    var response = await pinterest.pins.getFilteredProducts(data);
+    var query = {
+      bookmark: String(),
+      page_size: Number(),
+      ad_account_id: String(),
+    }
+    var response = await pinterest.pins.getFilteredProducts({ query }, payload);
   } catch (error) {
     return;
   }

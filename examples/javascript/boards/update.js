@@ -18,15 +18,15 @@ var boardsRequest = async function () {
    * fields (privacy: Enum ["PUBLIC" "SECRET"])
    */
 
-  var data = {
+  var payload = {
     name: 'your board name',
     description: 'your board description'
   };
 
-  var board_id = 'board_id';
+  var board_id = String();
 
   try {
-    var response = await pinterest.boards.update(board_id, data);
+    var response = await pinterest.boards.update(board_id, payload);
   } catch (error) {
     return;
   }

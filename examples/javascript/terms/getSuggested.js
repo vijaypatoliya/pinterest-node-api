@@ -6,7 +6,11 @@ var pinterest = require('../../../lib')(userToken);
 
 var usersRequest = async function () {
   try {
-    var response = await pinterest.terms.getSuggested();
+    var query = {
+      term: String(),
+      limit: Number()
+    }
+    var response = await pinterest.terms.getSuggested({ query });
     console.log(response)
   } catch (error) {
     console.log('error', error)

@@ -8,8 +8,8 @@ const pinterest = new PinterestAPI();
 pinterest.setUserToken(userToken);
 
 var pinsRequest = async function () {
-  var ad_account_id = "ad_account_id";
-  var body = {
+  var ad_account_id = String();
+  var payload = {
     data: [
       {
         event_name: "checkout",
@@ -51,8 +51,11 @@ var pinsRequest = async function () {
       },
     ],
   };
+  var query = {
+    test: Boolean(),
+  }
   try {
-    var response = await pinterest.conversion_events.send(ad_account_id, data);
+    var response = await pinterest.conversion_events.send(ad_account_id, { query }, payload);
   } catch (error) {
     return;
   }

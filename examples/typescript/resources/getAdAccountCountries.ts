@@ -8,9 +8,11 @@ const pinterest = new PinterestAPI();
 pinterest.setUserToken(userToken);
 
 var usersRequest = async function () {
-
+  var query = {
+    report_type: String()
+  }
   try {
-    var response = await pinterest.resources.getAdAccountCountries();
+    var response = await pinterest.resources.getAdAccountCountries({ query });
     console.log(response)
   } catch (error) {
     console.log('error', error)

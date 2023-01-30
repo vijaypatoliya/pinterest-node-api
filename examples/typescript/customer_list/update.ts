@@ -8,9 +8,9 @@ const pinterest = new PinterestAPI();
 pinterest.setUserToken(userToken);
 
 var pinsRequest = async function () {
-  var ad_account_id = "ad_account_id";
-  var customer_list_id = 'customer_list_id';
-  var data = {
+  var ad_account_id = String();
+  var customer_list_id = String();
+  var payload = {
     records: "email2@pinterest.com,email6@pinterest.com,",
     operation_type: "REMOVE",
     exceptions: {
@@ -19,7 +19,7 @@ var pinsRequest = async function () {
     },
   };
   try {
-    var response = await pinterest.customer_lists.update(ad_account_id, customer_list_id, data);
+    var response = await pinterest.customer_lists.update(ad_account_id, customer_list_id, payload);
   } catch (error) {
     return;
   }

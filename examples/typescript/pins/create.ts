@@ -8,7 +8,7 @@ const pinterest = new PinterestAPI();
 pinterest.setUserToken(userToken);
 
 var pinsRequest = async function () {
-  var data = {
+  var payload = {
     link: "https://www.pinterest.com/",
     title: "string",
     description: "string",
@@ -24,7 +24,7 @@ var pinsRequest = async function () {
     parent_pin_id: "string",
   };
   try {
-    var response = await pinterest.pins.create(data);
+    var response = await pinterest.pins.create(payload);
   } catch (error) {
     return;
   }

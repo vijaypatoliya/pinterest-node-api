@@ -5,8 +5,11 @@ var userToken = process.env.PINTEREST_USER_TOKEN;
 var pinterest = require("../../../lib")(userToken);
 
 var pinsRequest = async function () {
-  var product_group_id = "product_group_id";
-  var data = {
+  var product_group_id = String();
+  var query = {
+    ad_account_id: String()
+  }
+  var payload = {
     name: "string",
     description: "string",
     is_featured: true,
@@ -25,7 +28,8 @@ var pinsRequest = async function () {
   try {
     var response = await pinterest.catalogs.updateProductGroup(
       product_group_id,
-      data
+      { query },
+      payload
     );
   } catch (error) {
     return;

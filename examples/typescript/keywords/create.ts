@@ -8,7 +8,7 @@ const pinterest = new PinterestAPI();
 pinterest.setUserToken(userToken);
 
 var pinsRequest = async function () {
-  var data = {
+  var payload = {
     keywords: [
       {
         bid: 200000,
@@ -19,9 +19,9 @@ var pinsRequest = async function () {
     parent_id: "383791336903426391",
   };
 
-  var ad_account_id = "ad_account_id";
+  var ad_account_id = String();
   try {
-    var response = await pinterest.keywords.create(ad_account_id, data);
+    var response = await pinterest.keywords.create(ad_account_id, payload);
   } catch (error) {
     return;
   }

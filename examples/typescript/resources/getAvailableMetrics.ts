@@ -9,7 +9,10 @@ pinterest.setUserToken(userToken);
 
 var usersRequest = async function () {
   try {
-    var response = await pinterest.resources.getAvailableMetrics();
+    var query = {
+      report_type: String()
+    }
+    var response = await pinterest.resources.getAvailableMetrics(query);
     console.log(response)
   } catch (error) {
     console.log('error', error)

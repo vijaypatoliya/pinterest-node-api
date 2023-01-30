@@ -5,35 +5,35 @@ var userToken = process.env.PINTEREST_USER_TOKEN;
 var pinterest = require("../../../lib")(userToken);
 
 var pinsRequest = async function () {
-  /**
-   * passing parameters
-   * -------------------
-   *
-   * link
-   * title
-   * description
-   * board_id (required) (The board id)
-   * note (required)
-   * dominant_color
-   * board_section_id
-   * alt_text
-   * media_source.source_type
-   * media_source.content_type
-   * media_source.data (The link of a Base64 encoded image)
-   * parent_pin_id
-   *
-   * (optional)
-   * fields (link)
-   */
-
-  var data = {
-    board: "pideveloper/board-2",
-    note: "it's a test pin desc.",
-    image_url:
-      "https://www.birmingham.ac.uk/Images/College-EPS-only/outreach/engineering/aerospace-engineering.jpg",
-  };
+  var payload = [
+    {
+      ad_group_id: "2680059592705",
+      android_deep_link: "string",
+      carousel_android_deep_links: ["string"],
+      carousel_destination_urls: ["string"],
+      carousel_ios_deep_links: ["string"],
+      click_tracking_url: "string",
+      creative_type: "REGULAR",
+      destination_url: "string",
+      ios_deep_link: "string",
+      is_pin_deleted: false,
+      is_removable: false,
+      name: "string",
+      status: "ACTIVE",
+      tracking_urls: {
+        impression: ["URL1", "URL2"],
+        click: ["URL1", "URL2"],
+        engagement: ["URL1", "URL2"],
+        buyable_button: ["URL1", "URL2"],
+        audience_verification: ["URL1", "URL2"],
+      },
+      view_tracking_url: "string",
+      id: "687195134316",
+    },
+  ];
+  var ad_account_id = String();
   try {
-    var response = await pinterest.pins.createPin(data);
+    var response = await pinterest.pins.createPin(ad_account_id, payload);
   } catch (error) {
     return;
   }

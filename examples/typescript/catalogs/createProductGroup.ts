@@ -8,7 +8,7 @@ const pinterest = new PinterestAPI();
 pinterest.setUserToken(userToken);
 
 var pinsRequest = async function () {
-  var data = {
+  var payload = {
     name: "string",
     description: "string",
     is_featured: false,
@@ -25,8 +25,11 @@ var pinsRequest = async function () {
     },
     feed_id: "2680059592705",
   };
+  var query = {
+    ad_account_id: String()
+  }
   try {
-    var response = await pinterest.catalogs.createProductGroup(board);
+    var response = await pinterest.catalogs.createProductGroup({ query }, payload);
   } catch (error) {
     return;
   }

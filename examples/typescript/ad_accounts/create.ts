@@ -8,6 +8,7 @@ const pinterest = new PinterestAPI();
 pinterest.setUserToken(userToken);
 
 var pinsRequest = async function () {
+
   var data = {
     country: "US",
     owner_user_id: "383791336903426391",

@@ -8,13 +8,13 @@ const pinterest = new PinterestAPI();
 pinterest.setUserToken(userToken);
 
 var boardsRequest = async function () {
-  var data = {
+  var payload = {
     name: "Summer Recipes",
     description: "My favorite summer recipes",
     privacy: "PUBLIC",
   };
   try {
-    var response = await pinterest.boards.create(data);
+    var response = await pinterest.boards.create(payload);
   } catch (error) {
     return;
   }

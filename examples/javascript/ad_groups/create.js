@@ -72,7 +72,7 @@ var pinsRequest = async function () {
       billable_event: "CLICKTHROUGH",
     },
   ];
-  var ad_account_id = 12345
+  var ad_account_id = String()
   try {
     var response = await pinterest.ad_groups.create(ad_account_id, data);
     console.log(response);

@@ -10,9 +10,13 @@ var boardsRequest = async function () {
    * -------------------
    * board (The board id)
    */
-  var board_id = 'board_id';
+  var board_id = String();
+  var query = {
+    bookmark: String(),
+    page_size: Number()
+  }
   try {
-    var response = await pinterest.boards.getPins(board_id);
+    var response = await pinterest.boards.getPins(board_id, { query });
   } catch (error) {
     return;
   }

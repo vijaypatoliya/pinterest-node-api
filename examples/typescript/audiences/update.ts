@@ -9,10 +9,10 @@ pinterest.setUserToken(userToken);
 
 var pinsRequest = async function () {
   try {
-    var ad_account_id = 12345;
-    var audience_id = 12345;
+    var ad_account_id = String();
+    var audience_id = String();
 
-    var data = {
+    var payload = {
       ad_account_id: "549755885175",
       name: "string",
       rule: {
@@ -65,7 +65,7 @@ var pinsRequest = async function () {
       description: "string",
       operation_type: "UPDATE",
     };
-    var response = await pinterest.audiences.update(ad_account_id, audience_id, data);
+    var response = await pinterest.audiences.update(ad_account_id, audience_id, payload);
   } catch (error) {
     return;
   }

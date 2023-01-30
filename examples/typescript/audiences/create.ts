@@ -10,7 +10,7 @@ pinterest.setUserToken(userToken);
 var pinsRequest = async function () {
   try {
     var ad_account_id = 12345;
-    var data = {
+    var payload = {
       ad_account_id: "549755885175",
       name: "string",
       rule: {
@@ -63,7 +63,7 @@ var pinsRequest = async function () {
       description: "string",
       audience_type: "string",
     };
-    var response = await pinterest.audiences.create(ad_account_id, data);
+    var response = await pinterest.audiences.create(ad_account_id, payload);
   } catch (error) {
     return;
   }

@@ -8,7 +8,7 @@ const pinterest = new PinterestAPI();
 pinterest.setUserToken(userToken);
 
 var usersRequest = async function () {
-  var ad_account_id = 'ad_account_id'
+  var ad_account_id = String();
   var payload = {
     product_group_promotion: [
       {
@@ -36,6 +36,7 @@ var usersRequest = async function () {
     ],
     ad_group_id: "2680059592705",
   };
+
   try {
     var response = await pinterest.product_group_promotions.create(ad_account_id, payload);
     console.log(response);

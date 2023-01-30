@@ -8,9 +8,14 @@ var pinsRequest = async function () {
 
   try {
 
-    var ad_account_id = 12345
+    var ad_account_id = String();
+    var query = {
+      bookmark: String(),
+      order: String(),
+      page_size: Number()
+    }
 
-    var response = await pinterest.audiences.getAll(ad_account_id);
+    var response = await pinterest.audiences.getAll(ad_account_id, { query });
   } catch (error) {
     return;
   }

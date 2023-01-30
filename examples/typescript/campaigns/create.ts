@@ -8,7 +8,7 @@ const pinterest = new PinterestAPI();
 pinterest.setUserToken(userToken);
 
 var pinsRequest = async function () {
-  var data = [
+  var payload = [
     {
       ad_account_id: "549755885175",
       name: "ACME Tools",
@@ -33,9 +33,9 @@ var pinsRequest = async function () {
       objective_type: "AWARENESS",
     },
   ];
-  var ad_account_id = 'ad_account_id'
+  var ad_account_id = String()
   try {
-    var response = await pinterest.campaigns.create(ad_account_id, data);
+    var response = await pinterest.campaigns.create(ad_account_id, payload);
   } catch (error) {
     return;
   }

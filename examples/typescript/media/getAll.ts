@@ -9,7 +9,11 @@ pinterest.setUserToken(userToken);
 
 var pinsRequest = async function () {
   try {
-    var response = await pinterest.media.getAll();
+    var query = {
+      bookmark: String(),
+      page_size: Number()
+    }
+    var response = await pinterest.media.getAll({ query });
   } catch (error) {
     return;
   }

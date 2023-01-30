@@ -8,8 +8,8 @@ const pinterest = new PinterestAPI();
 pinterest.setUserToken(userToken);
 
 var pinsRequest = async function () {
-  var feed_id = "feed_id";
-  var data = {
+  var feed_id = String();
+  var payload = {
     default_availability: "IN_STOCK",
     default_currency: "USD",
     name: "string",
@@ -25,8 +25,11 @@ var pinsRequest = async function () {
     },
     status: "ACTIVE",
   };
+  var query = {
+    ad_account_id: String()
+  }
   try {
-    var response = await pinterest.catalogs.updateFeed(feed_id, data);
+    var response = await pinterest.catalogs.updateFeed(feed_id, { query }, payload);
   } catch (error) {
     return;
   }

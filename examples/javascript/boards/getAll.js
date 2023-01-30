@@ -5,21 +5,16 @@ var userToken = process.env.PINTEREST_USER_TOKEN;
 var pinterest = require("../../../lib")(userToken);
 
 var boardsRequest = async function () {
-  /**
-   * passing parameters
-   * -------------------
-   * board (The board id)
-   */
+  var query = {
+    bookmark: String(),
+    page_size: Number(),
+    privacy: String(),
+  };
   try {
-    var response = await pinterest.boards.getAll({
-      query: {
-        page_size: 1,
-        privacy: 'PROTECTED'
-      }
-    });
-    console.log(response)
+    var response = await pinterest.boards.getAll({ query });
+    console.log(response);
   } catch (error) {
-    console.log(error)
+    console.log(error);
     return;
   }
 };

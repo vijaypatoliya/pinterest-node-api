@@ -8,7 +8,7 @@ const pinterest = new PinterestAPI();
 pinterest.setUserToken(userToken);
 
 var usersRequest = async function () {
-  var ad_account_id = "ad_account_id";
+  var ad_account_id = String();
   var payload = {
     product_group_promotion: [
       {

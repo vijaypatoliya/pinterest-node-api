@@ -56,6 +56,7 @@ var pinsRequest = async function () {
       id: "2680060704746",
     },
   ];
+  var ad_account_id = String();
   try {
     var response = await pinterest.ad_groups.update(ad_account_id, data);
     console.log(response);

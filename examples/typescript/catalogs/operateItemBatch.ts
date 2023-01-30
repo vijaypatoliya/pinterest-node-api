@@ -145,8 +145,13 @@ var pinsRequest = async function () {
       },
     ],
   };
+
+  var query = {
+    ad_account_id: String(),
+  }
+
   try {
-    var response = await pinterest.catalogs.operateItemBatch(create || update || delete_discontinued);
+    var response = await pinterest.catalogs.operateItemBatch({ query }, create || update || delete_discontinued);
   } catch (error) {
     return;
   }

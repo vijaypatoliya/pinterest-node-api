@@ -7,7 +7,7 @@ var pinterest = require("../../../lib")(userToken);
 var pinsRequest = async function () {
   try {
     var ad_account_id = 12345;
-    var data = [
+    var payload = [
       {
         ad_group_id: "2680059592705",
         android_deep_link: "string",
@@ -33,7 +33,7 @@ var pinsRequest = async function () {
         pin_id: "394205773611545468",
       },
     ];
-    var response = await pinterest.ads.create(ad_account_id, data);
+    var response = await pinterest.ads.create(ad_account_id, payload);
   } catch (error) {
     return;
   }

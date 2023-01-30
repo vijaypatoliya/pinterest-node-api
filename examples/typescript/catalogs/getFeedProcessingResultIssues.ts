@@ -9,9 +9,16 @@ pinterest.setUserToken(userToken);
 
 var pinsRequest = async function () {
 
-  var processing_result_id = 'processing_result_id';
+  var processing_result_id = String();
+  var query = {
+    bookmark: String(),
+    page_size: Number(),
+    item_numbers: Array(Number()),
+    item_validation_issue: String(),
+    ad_account_id: String()
+  }
   try {
-    var response = await pinterest.catalogs.getFeedProcessingResultIssues(processing_result_id);
+    var response = await pinterest.catalogs.getFeedProcessingResultIssues(processing_result_id, { query });
   } catch (error) {
     return;
   }

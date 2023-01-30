@@ -9,9 +9,9 @@ pinterest.setUserToken(userToken);
 
 var pinsRequest = async function () {
 
-  var pin = 'pin_id';
+  var pin_id = String();
   try {
-    var response = await pinterest.pins.delete(pin);
+    var response = await pinterest.pins.delete(pin_id);
   } catch (error) {
     return;
   }

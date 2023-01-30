@@ -8,7 +8,7 @@ const pinterest = new PinterestAPI();
 pinterest.setUserToken(userToken);
 
 var pinsRequest = async function () {
-  var data = {
+  var payload = {
     create: {
       campaigns: [
         {
@@ -314,9 +314,9 @@ var pinsRequest = async function () {
     },
   };
 
-  var ad_account_id = "ad_account_id";
+  var ad_account_id = String();
   try {
-    var response = await pinterest.pins.createPin(ad_account_id, data);
+    var response = await pinterest.pins.createPin(ad_account_id, payload);
   } catch (error) {
     return;
   }

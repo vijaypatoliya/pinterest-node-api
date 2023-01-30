@@ -8,9 +8,12 @@ const pinterest = new PinterestAPI();
 pinterest.setUserToken(userToken);
 
 var pinsRequest = async function () {
-  var feed_id = "feed_id";
+  var feed_id = String();
+  var query = {
+    ad_account_id: String()
+  }
   try {
-    var response = await pinterest.catalogs.getFeed(feed_id);
+    var response = await pinterest.catalogs.getFeed(feed_id, { query });
   } catch (error) {
     return;
   }

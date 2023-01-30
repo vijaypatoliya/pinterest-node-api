@@ -8,7 +8,7 @@ const pinterest = new PinterestAPI();
 pinterest.setUserToken(userToken);
 
 var pinsRequest = async function () {
-  var media_id = 'media_id';
+  var media_id = String();
   try {
     var response = await pinterest.media.get(media_id);
   } catch (error) {

@@ -33,9 +33,9 @@ var pinsRequest = async function () {
     level: "CAMPAIGN",
     report_format: "JSON",
   };
-
+  var ad_account_id = String();
   try {
-    var response = await pinterest.ad_accounts.createReport(data);
+    var response = await pinterest.ad_accounts.createReport(ad_account_id, data);
     console.log(response)
   } catch (error) {
     console.log(error)

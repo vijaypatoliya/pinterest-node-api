@@ -8,9 +8,14 @@ const pinterest = new PinterestAPI();
 pinterest.setUserToken(userToken);
 
 var pinsRequest = async function () {
-  var ad_account_id = 'ad_account_id';
+  var ad_account_id = String();
+  var query = {
+    page_size: Number(),
+    order: String(),
+    bookmark: String()
+  }
   try {
-    var response = await pinterest.order_lines.get(ad_account_id);
+    var response = await pinterest.order_lines.get(ad_account_id, { query });
   } catch (error) {
     return;
   }

@@ -9,8 +9,14 @@ pinterest.setUserToken(userToken);
 
 var usersRequest = async function () {
   try {
-    var targeting_type = 'targeting_type'
-    var response = await pinterest.resources.getTargetingOptions(targeting_type);
+    var targeting_type = String();
+    var query = {
+      client_id: String(),
+      oauth_signature: String(),
+      timestamp: String()
+    }
+
+    var response = await pinterest.resources.getTargetingOptions(targeting_type, { query });
     console.log(response);
   } catch (error) {
     console.log("error", error);

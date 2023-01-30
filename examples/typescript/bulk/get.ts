@@ -8,7 +8,7 @@ const pinterest = new PinterestAPI();
 pinterest.setUserToken(userToken);
 
 var pinsRequest = async function () {
-  var data = {
+  var payload = {
     entity_types: ["CAMPAIGN", "AD_GROUP"],
     entity_ids: ["string"],
     updated_since: "1622848072",
@@ -21,9 +21,9 @@ var pinsRequest = async function () {
     },
     output_format: "CSV",
   };
-  var ad_account_id = 'ad_account_id'
+  var ad_account_id = String()
   try {
-    var response = await pinterest.bulk.get(ad_account_id, data);
+    var response = await pinterest.bulk.get(ad_account_id, payload);
   } catch (error) {
     return;
   }

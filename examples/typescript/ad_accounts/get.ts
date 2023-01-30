@@ -9,9 +9,9 @@ pinterest.setUserToken(userToken);
 
 var pinsRequest = async function () {
 
-  var data = {};
+  var ad_account_id = String();
   try {
-    var response = await pinterest.ad_accounts.get('12345');
+    var response = await pinterest.ad_accounts.get(ad_account_id);
     console.log(response)
   } catch (error) {
     console.log(error)

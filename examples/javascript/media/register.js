@@ -6,7 +6,7 @@ var pinterest = require("../../../lib")(userToken);
 
 var pinsRequest = async function () {
   var payload = {
-    media_type: "video",
+    media_type: String(),
   };
   try {
     var response = await pinterest.media.register(payload);

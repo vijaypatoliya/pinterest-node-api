@@ -8,8 +8,8 @@ const pinterest = new PinterestAPI();
 pinterest.setUserToken(userToken);
 
 var pinsRequest = async function () {
-  var ad_account_id = "ad_account_id";
-  var customer_list_id = 'customer_list_id';
+  var ad_account_id = String();
+  var customer_list_id = String();
   try {
     var response = await pinterest.customer_lists.get(ad_account_id, customer_list_id);
   } catch (error) {

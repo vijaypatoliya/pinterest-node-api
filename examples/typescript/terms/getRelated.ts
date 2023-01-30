@@ -10,7 +10,10 @@ pinterest.setUserToken(userToken);
 var usersRequest = async function () {
 
   try {
-    var response = await pinterest.terms.getRelated();
+    var query = {
+      terms: Array(String())
+    }
+    var response = await pinterest.terms.getRelated({ query });
     console.log(response)
   } catch (error) {
     console.log('error', error)
