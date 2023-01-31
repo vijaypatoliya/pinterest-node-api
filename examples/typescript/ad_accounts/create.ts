@@ -9,14 +9,14 @@ pinterest.setUserToken(userToken);
 
 var pinsRequest = async function () {
 
-  var data = {
+  var payload = {
     country: "US",
     owner_user_id: "383791336903426391",
     name: "ACME Tools",
   };
 
   try {
-    var response = await pinterest.ad_accounts.create(data);
+    var response = await pinterest.ad_accounts.create(payload);
     console.log(response);
   } catch (error) {
     console.log(error);

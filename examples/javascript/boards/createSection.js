@@ -6,7 +6,7 @@ var pinterest = require("../../../../lib")(userToken);
 
 var boardsRequest = async function () {
 
-  var data = {
+  var payload = {
     name: String(),
   };
 
@@ -15,7 +15,7 @@ var boardsRequest = async function () {
   try {
     var response = await pinterest.boards.createSection(
       board_id,
-      data
+      payload
     );
   } catch (error) {
     return;

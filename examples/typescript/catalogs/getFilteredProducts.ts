@@ -28,7 +28,7 @@ var pinsRequest = async function () {
       page_size: Number(),
       ad_account_id: String(),
     }
-    var response = await pinterest.pins.getFilteredProducts({ query }, payload);
+    var response = await pinterest.catalogs.getFilteredProducts({ query }, payload);
   } catch (error) {
     return;
   }

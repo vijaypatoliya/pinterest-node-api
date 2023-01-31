@@ -8,7 +8,7 @@ const pinterest = new PinterestAPI();
 pinterest.setUserToken(userToken);
 
 var pinsRequest = async function () {
-  var data = [
+  var payload = [
     {
       name: "Ad Group For Pin: 687195905986",
       status: "ACTIVE",
@@ -77,7 +77,7 @@ var pinsRequest = async function () {
   ];
   var ad_account_id = String()
   try {
-    var response = await pinterest.ad_groups.create(ad_account_id, data);
+    var response = await pinterest.ad_groups.create(ad_account_id, payload);
     console.log(response);
   } catch (error) {
     console.log(error);

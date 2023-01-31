@@ -69,14 +69,14 @@ Originally by [Vijay Patoliya](https://github.com/vijaypatoliya) (osi.vijay@gmai
 ```js
 /* Create */
 
-var data = {
+var payload = {
   country: "US",
   owner_user_id: "383791336903426391",
   name: "ACME Tools",
 };
 
 try {
-  var response = await pinterest.ad_accounts.create(data);
+  var response = await pinterest.ad_accounts.create(payload);
   console.log(response);
 } catch (error) {
   console.log(error);
@@ -87,7 +87,7 @@ try {
 ```js
 /* CREATE REPORT */
 
-var data = {
+var payload = {
   start_date: "2020-12-20",
   end_date: "2020-12-20",
   granularity: "TOTAL",
@@ -114,7 +114,7 @@ var data = {
 };
 
 try {
-  var response = await pinterest.ad_accounts.createReport(data);
+  var response = await pinterest.ad_accounts.createReport(payload);
   console.log(response);
 } catch (error) {
   console.log(error);
@@ -125,7 +125,7 @@ try {
 ```js
 /* GET */
 
-var data = {};
+var payload = {};
 try {
   var response = await pinterest.ad_accounts.get("12345");
   console.log(response);
@@ -205,7 +205,7 @@ try {
 ```js
 /* CREACT */
 
-var data = [
+var payload = [
   {
     name: "Ad Group For Pin: 687195905986",
     status: "ACTIVE",
@@ -274,7 +274,7 @@ var data = [
 ];
 var ad_account_id = 12345;
 try {
-  var response = await pinterest.ad_groups.create(ad_account_id, data);
+  var response = await pinterest.ad_groups.create(ad_account_id, payload);
   console.log(response);
 } catch (error) {
   console.log(error);
@@ -341,7 +341,7 @@ try {
 ```
 
 ```js
-var data = [
+var payload = [
   {
     name: "Ad Group For Pin: 687195905986",
     status: "ACTIVE",
@@ -393,7 +393,7 @@ var data = [
   },
 ];
 try {
-  var response = await pinterest.ad_groups.update(ad_account_id, data);
+  var response = await pinterest.ad_groups.update(ad_account_id, payload);
   console.log(response);
 } catch (error) {
   console.log(error);
@@ -406,7 +406,7 @@ try {
 ```js
 
 var ad_account_id = 12345;
-    var data = [
+    var payload = [
       {
         ad_group_id: "2680059592705",
         android_deep_link: "string",
@@ -432,7 +432,7 @@ var ad_account_id = 12345;
         pin_id: "394205773611545468",
       },
     ];
-    var response = await pinterest.ads.create(ad_account_id, data);
+    var response = await pinterest.ads.create(ad_account_id, payload);
   } catch (error) {
     return;
   }
@@ -528,14 +528,14 @@ try {
  * fields (link)
  */
 
-var data = {
+var payload = {
   board: "pideveloper/board-2",
   note: "it's a test pin desc.",
   image_url:
     "https://www.birmingham.ac.uk/Images/College-EPS-only/outreach/engineering/aerospace-engineering.jpg",
 };
 try {
-  var response = await pinterest.pins.createPin(data);
+  var response = await pinterest.pins.createPin(payload);
 } catch (error) {
   return;
 }
@@ -558,7 +558,7 @@ try {
 ```js
 try {
   var ad_account_id = 12345;
-  var data = {
+  var payload = {
     ad_account_id: "549755885175",
     name: "string",
     rule: {
@@ -611,7 +611,7 @@ try {
     description: "string",
     audience_type: "string",
   };
-  var response = await pinterest.audiences.create(ad_account_id, data);
+  var response = await pinterest.audiences.create(ad_account_id, payload);
 } catch (error) {
   return;
 }
@@ -643,7 +643,7 @@ try {
   var ad_account_id = 12345;
   var audience_id = 12345;
 
-  var data = {
+  var payload = {
     ad_account_id: "549755885175",
     name: "string",
     rule: {
@@ -699,7 +699,7 @@ try {
   var response = await pinterest.audiences.update(
     ad_account_id,
     audience_id,
-    data
+    payload
   );
 } catch (error) {
   return;
@@ -709,13 +709,13 @@ try {
 ### BOARD
 
 ```js
-var data = {
+var payload = {
   name: "Summer Recipes",
   description: "My favorite summer recipes",
   privacy: "PUBLIC",
 };
 try {
-  var response = await pinterest.boards.create(data);
+  var response = await pinterest.boards.create(payload);
 } catch (error) {
   return;
 }
@@ -827,7 +827,7 @@ try {
  * fields (privacy: Enum ["PUBLIC" "SECRET"])
  */
 
-var data = {
+var payload = {
   name: "your board name",
   description: "your board description",
 };
@@ -835,7 +835,7 @@ var data = {
 var board_id = "board_id";
 
 try {
-  var response = await pinterest.boards.update(board_id, data);
+  var response = await pinterest.boards.update(board_id, payload);
 } catch (error) {
   return;
 }
@@ -854,7 +854,7 @@ try {
  * fields (privacy: Enum ["PUBLIC" "SECRET"])
  */
 
-var data = {
+var payload = {
   name: "Salads",
 };
 
@@ -865,7 +865,7 @@ try {
   var response = await pinterest.boards.updateSection(
     board_id,
     section_id,
-    data
+    payload
   );
 } catch (error) {
   return;
@@ -885,7 +885,7 @@ try {
 ```
 
 ```js
-var data = {
+var payload = {
   entity_types: ["CAMPAIGN", "AD_GROUP"],
   entity_ids: ["string"],
   updated_since: "1622848072",
@@ -900,14 +900,14 @@ var data = {
 };
 var ad_account_id = "ad_account_id";
 try {
-  var response = await pinterest.bulk.get(ad_account_id, data);
+  var response = await pinterest.bulk.get(ad_account_id, payload);
 } catch (error) {
   return;
 }
 ```
 
 ```js
-var data = {
+var payload = {
   create: {
     campaigns: [
       {
@@ -1215,7 +1215,7 @@ var data = {
 
 var ad_account_id = "ad_account_id";
 try {
-  var response = await pinterest.pins.createPin(ad_account_id, data);
+  var response = await pinterest.pins.createPin(ad_account_id, payload);
 } catch (error) {
   return;
 }
@@ -1224,7 +1224,7 @@ try {
 ### CAMPAIGNS
 
 ```js
-var data = [
+var payload = [
   {
     ad_account_id: "549755885175",
     name: "ACME Tools",
@@ -1251,7 +1251,7 @@ var data = [
 ];
 var ad_account_id = "ad_account_id";
 try {
-  var response = await pinterest.campaigns.create(ad_account_id, data);
+  var response = await pinterest.campaigns.create(ad_account_id, payload);
 } catch (error) {
   return;
 }
@@ -1306,7 +1306,7 @@ try {
 ### CATALOGS
 
 ```js
-var data = {
+var payload = {
   default_country: "US",
   default_availability: "IN_STOCK",
   default_currency: "USD",
@@ -1324,14 +1324,14 @@ var data = {
   },
 };
 try {
-  var response = await pinterest.catalogs.createFeed(data);
+  var response = await pinterest.catalogs.createFeed(payload);
 } catch (error) {
   return;
 }
 ```
 
 ```js
-var data = {
+var payload = {
   name: "string",
   description: "string",
   is_featured: false,
@@ -1349,7 +1349,7 @@ var data = {
   feed_id: "2680059592705",
 };
 try {
-  var response = await pinterest.catalogs.createProductGroup(board);
+  var response = await pinterest.catalogs.createProductGroup(payload);
 } catch (error) {
   return;
 }
@@ -1412,7 +1412,7 @@ try {
 
 ```js
 try {
-  var data = {
+  var payload = {
     feed_id: "2680059592705",
     filters: {
       any_of: [
@@ -1426,7 +1426,7 @@ try {
       ],
     },
   };
-  var response = await pinterest.pins.getFilteredProducts(data);
+  var response = await pinterest.pins.getFilteredProducts(payload);
 } catch (error) {
   return;
 }
@@ -1633,7 +1633,7 @@ try {
 
 ```js
 var feed_id = "feed_id";
-var data = {
+var payload = {
   default_availability: "IN_STOCK",
   default_currency: "USD",
   name: "string",
@@ -1650,7 +1650,7 @@ var data = {
   status: "ACTIVE",
 };
 try {
-  var response = await pinterest.catalogs.updateFeed(feed_id, data);
+  var response = await pinterest.catalogs.updateFeed(feed_id, payload);
 } catch (error) {
   return;
 }
@@ -1658,7 +1658,7 @@ try {
 
 ```js
 var product_group_id = "product_group_id";
-var data = {
+var payload = {
   name: "string",
   description: "string",
   is_featured: true,
@@ -1677,7 +1677,7 @@ var data = {
 try {
   var response = await pinterest.catalogs.updateProductGroup(
     product_group_id,
-    data
+    payload
   );
 } catch (error) {
   return;
@@ -1689,7 +1689,7 @@ try {
 ```js
 var ad_account_id = "ad_account_id";
 var body = {
-  data: [
+  payload: [
     {
       event_name: "checkout",
       action_source: "app_ios",
@@ -1731,7 +1731,7 @@ var body = {
   ],
 };
 try {
-  var response = await pinterest.conversion_events.send(ad_account_id, data);
+  var response = await pinterest.conversion_events.send(ad_account_id, payload);
 } catch (error) {
   return;
 }
@@ -1740,11 +1740,11 @@ try {
 ### CONVERSION_TAGS
 
 ```js
-var data = {
+var payload = {
   name: "ACME Tools Tag",
 };
 try {
-  var response = await pinterest.conversion_tags.create(data);
+  var response = await pinterest.conversion_tags.create(payload);
 } catch (error) {
   return;
 }
@@ -1794,14 +1794,14 @@ try {
 
 ```js
 var ad_account_id = "ad_account_id";
-var data = {
+var payload = {
   name: "The Glengarry Glen Ross leads",
   records: "email1@pinterest.com,email2@pinterest.com,..<more records>",
   list_type: "EMAIL",
   exceptions: {},
 };
 try {
-  var response = await pinterest.customer_lists.create(ad_account_id, data);
+  var response = await pinterest.customer_lists.create(ad_account_id, payload);
 } catch (error) {
   return;
 }
@@ -1832,7 +1832,7 @@ try {
 ```js
 var ad_account_id = "ad_account_id";
 var customer_list_id = "customer_list_id";
-var data = {
+var payload = {
   records: "email2@pinterest.com,email6@pinterest.com,",
   operation_type: "REMOVE",
   exceptions: {
@@ -1844,7 +1844,7 @@ try {
   var response = await pinterest.customer_lists.update(
     ad_account_id,
     customer_list_id,
-    data
+    payload
   );
 } catch (error) {
   return;
@@ -1854,7 +1854,7 @@ try {
 ### KEYWORDS
 
 ```js
-var data = {
+var payload = {
   keywords: [
     {
       bid: 200000,
@@ -1867,7 +1867,7 @@ var data = {
 
 var ad_account_id = "ad_account_id";
 try {
-  var response = await pinterest.keywords.create(ad_account_id, data);
+  var response = await pinterest.keywords.create(ad_account_id, payload);
 } catch (error) {
   return;
 }
@@ -1972,7 +1972,7 @@ try {
 ### PINS
 
 ```js
-var data = {
+var payload = {
   link: "https://www.pinterest.com/",
   title: "string",
   description: "string",
@@ -1988,7 +1988,7 @@ var data = {
   parent_pin_id: "string",
 };
 try {
-  var response = await pinterest.pins.create(data);
+  var response = await pinterest.pins.create(payload);
 } catch (error) {
   return;
 }

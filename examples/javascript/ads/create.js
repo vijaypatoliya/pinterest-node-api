@@ -6,7 +6,7 @@ var pinterest = require("../../../lib")(userToken);
 
 var pinsRequest = async function () {
   try {
-    var ad_account_id = 12345;
+    var ad_account_id = String();
     var payload = [
       {
         ad_group_id: "2680059592705",

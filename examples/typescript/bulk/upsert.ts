@@ -316,7 +316,7 @@ var pinsRequest = async function () {
 
   var ad_account_id = String();
   try {
-    var response = await pinterest.pins.createPin(ad_account_id, payload);
+    var response = await pinterest.bulk.upsert(ad_account_id, payload);
   } catch (error) {
     return;
   }

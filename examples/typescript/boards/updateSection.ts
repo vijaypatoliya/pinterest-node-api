@@ -20,7 +20,7 @@ var boardsRequest = async function () {
    * fields (privacy: Enum ["PUBLIC" "SECRET"])
    */
 
-  var data = {
+  var payload = {
     name: String(),
   };
 
@@ -31,7 +31,7 @@ var boardsRequest = async function () {
     var response = await pinterest.boards.updateSection(
       board_id,
       section_id,
-      data
+      payload
     );
   } catch (error) {
     return;

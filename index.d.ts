@@ -41,8 +41,8 @@ declare class AudienceInsights extends BaseClient {
 declare class Audiences extends BaseClient {
   get(ad_account_id: string, audience_id: string): Promise<any>;
   getAll(ad_account_id: any): Promise<any>;
-  create(ad_account_id: string, data: any): Promise<any>;
-  update(ad_account_id: string, audience_id: string, data: any): Promise<any>;
+  create(ad_account_id: string, payload: any): Promise<any>;
+  update(ad_account_id: string, audience_id: string, payload: any): Promise<any>;
 }
 
 declare class Boards extends BaseClient {
@@ -60,8 +60,8 @@ declare class Boards extends BaseClient {
 }
 
 declare class Bulk extends BaseClient {
-  get(ad_account_id: string, data: any): Promise<any>;
-  upsert(ad_account_id: string, data: any): Promise<any>;
+  get(ad_account_id: string, payload: any): Promise<any>;
+  upsert(ad_account_id: string, payload: any): Promise<any>;
   download(ad_account_id: string, bulk_request_id: string): Promise<any>;
 }
 
@@ -111,7 +111,7 @@ declare class CustomerLists extends BaseClient {
   get(ad_account_id: string, customer_list_id: string): Promise<any>;
   getAll(ad_account_id: string): Promise<any>;
   create(ad_account_id: string, payload: any): Promise<any>;
-  update(ad_account_id: string, customer_list_id: string, data: any): Promise<any>;
+  update(ad_account_id: string, customer_list_id: string, payload: any): Promise<any>;
 }
 
 declare class Keywords extends BaseClient {
