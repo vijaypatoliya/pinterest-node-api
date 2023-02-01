@@ -6,13 +6,15 @@ var pinterest = require('../../../lib')(userToken);
 
 var boardsRequest = async function () {
   /**
-   * passing parameters 
-   * -------------------
+   * DELETE BOARD SECTION
    * 
-   * board (The board id)
-   */
-  var board_id = String();
-  var section_id = String()
+   * Passing Path Parameters:
+   * ------------------------
+   * board_id: required(string())
+   * section_id: required(string())
+   * */
+  var board_id = 12345;
+  var section_id = 12345
   try {
     var response = await pinterest.boards.deleteSection(board_id, section_id);
   } catch (error) {

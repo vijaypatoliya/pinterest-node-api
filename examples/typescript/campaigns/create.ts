@@ -34,7 +34,7 @@ var pinsRequest = async function () {
       objective_type: "AWARENESS",
     },
   ];
-  var ad_account_id = String()
+  var ad_account_id = 12345
   try {
     var response = await pinterest.campaigns.create(ad_account_id, payload);
   } catch (error) {

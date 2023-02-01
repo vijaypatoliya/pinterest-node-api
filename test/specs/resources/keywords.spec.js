@@ -11,7 +11,7 @@ var pinterest = require("../../../lib")(userToken);
 describe("keywords.get()", function () {
   it("It should get", async function () {
     try {
-      var ad_account_id = String();
+      var ad_account_id = 12345;
       var query = {
         campaign_id: String(),
         ad_group_id: String(),
@@ -50,7 +50,7 @@ describe("keywords.create()", function () {
         parent_id: "383791336903426391",
       };
 
-      var ad_account_id = String();
+      var ad_account_id = 12345;
       var response = await pinterest.keywords
         .create(ad_account_id, payload)
         .catch((error) => {
@@ -81,7 +81,7 @@ describe("keywords.update()", function () {
         ],
       };
 
-      var ad_account_id = String();
+      var ad_account_id = 12345;
       var response = await pinterest.keywords
         .update(ad_account_id, payload)
         .catch((error) => {
@@ -102,7 +102,7 @@ describe("keywords.update()", function () {
 describe("keywords.getCountryKeywordMetrics()", function () {
   it("It should get country keyword metrics", async function () {
     try {
-      var ad_account_id = String();
+      var ad_account_id = 12345;
       var query = {
         country_code: String(),
         keywords: Array(String()),

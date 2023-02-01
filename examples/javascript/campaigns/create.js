@@ -5,6 +5,14 @@ var userToken = process.env.PINTEREST_USER_TOKEN;
 var pinterest = require("../../../lib")(userToken);
 
 var pinsRequest = async function () {
+  /**
+   * GET SECTIONS
+   * 
+   * Passing Path Parameters:
+   * ------------------------
+   * 
+   * ad_account_id
+   * */
   var payload = [
     {
       ad_account_id: "549755885175",
@@ -30,7 +38,7 @@ var pinsRequest = async function () {
       objective_type: "AWARENESS",
     },
   ];
-  var ad_account_id = String()
+  var ad_account_id = 12345
   try {
     var response = await pinterest.campaigns.create(ad_account_id, payload);
   } catch (error) {

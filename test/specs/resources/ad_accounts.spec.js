@@ -61,7 +61,7 @@ describe("ad_accounts.create()", function () {
 describe("ad_accounts.get()", function () {
   it("It should get", async function () {
     try {
-      var ad_account_id = String();
+      var ad_account_id = 12345;
       var response = await pinterest.ad_accounts
         .get(ad_account_id)
         .catch((error) => {
@@ -92,7 +92,7 @@ describe("ad_accounts.getAnalytics()", function () {
         view_window_days: Number(),
         conversion_report_time: String(),
       };
-      var ad_account_id = String();
+      var ad_account_id = 12345;
       var response = await pinterest.ad_accounts
         .getAnalytics(ad_account_id, { query })
         .catch((error) => {
@@ -113,7 +113,7 @@ describe("ad_accounts.getAnalytics()", function () {
 describe("ad_accounts.getReport()", function () {
   it("It should get report", async function () {
     try {
-      var ad_account_id = String();
+      var ad_account_id = 12345;
       var query = { token: String() };
       var response = await pinterest.ad_accounts
         .getReport(ad_account_id, { query })
@@ -160,7 +160,7 @@ describe("ad_accounts.createReport()", function () {
         level: "CAMPAIGN",
         report_format: "JSON",
       };
-      var ad_account_id = String();
+      var ad_account_id = 12345;
       var response = await pinterest.ad_accounts
         .createReport(ad_account_id, payload)
         .catch((error) => {
@@ -193,6 +193,7 @@ describe("ad_accounts.getTargetedAnalytics()", function () {
         conversion_report_time: String(),
         attribution_types: String(),
       };
+      var ad_account_id = 12345;
       var response = await pinterest.ad_accounts
         .getTargetedAnalytics(ad_account_id, { query })
         .catch((error) => {

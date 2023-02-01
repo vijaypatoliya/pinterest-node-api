@@ -10,7 +10,7 @@ pinterest.setUserToken(userToken);
 
 var usersRequest = async function () {
   try {
-    var targeting_type = String();
+    var targeting_type = 12345;
     var query = {
       client_id: String(),
       oauth_signature: String(),

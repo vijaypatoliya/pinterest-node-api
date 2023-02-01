@@ -20,7 +20,7 @@ var pinsRequest = async function () {
       view_window_days: Number(),
       conversion_report_time: String()
     }
-    var ad_account_id = String()
+    var ad_account_id = 12345
     var response = await pinterest.ad_accounts.getAnalytics(ad_account_id, { query })
     console.log(response)
   } catch (error) {

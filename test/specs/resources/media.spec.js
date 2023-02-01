@@ -54,7 +54,7 @@ describe("media.register()", function () {
 describe("media.get()", function () {
   it("It should get", async function () {
     try {
-      var media_id = String();
+      var media_id = 12345;
       var response = await pinterest.media.get(media_id).catch((error) => {
         if (error) {
           console.log("error ", error);

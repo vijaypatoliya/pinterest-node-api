@@ -25,8 +25,8 @@ var boardsRequest = async function () {
     name: String(),
   };
 
-  var board_id = String();
-  var section_id = String();
+  var board_id = 12345;
+  var section_id = 12345;
 
   try {
     var response = await pinterest.boards.updateSection(

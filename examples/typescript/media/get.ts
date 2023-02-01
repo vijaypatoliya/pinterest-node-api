@@ -9,7 +9,7 @@ pinterest.setUserToken(userToken);
 
 
 var pinsRequest = async function () {
-  var media_id = String();
+  var media_id = 12345;
   try {
     var response = await pinterest.media.get(media_id);
   } catch (error) {

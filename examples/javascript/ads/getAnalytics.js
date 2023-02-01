@@ -6,7 +6,14 @@ var pinterest = require("../../../lib")(userToken);
 
 var pinsRequest = async function () {
   try {
-    var ad_account_id = String();
+    /**
+     * GET ADS ANALYTICS
+     *
+     * Passing Path Parameters:
+     * - ad_account_id: required(string())
+     *
+     * */
+    var ad_account_id = 12345;
     var query = {
       start_date: String(Date()),
       end_date: String(Date()),
@@ -17,7 +24,7 @@ var pinsRequest = async function () {
       engagement_window_days: Number(),
       view_window_days: Number(),
       conversion_report_time: String(),
-    }
+    };
 
     var response = await pinterest.ads.getAnalytics(ad_account_id, { query });
   } catch (error) {

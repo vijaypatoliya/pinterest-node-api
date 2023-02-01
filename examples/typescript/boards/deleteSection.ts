@@ -15,8 +15,8 @@ var boardsRequest = async function () {
    * 
    * board (The board id)
    */
-  var board_id = String();
-  var section_id = String()
+  var board_id = 12345;
+  var section_id = 12345
   try {
     var response = await pinterest.boards.deleteSection(board_id, section_id);
   } catch (error) {

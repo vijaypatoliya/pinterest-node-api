@@ -27,7 +27,7 @@ var boardsRequest = async function () {
     description: 'your board description'
   };
 
-  var board_id = String();
+  var board_id = 12345;
 
   try {
     var response = await pinterest.boards.update(board_id, payload);

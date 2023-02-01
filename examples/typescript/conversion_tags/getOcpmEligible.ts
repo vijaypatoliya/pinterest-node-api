@@ -9,7 +9,7 @@ pinterest.setUserToken(userToken);
 
 
 var pinsRequest = async function () {
-  var ad_account_id = String();
+  var ad_account_id = 12345;
   try {
     var response = await pinterest.conversion_tags.getOcpmEligible(ad_account_id);
   } catch (error) {

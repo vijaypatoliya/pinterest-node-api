@@ -11,7 +11,7 @@ var pinterest = require("../../../lib")(userToken);
 describe("customer_list.create()", function () {
   it("It should create", async function () {
     try {
-      var ad_account_id = String();
+      var ad_account_id = 12345;
       var payload = {
         name: "The Glengarry Glen Ross leads",
         records: "email1@pinterest.com,email2@pinterest.com,..<more records>",
@@ -38,7 +38,7 @@ describe("customer_list.create()", function () {
 describe("customer_list.getAll()", function () {
   it("It should getAll", async function () {
     try {
-      var ad_account_id = String();
+      var ad_account_id = 12345;
       var query = {
         page_size: Number(),
         order: String(),
@@ -64,8 +64,8 @@ describe("customer_list.getAll()", function () {
 describe("customer_list.get()", function () {
   it("It should get", async function () {
     try {
-      var ad_account_id = String();
-      var customer_list_id = String();
+      var ad_account_id = 12345;
+      var customer_list_id = 12345;
       var response = await pinterest.customer_lists
         .get(ad_account_id, customer_list_id)
         .catch((error) => {
@@ -86,8 +86,8 @@ describe("customer_list.get()", function () {
 describe("customer_list.update()", function () {
   it("It should update", async function () {
     try {
-      var ad_account_id = String();
-      var customer_list_id = String();
+      var ad_account_id = 12345;
+      var customer_list_id = 12345;
       var payload = {
         records: "email2@pinterest.com,email6@pinterest.com,",
         operation_type: "REMOVE",

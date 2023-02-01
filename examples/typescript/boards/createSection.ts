@@ -14,7 +14,7 @@ var boardsRequest = async function () {
     name: String(),
   };
 
-  var board_id = String();
+  var board_id = 12345;
 
   try {
     var response = await pinterest.boards.createSection(

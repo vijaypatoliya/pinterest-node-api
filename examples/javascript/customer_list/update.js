@@ -5,8 +5,17 @@ var userToken = process.env.PINTEREST_USER_TOKEN;
 var pinterest = require("../../../lib")(userToken);
 
 var pinsRequest = async function () {
-  var ad_account_id = String();
-  var customer_list_id = String();
+  /**
+   * GET SECTIONS
+   * 
+   * Passing Path Parameters:
+   * ------------------------
+   * 
+   * ad_account_id
+   * customer_list_id
+   * */
+  var ad_account_id = 12345;
+  var customer_list_id = 12345;
   var payload = {
     records: "email2@pinterest.com,email6@pinterest.com,",
     operation_type: "REMOVE",

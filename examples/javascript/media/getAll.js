@@ -6,6 +6,10 @@ var pinterest = require('../../../lib')(userToken);
 
 var pinsRequest = async function () {
   try {
+    /**
+   * GET SECTIONS
+   * 
+   * */
     var query = {
       bookmark: String(),
       page_size: Number()

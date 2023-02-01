@@ -5,7 +5,15 @@ var userToken = process.env.PINTEREST_USER_TOKEN;
 var pinterest = require("../../../lib")(userToken);
 
 var pinsRequest = async function () {
-  var pin_id = String();
+  /**
+   * GET SECTIONS
+   * 
+   * Passing Path Parameters:
+   * ------------------------
+   * 
+   * pin_id
+   * */
+  var pin_id = 12345;
   var payload = {
     board_id: "string",
     board_section_id: "string",

@@ -10,7 +10,7 @@ pinterest.setUserToken(userToken);
 
 var usersRequest = async function () {
   try {
-    var interest_id = String()
+    var interest_id = 12345
     var response = await pinterest.resources.getInterest(interest_id);
     console.log(response);
   } catch (error) {

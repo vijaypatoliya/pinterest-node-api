@@ -11,7 +11,7 @@ var pinterest = require("../../../lib")(userToken);
 describe("campaigns.getAll()", function () {
   it("It should get all", async function () {
     try {
-      var ad_account_id = String();
+      var ad_account_id = 12345;
       var query = {
         campaign_ids: Array(String()),
         entity_statuses: Array(String()),
@@ -64,7 +64,7 @@ describe("campaigns.create()", function () {
           objective_type: "AWARENESS",
         },
       ];
-      var ad_account_id = String();
+      var ad_account_id = 12345;
       var response = await pinterest.campaigns
         .create(ad_account_id, payload)
         .catch((error) => {
@@ -85,7 +85,7 @@ describe("campaigns.create()", function () {
 describe("campaigns.update()", function () {
   it("It should update", async function () {
     try {
-      var ad_account_id = String();
+      var ad_account_id = 12345;
       var payload = [
         {
           id: "549755885175",
@@ -131,8 +131,8 @@ describe("campaigns.update()", function () {
 describe("campaigns.get()", function () {
   it("It should get", async function () {
     try {
-      var ad_account_id = String();
-      var campaign_id = String();
+      var ad_account_id = 12345;
+      var campaign_id = 12345;
       var response = await pinterest.campaigns
         .get(ad_account_id, campaign_id)
         .catch((error) => {
@@ -153,7 +153,7 @@ describe("campaigns.get()", function () {
 describe("campaigns.getAnalytics()", function () {
   it("It should get analytics", async function () {
     try {
-      var ad_account_id = String();
+      var ad_account_id = 12345;
       var query = {
         start_date: String(Date()),
         end_date: String(Date()),
@@ -185,7 +185,7 @@ describe("campaigns.getAnalytics()", function () {
 describe("campaigns.getTargetedAnalytics()", function () {
   it("It should get targeted analytics", async function () {
     try {
-      var ad_account_id = String();
+      var ad_account_id = 12345;
       var query = {
         campaign_ids: Array(String()),
         start_Date: String(Date()),

@@ -13,7 +13,7 @@ var base64Encoded = require("../data.json").base64Encoded;
 describe("product_group_promotions.getAnalytics()", function () {
   it("It should get analytics", async function () {
     try {
-      var ad_account_id = String();
+      var ad_account_id = 12345;
       var query = {
         start_date: String(Date()),
         end_date: String(Date()),
@@ -45,7 +45,7 @@ describe("product_group_promotions.getAnalytics()", function () {
 describe("product_group_promotions.create()", function () {
   it("It should create", async function () {
     try {
-      var ad_account_id = String();
+      var ad_account_id = 12345;
       var payload = {
         product_group_promotion: [
           {
@@ -93,7 +93,7 @@ describe("product_group_promotions.create()", function () {
 describe("product_group_promotions.update()", function () {
   it("It should update", async function () {
     try {
-      var ad_account_id = String();
+      var ad_account_id = 12345;
       var payload = {
         product_group_promotion: [
           {
@@ -143,7 +143,7 @@ describe("product_group_promotions.update()", function () {
 describe("product_group_promotions.getAll()", function () {
   it("It should getAll", async function () {
     try {
-      var ad_account_id = String();
+      var ad_account_id = 12345;
       var query = {
         product_group_promotion_ids: Array(String()),
         entity_statuses: Array(String()),
@@ -172,8 +172,8 @@ describe("product_group_promotions.getAll()", function () {
 describe("product_group_promotions.get()", function () {
   it("It should get", async function () {
     try {
-      var ad_account_id = String();
-      var product_group_promotion_id = String();
+      var ad_account_id = 12345;
+      var product_group_promotion_id = 12345;
       var response = await pinterest.product_group_promotions
         .get(ad_account_id, product_group_promotion_id)
         .catch((error) => {

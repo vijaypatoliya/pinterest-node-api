@@ -11,7 +11,7 @@ var pinterest = require("../../../lib")(userToken);
 describe("ads.getTargetedAnalytics()", function () {
   it("It should get targeted analytics", async function () {
     try {
-      var ad_account_id = String();
+      var ad_account_id = 12345;
       var query = {
         ad_ids: Array(String()),
         start_date: String(Date()),
@@ -46,7 +46,7 @@ describe("ads.getTargetedAnalytics()", function () {
 describe("ads.getAll()", function () {
   it("It should get all", async function () {
     try {
-      var ad_account_id = String();
+      var ad_account_id = 12345;
       var query = {
         campaign_ids: Array(String()),
         ad_group_ids: Array(String()),
@@ -77,7 +77,7 @@ describe("ads.getAll()", function () {
 describe("ads.create()", function () {
   it("It should create", async function () {
     try {
-      var ad_account_id = String();
+      var ad_account_id = 12345;
       var payload = [
         {
           ad_group_id: "2680059592705",
@@ -150,7 +150,7 @@ describe("ads.update()", function () {
           id: "687195134316",
         },
       ];
-      var ad_account_id = String();
+      var ad_account_id = 12345;
       var response = await pinterest.ads
         .update(ad_account_id, payload)
         .catch((error) => {
@@ -171,8 +171,8 @@ describe("ads.update()", function () {
 describe("ads.get()", function () {
   it("It should get", async function () {
     try {
-      var ad_account_id = String();
-      var ads_id = String();
+      var ad_account_id = 12345;
+      var ads_id = 12345;
       var response = await pinterest.ads
         .get(ad_account_id, ads_id)
         .catch((error) => {
@@ -193,7 +193,7 @@ describe("ads.get()", function () {
 describe("ads.getAnalytics()", function () {
   it("It should get analytics", async function () {
     try {
-      var ad_account_id = String();
+      var ad_account_id = 12345;
       var query = {
         start_date: String(Date()),
         end_date: String(Date()),
@@ -225,7 +225,7 @@ describe("ads.getAnalytics()", function () {
 describe("ads.createPreview()", function () {
   it("It should create preview", async function () {
     try {
-      var ad_account_id = String();
+      var ad_account_id = 12345;
       var createFromImgPayload = {
         image_url: "https://somewebsite.com/someimage.jpg",
         title: "My Preview Image",

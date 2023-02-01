@@ -6,7 +6,14 @@ var pinterest = require("../../../lib")(userToken);
 
 var pinsRequest = async function () {
   try {
-    var ad_account_id = String();
+    /**
+     * CREATE ADS PREVIEW
+     *
+     * Passing Path Parameters:
+     * - ad_account_id: required(string())
+     *
+     * */
+    var ad_account_id = 12345;
     var createFromImgPayload = {
       image_url: "https://somewebsite.com/someimage.jpg",
       title: "My Preview Image",

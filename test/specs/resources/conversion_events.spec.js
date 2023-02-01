@@ -11,7 +11,7 @@ var pinterest = require("../../../lib")(userToken);
 describe("conversion_events.send()", function () {
   it("It should send", async function () {
     try {
-      var ad_account_id = String();
+      var ad_account_id = 12345;
       var payload = {
         data: [
           {

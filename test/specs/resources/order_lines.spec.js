@@ -11,7 +11,7 @@ var pinterest = require("../../../lib")(userToken);
 describe("order_lines.getAll()", function () {
   it("It should get all", async function () {
     try {
-      var ad_account_id = String();
+      var ad_account_id = 12345;
       var query = {
         page_size: Number(),
         order: String(),
@@ -37,8 +37,8 @@ describe("order_lines.getAll()", function () {
 describe("order_lines.get()", function () {
   it("It should get", async function () {
     try {
-      var ad_account_id = String();
-      var order_line_id = String();
+      var ad_account_id = 12345;
+      var order_line_id = 12345;
       var response = await pinterest.order_lines
         .get(ad_account_id, order_line_id)
         .catch((error) => {

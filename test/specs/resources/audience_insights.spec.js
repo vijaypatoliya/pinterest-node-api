@@ -11,7 +11,7 @@ var pinterest = require("../../../lib")(userToken);
 describe("audience_insights.get()", function () {
   it("It should get", async function () {
     try {
-      var ad_account_id = String();
+      var ad_account_id = 12345;
       var query = {
         audience_insight_type: String(),
       };

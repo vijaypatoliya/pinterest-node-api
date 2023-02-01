@@ -10,7 +10,7 @@ pinterest.setUserToken(userToken);
 
 var pinsRequest = async function () {
 
-  var batch_id = String();
+  var batch_id = 12345;
   var query = {
     ad_account_id: String()
   };

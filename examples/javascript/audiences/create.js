@@ -6,7 +6,14 @@ var pinterest = require("../../../lib")(userToken);
 
 var pinsRequest = async function () {
   try {
-    var ad_account_id = String();
+    /**
+     * CREATE AUDIENCE
+     *
+     * Passing Path Parameters:
+     * - ad_account_id: required(string())
+     *
+     * */
+    var ad_account_id = 12345;
     var payload = {
       ad_account_id: "549755885175",
       name: "string",

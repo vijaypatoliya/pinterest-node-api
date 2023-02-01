@@ -9,7 +9,7 @@ pinterest.setUserToken(userToken);
 
 
 var usersRequest = async function () {
-  var ad_account_id = String()
+  var ad_account_id = 12345
   var query = {
     start_date: String(Date()),
     end_date: String(Date()),

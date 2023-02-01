@@ -76,7 +76,7 @@ describe("catalogs.createFeed()", function () {
 describe("catalogs.getFeed()", function () {
   it("It should get feed", async function () {
     try {
-      var feed_id = String();
+      var feed_id = 12345;
       var query = {
         ad_account_id: String(),
       };
@@ -100,7 +100,7 @@ describe("catalogs.getFeed()", function () {
 describe("catalogs.updateFeed()", function () {
   it("It should update feed", async function () {
     try {
-      var feed_id = String();
+      var feed_id = 12345;
       var payload = {
         default_availability: "IN_STOCK",
         default_currency: "USD",
@@ -140,7 +140,7 @@ describe("catalogs.updateFeed()", function () {
 describe("catalogs.deleteFeed()", function () {
   it("It should delete feed", async function () {
     try {
-      var feed_id = String();
+      var feed_id = 12345;
       var query = {
         ad_account_id: String(),
       };
@@ -164,7 +164,7 @@ describe("catalogs.deleteFeed()", function () {
 describe("catalogs.getFeedProcessingResultIssues()", function () {
   it("It should get feed processing result issues", async function () {
     try {
-      var processing_result_id = String();
+      var processing_result_id = 12345;
       var query = {
         bookmark: String(),
         page_size: Number(),
@@ -192,7 +192,7 @@ describe("catalogs.getFeedProcessingResultIssues()", function () {
 describe("catalogs.getFeedProcessingResults()", function () {
   it("It should get feed processing results", async function () {
     try {
-      var feed_id = String();
+      var feed_id = 12345;
       var query = {
         bookmark: String(),
         page_size: Number(),
@@ -244,7 +244,7 @@ describe("catalogs.getItems()", function () {
 describe("catalogs.getItemsBatch()", function () {
   it("It should get items batch", async function () {
     try {
-      var batch_id = String();
+      var batch_id = 12345;
       var query = {
         ad_account_id: String(),
       };
@@ -467,7 +467,7 @@ describe("catalogs.getFilteredProducts()", function () {
 describe("catalogs.getProductGroup()", function () {
   it("It should get product group", async function () {
     try {
-      var product_group_id = String();
+      var product_group_id = 12345;
       var query = {
         ad_account_id: String(),
       };
@@ -491,7 +491,7 @@ describe("catalogs.getProductGroup()", function () {
 describe("catalogs.deleteProductGroup()", function () {
   it("It should delete product group", async function () {
     try {
-      var product_group_id = String();
+      var product_group_id = 12345;
       var query = {
         ad_account_id: String(),
       };
@@ -515,7 +515,7 @@ describe("catalogs.deleteProductGroup()", function () {
 describe("catalogs.updateProductGroup()", function () {
   it("It should update product group", async function () {
     try {
-      var product_group_id = String();
+      var product_group_id = 12345;
       var query = {
         ad_account_id: String(),
       };
@@ -555,10 +555,10 @@ describe("catalogs.updateProductGroup()", function () {
 describe("catalogs.getProducts()", function () {
   it("It should get products", async function () {
     try {
-      var product_group_id = String();
+      var product_group_id = 12345;
       var query = {
         bookmark: String(),
-        page_size: Integer(),
+        page_size: Number(),
         ad_account_id: String(),
       };
       var response = await pinterest.catalogs
@@ -581,7 +581,7 @@ describe("catalogs.getProducts()", function () {
 describe("catalogs.getProductCount()", function () {
   it("It should get product count", async function () {
     try {
-      var product_group_id = String();
+      var product_group_id = 12345;
       var query = {
         ad_account_id: String(),
       };

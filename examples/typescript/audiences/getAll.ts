@@ -12,7 +12,7 @@ var pinsRequest = async function () {
 
   try {
 
-    var ad_account_id = String();
+    var ad_account_id = 12345;
     var query = {
       bookmark: String(),
       order: String(),

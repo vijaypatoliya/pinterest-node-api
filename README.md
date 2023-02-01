@@ -67,6 +67,7 @@ Originally by [Vijay Patoliya](https://github.com/vijaypatoliya) (osi.vijay@gmai
 > ### AD_ACCOUNTS
 
 ```js
+/** Create ad account */
 var payload = {
   country: "US",
   owner_user_id: "383791336903426391",
@@ -83,6 +84,7 @@ try {
 ```
 
 ```js
+/** Create ad account report */
 var payload = {
   start_date: "2020-12-20",
   end_date: "2020-12-20",
@@ -108,7 +110,7 @@ var payload = {
   level: "CAMPAIGN",
   report_format: "JSON",
 };
-var ad_account_id = String();
+var ad_account_id = 12345;
 try {
   var response = await pinterest.ad_accounts.createReport(
     ad_account_id,
@@ -122,9 +124,9 @@ try {
 ```
 
 ```js
-/* GET */
+/** Get ad account */
 
-var ad_account_id = String();
+var ad_account_id = 12345;
 try {
   var response = await pinterest.ad_accounts.get(ad_account_id);
   console.log(response);
@@ -135,7 +137,7 @@ try {
 ```
 
 ```js
-/* GET ALL */
+/** Get all ad accounts */
 
 var query = {
   bookmark: String(),
@@ -151,6 +153,7 @@ try {
 ```
 
 ```js
+/** Get analytics */
 try {
   var query = {
     start_date: String(Date()),
@@ -162,7 +165,7 @@ try {
     view_window_days: Number(),
     conversion_report_time: String(),
   };
-  var ad_account_id = String();
+  var ad_account_id = 12345;
   var response = await pinterest.ad_accounts.getAnalytics(ad_account_id, {
     query,
   });
@@ -173,9 +176,9 @@ try {
 ```
 
 ```js
-/* GET REPORT */
+/** Get report */
 
-var ad_account_id = String();
+var ad_account_id = 12345;
 var query = { token: String() };
 try {
   var response = await pinterest.ad_accounts.getReport(ad_account_id, {
@@ -189,9 +192,9 @@ try {
 ```
 
 ```js
-/* GET TARGETED ANALYTICS */
+/** Get ad account target analytics */
 
-var ad_account_id = String();
+var ad_account_id = 12345;
 try {
   var query = {
     start_date: String(Date()),
@@ -219,6 +222,7 @@ try {
 > ### AD_GROUPS
 
 ```js
+/** Create ad group */
 var payload = [
   {
     name: "Ad Group For Pin: 687195905986",
@@ -286,7 +290,7 @@ var payload = [
     billable_event: "CLICKTHROUGH",
   },
 ];
-var ad_account_id = String();
+var ad_account_id = 12345;
 try {
   var response = await pinterest.ad_groups.create(ad_account_id, payload);
   console.log(response);
@@ -297,10 +301,10 @@ try {
 ```
 
 ```js
-/* GET */
+/** Get ad group */
 
-var ad_account_id = String();
-var ad_group_id = String();
+var ad_account_id = 12345;
+var ad_group_id = 12345;
 try {
   var response = await pinterest.ad_groups.get(ad_account_id, ad_group_id);
   console.log(response);
@@ -311,7 +315,8 @@ try {
 ```
 
 ```js
-var ad_account_id = String();
+/** Get all ad groups */
+var ad_account_id = 12345;
 var query = {
   campaign_ids: Array(String()),
   ad_group_ids: Array(String()),
@@ -331,7 +336,8 @@ try {
 ```
 
 ```js
-var ad_account_id = String();
+/** Get ad group analytics */
+var ad_account_id = 12345;
 var query = {
   start_date: String(Date()),
   end_date: String(Date()),
@@ -355,7 +361,8 @@ try {
 ```
 
 ```js
-var ad_account_id = String();
+/** Get ad group bid floor */
+var ad_account_id = 12345;
 var payload = {
   targeting_spec: {
     GEO: ["BE-VOV"],
@@ -448,7 +455,8 @@ try {
 ```
 
 ```js
-var ad_account_id = String();
+/** Get ad group targeted analytics */
+var ad_account_id = 12345;
 var query = {
   ad_group_ids: Array(String()),
   start_date: String(Date()),
@@ -474,6 +482,7 @@ try {
 ```
 
 ```js
+/** Update ad groups */
 var payload = [
   {
     name: "Ad Group For Pin: 687195905986",
@@ -525,7 +534,7 @@ var payload = [
     id: "2680060704746",
   },
 ];
-var ad_account_id = String();
+var ad_account_id = 12345;
 try {
   var response = await pinterest.ad_groups.update(ad_account_id, payload);
   console.log(response);
@@ -538,8 +547,9 @@ try {
 > ### ADS
 
 ```js
+/** Create ads */
 try {
-  var ad_account_id = String();
+  var ad_account_id = 12345;
   var payload = [
     {
       ad_group_id: "2680059592705",
@@ -573,8 +583,9 @@ try {
 ```
 
 ```js
+/** Create ads preview */
 try {
-  var ad_account_id = String();
+  var ad_account_id = 12345;
   var createFromImgPayload = {
     image_url: "https://somewebsite.com/someimage.jpg",
     title: "My Preview Image",
@@ -598,9 +609,10 @@ try {
 ```
 
 ```js
+/** Get ads */
 try {
-  var ad_account_id = String();
-  var ads_id = String();
+  var ad_account_id = 12345;
+  var ads_id = 12345;
 
   var response = await pinterest.ads.get(ad_account_id, ads_id);
 } catch (error) {
@@ -609,8 +621,9 @@ try {
 ```
 
 ```js
+/** Get all ads */
 try {
-  var ad_account_id = String();
+  var ad_account_id = 12345;
   var query = {
     campaign_ids: Array(String()),
     ad_group_ids: Array(String()),
@@ -628,8 +641,9 @@ try {
 ```
 
 ```js
+/** Get ads analytics */
 try {
-  var ad_account_id = String();
+  var ad_account_id = 12345;
   var query = {
     start_date: String(Date()),
     end_date: String(Date()),
@@ -649,8 +663,9 @@ try {
 ```
 
 ```js
+/** Get ads targeted analytics */
 try {
-  var ad_account_id = String();
+  var ad_account_id = 12345;
   var query = {
     ad_ids: Array(String()),
     start_date: String(Date()),
@@ -673,26 +688,7 @@ try {
 ```
 
 ```js
-/**
- * passing parameters
- * -------------------
- *
- * link
- * title
- * description
- * board_id (required) (The board id)
- * note (required)
- * dominant_color
- * board_section_id
- * alt_text
- * media_source.source_type
- * media_source.content_type
- * media_source.data (The link of a Base64 encoded image)
- * parent_pin_id
- *
- * (optional)
- * fields (link)
- */
+/** Update ads */
 
 var payload = [
   {
@@ -720,7 +716,7 @@ var payload = [
     id: "687195134316",
   },
 ];
-var ad_account_id = String();
+var ad_account_id = 12345;
 try {
   var response = await pinterest.ads.update(ad_account_id, payload);
 } catch (error) {
@@ -731,8 +727,9 @@ try {
 > ### AUDIENCE_INSIGHTS
 
 ```js
+/** Get audience insight */
 try {
-  var ad_account_id = String();
+  var ad_account_id = 12345;
   var query = {
     audience_insight_type: String(),
   };
@@ -747,8 +744,9 @@ try {
 > ### AUDIENCES
 
 ```js
+/** Create audiences */
 try {
-  var ad_account_id = String();
+  var ad_account_id = 12345;
   var payload = {
     ad_account_id: "549755885175",
     name: "string",
@@ -809,9 +807,10 @@ try {
 ```
 
 ```js
+/** Get audiences */
 try {
-  var ad_account_id = String();
-  var audience_id = String();
+  var ad_account_id = 12345;
+  var audience_id = 12345;
 
   var response = await pinterest.audiences.get(ad_account_id, audience_id);
 } catch (error) {
@@ -820,8 +819,9 @@ try {
 ```
 
 ```js
+/** Get all audiences */
 try {
-  var ad_account_id = String();
+  var ad_account_id = 12345;
   var query = {
     bookmark: String(),
     order: String(),
@@ -835,9 +835,10 @@ try {
 ```
 
 ```js
+/** Update audiences */
 try {
-  var ad_account_id = String();
-  var audience_id = String();
+  var ad_account_id = 12345;
+  var audience_id = 12345;
 
   var payload = {
     ad_account_id: "549755885175",
@@ -905,6 +906,7 @@ try {
 > ### BOARD
 
 ```js
+/** Create board */
 var payload = {
   name: "Summer Recipes",
   description: "My favorite summer recipes",
@@ -918,11 +920,12 @@ try {
 ```
 
 ```js
+/** Create board section */
 var payload = {
   name: String(),
 };
 
-var board_id = String();
+var board_id = 12345;
 
 try {
   var response = await pinterest.boards.createSection(board_id, payload);
@@ -932,7 +935,8 @@ try {
 ```
 
 ```js
-var board_id = String();
+/** Delete board */
+var board_id = 12345;
 try {
   var response = await pinterest.boards.delete(board_id);
 } catch (error) {
@@ -941,8 +945,9 @@ try {
 ```
 
 ```js
-var board_id = String();
-var section_id = String();
+/** Delete board section */
+var board_id = 12345;
+var section_id = 12345;
 try {
   var response = await pinterest.boards.deleteSection(board_id, section_id);
 } catch (error) {
@@ -951,7 +956,8 @@ try {
 ```
 
 ```js
-var board_id = String();
+/** Get board */
+var board_id = 12345;
 try {
   var response = await pinterest.boards.get(board_id);
 } catch (error) {
@@ -960,6 +966,7 @@ try {
 ```
 
 ```js
+/** Get all boards */
 var query = {
   bookmark: String(),
   page_size: Number(),
@@ -975,7 +982,8 @@ try {
 ```
 
 ```js
-var board_id = String();
+/** Get boards pins */
+var board_id = 12345;
 var query = {
   bookmark: String(),
   page_size: Number(),
@@ -988,8 +996,9 @@ try {
 ```
 
 ```js
-var board_id = String();
-var section_id = String();
+/** Get board section pins */
+var board_id = 12345;
+var section_id = 12345;
 var query = {
   bookmark: String(),
   page_size: Number(),
@@ -1004,7 +1013,8 @@ try {
 ```
 
 ```js
-var board_id = String();
+/** Get board sections */
+var board_id = 12345;
 var query = {
   bookmark: String(),
   page_size: Number(),
@@ -1017,12 +1027,13 @@ try {
 ```
 
 ```js
+/** Update board */
 var payload = {
   name: "your board name",
   description: "your board description",
 };
 
-var board_id = String();
+var board_id = 12345;
 
 try {
   var response = await pinterest.boards.update(board_id, payload);
@@ -1032,12 +1043,13 @@ try {
 ```
 
 ```js
+/** Update board section */
 var payload = {
   name: String(),
 };
 
-var board_id = String();
-var section_id = String();
+var board_id = 12345;
+var section_id = 12345;
 
 try {
   var response = await pinterest.boards.updateSection(
@@ -1053,8 +1065,9 @@ try {
 > ### BULK
 
 ```js
-var ad_account_id = String();
-var bulk_request_id = String();
+/** Download bulk */
+var ad_account_id = 12345;
+var bulk_request_id = 12345;
 try {
   var response = await pinterest.bulk.download(ad_account_id, bulk_request_id);
 } catch (error) {
@@ -1063,6 +1076,7 @@ try {
 ```
 
 ```js
+/** Get bulk */
 var payload = {
   entity_types: ["CAMPAIGN", "AD_GROUP"],
   entity_ids: ["string"],
@@ -1076,7 +1090,7 @@ var payload = {
   },
   output_format: "CSV",
 };
-var ad_account_id = String();
+var ad_account_id = 12345;
 try {
   var response = await pinterest.bulk.get(ad_account_id, payload);
 } catch (error) {
@@ -1085,6 +1099,7 @@ try {
 ```
 
 ```js
+/** Upsert bulk */
 var payload = {
   create: {
     campaigns: [
@@ -1391,7 +1406,7 @@ var payload = {
   },
 };
 
-var ad_account_id = String();
+var ad_account_id = 12345;
 try {
   var response = await pinterest.bulk.upsert(ad_account_id, payload);
 } catch (error) {
@@ -1402,6 +1417,7 @@ try {
 > ### CAMPAIGNS
 
 ```js
+/** Create campaign */
 var payload = [
   {
     ad_account_id: "549755885175",
@@ -1427,7 +1443,7 @@ var payload = [
     objective_type: "AWARENESS",
   },
 ];
-var ad_account_id = String();
+var ad_account_id = 12345;
 try {
   var response = await pinterest.campaigns.create(ad_account_id, payload);
 } catch (error) {
@@ -1436,8 +1452,9 @@ try {
 ```
 
 ```js
-var ad_account_id = String();
-var campaign_id = String();
+/** Get campaign */
+var ad_account_id = 12345;
+var campaign_id = 12345;
 try {
   var response = await pinterest.campaigns.get(ad_account_id, campaign_id);
 } catch (error) {
@@ -1446,7 +1463,8 @@ try {
 ```
 
 ```js
-var ad_account_id = String();
+/** Get all campaigns */
+var ad_account_id = 12345;
 var query = {
   campaign_ids: Array(String()),
   entity_statuses: Array(String()),
@@ -1462,7 +1480,8 @@ try {
 ```
 
 ```js
-var ad_account_id = String();
+/** Get campaign analytics */
+var ad_account_id = 12345;
 var query = {
   start_date: String(Date()),
   end_date: String(Date()),
@@ -1484,7 +1503,8 @@ try {
 ```
 
 ```js
-var ad_account_id = String();
+/** Get campaign targeted analytics */
+var ad_account_id = 12345;
 var query = {
   campaign_ids: Array(String()),
   start_Date: String(Date()),
@@ -1508,7 +1528,8 @@ try {
 ```
 
 ```js
-var ad_account_id = String();
+/** Get campaign targeted analytics */
+var ad_account_id = 12345;
 var payload = [
   {
     id: "549755885175",
@@ -1544,6 +1565,7 @@ try {
 > ### CATALOGS
 
 ```js
+/** Create catalogs feed */
 var payload = {
   default_country: "US",
   default_availability: "IN_STOCK",
@@ -1572,6 +1594,7 @@ try {
 ```
 
 ```js
+/** Create catalog product group */
 var payload = {
   name: "string",
   description: "string",
@@ -1603,7 +1626,8 @@ try {
 ```
 
 ```js
-var feed_id = String();
+/** Delete catalog feed */
+var feed_id = 12345;
 var query = {
   ad_account_id: String(),
 };
@@ -1615,7 +1639,8 @@ try {
 ```
 
 ```js
-var product_group_id = String();
+/** Delete catalog product group */
+var product_group_id = 12345;
 var query = {
   ad_account_id: String(),
 };
@@ -1629,7 +1654,8 @@ try {
 ```
 
 ```js
-var feed_id = String();
+/** Get catalog feed */
+var feed_id = 12345;
 var query = {
   ad_account_id: String(),
 };
@@ -1641,7 +1667,8 @@ try {
 ```
 
 ```js
-var processing_result_id = String();
+/** Get catalog feed processing result issues */
+var processing_result_id = 12345;
 var query = {
   bookmark: String(),
   page_size: Number(),
@@ -1660,7 +1687,8 @@ try {
 ```
 
 ```js
-var feed_id = String();
+/** Get catalog feed processing results */
+var feed_id = 12345;
 var query = {
   bookmark: String(),
   page_size: Number(),
@@ -1676,6 +1704,7 @@ try {
 ```
 
 ```js
+/** Get catalog feeds */
 var query = {
   bookmark: String(),
   page_size: Number(),
@@ -1689,6 +1718,7 @@ try {
 ```
 
 ```js
+/** Get catalogs filtered products */
 try {
   var payload = {
     feed_id: "2680059592705",
@@ -1719,6 +1749,7 @@ try {
 ```
 
 ```js
+/** Get catalogs items */
 var query = {
   country: String(),
   item_ids: Array(String()),
@@ -1733,7 +1764,8 @@ try {
 ```
 
 ```js
-var batch_id = String();
+/** Get catalogs items batch */
+var batch_id = 12345;
 var query = {
   ad_account_id: String(),
 };
@@ -1745,7 +1777,8 @@ try {
 ```
 
 ```js
-var product_group_id = String();
+/** Get catalogs product count */
+var product_group_id = 12345;
 var query = {
   ad_account_id: String(),
 };
@@ -1759,7 +1792,8 @@ try {
 ```
 
 ```js
-var product_group_id = String();
+/** Get catalogs product group */
+var product_group_id = 12345;
 var query = {
   ad_account_id: String(),
 };
@@ -1773,6 +1807,7 @@ try {
 ```
 
 ```js
+/** Get catalogs product groups */
 var query = {
   feed_id: String(),
   bookmark: String(),
@@ -1787,10 +1822,11 @@ try {
 ```
 
 ```js
-var product_group_id = String();
+/** Get catalogs products */
+var product_group_id = 12345;
 var query = {
   bookmark: String(),
-  page_size: Integer(),
+  page_size: Number(),
   ad_account_id: String(),
 };
 try {
@@ -1803,6 +1839,7 @@ try {
 ```
 
 ```js
+/** Operate catalog item batch */
 var update = {
   country: "US",
   language: "EN",
@@ -1956,7 +1993,8 @@ try {
 ```
 
 ```js
-var feed_id = String();
+/** Update catalog feed */
+var feed_id = 12345;
 var payload = {
   default_availability: "IN_STOCK",
   default_currency: "USD",
@@ -1988,7 +2026,8 @@ try {
 ```
 
 ```js
-var product_group_id = String();
+/** Update catalog product groups */
+var product_group_id = 12345;
 var query = {
   ad_account_id: String(),
 };
@@ -2022,7 +2061,8 @@ try {
 > ### CONVERSION_EVENTS
 
 ```js
-var ad_account_id = String();
+/** Send conversion events */
+var ad_account_id = 12345;
 var payload = {
   data: [
     {
@@ -2084,10 +2124,11 @@ try {
 > ### CONVERSION_TAGS
 
 ```js
+/** Create conversion tags */
 var payload = {
   name: "ACME Tools Tag",
 };
-var ad_account_id = String();
+var ad_account_id = 12345;
 try {
   var response = await pinterest.conversion_tags.create(ad_account_id, payload);
 } catch (error) {
@@ -2096,8 +2137,9 @@ try {
 ```
 
 ```js
-var ad_account_id = String();
-var conversion_tag_id = String();
+/** Get conversion tags */
+var ad_account_id = 12345;
+var conversion_tag_id = 12345;
 try {
   var response = await pinterest.conversion_tags.get(
     ad_account_id,
@@ -2109,7 +2151,8 @@ try {
 ```
 
 ```js
-var ad_account_id = String();
+/** Get all conversion tags */
+var ad_account_id = 12345;
 var query = {
   filter_deleted: Boolean(),
 };
@@ -2123,7 +2166,8 @@ try {
 ```
 
 ```js
-var ad_account_id = String();
+/** Get ocpm eligible */
+var ad_account_id = 12345;
 try {
   var response = await pinterest.conversion_tags.getOcpmEligible(ad_account_id);
 } catch (error) {
@@ -2132,7 +2176,8 @@ try {
 ```
 
 ```js
-var ad_account_id = String();
+/** Get conversion tags page visit */
+var ad_account_id = 12345;
 var query = {
   page_size: Number(),
   order: String(),
@@ -2150,7 +2195,8 @@ try {
 > ### CUSTOMER_LISTS
 
 ```js
-var ad_account_id = String();
+/** Create customer lists */
+var ad_account_id = 12345;
 var payload = {
   name: "The Glengarry Glen Ross leads",
   records: "email1@pinterest.com,email2@pinterest.com,..<more records>",
@@ -2165,8 +2211,9 @@ try {
 ```
 
 ```js
-var ad_account_id = String();
-var customer_list_id = String();
+/** Get customer lists */
+var ad_account_id = 12345;
+var customer_list_id = 12345;
 try {
   var response = await pinterest.customer_lists.get(
     ad_account_id,
@@ -2178,7 +2225,8 @@ try {
 ```
 
 ```js
-var ad_account_id = String();
+/** Get all customer lists */
+var ad_account_id = 12345;
 var query = {
   page_size: Number(),
   order: String(),
@@ -2194,8 +2242,9 @@ try {
 ```
 
 ```js
-var ad_account_id = String();
-var customer_list_id = String();
+/** Update customer list */
+var ad_account_id = 12345;
+var customer_list_id = 12345;
 var payload = {
   records: "email2@pinterest.com,email6@pinterest.com,",
   operation_type: "REMOVE",
@@ -2218,6 +2267,7 @@ try {
 > ### KEYWORDS
 
 ```js
+/** Create keyword */
 var payload = {
   keywords: [
     {
@@ -2229,7 +2279,7 @@ var payload = {
   parent_id: "383791336903426391",
 };
 
-var ad_account_id = String();
+var ad_account_id = 12345;
 try {
   var response = await pinterest.keywords.create(ad_account_id, payload);
 } catch (error) {
@@ -2238,7 +2288,8 @@ try {
 ```
 
 ```js
-var ad_account_id = String();
+/** Get keyword */
+var ad_account_id = 12345;
 var query = {
   campaign_id: String(),
   ad_group_id: String(),
@@ -2254,7 +2305,8 @@ try {
 ```
 
 ```js
-var ad_account_id = String();
+/** Get coutry keyword Metrics */
+var ad_account_id = 12345;
 var query = {
   country_code: String(),
   keywords: Array(String()),
@@ -2270,6 +2322,7 @@ try {
 ```
 
 ```js
+/** Update keyword */
 var payload = {
   keywords: [
     {
@@ -2280,7 +2333,7 @@ var payload = {
   ],
 };
 
-var ad_account_id = String();
+var ad_account_id = 12345;
 try {
   var response = await pinterest.keywords.update(ad_account_id, payload);
 } catch (error) {
@@ -2291,7 +2344,8 @@ try {
 > ### MEDIA
 
 ```js
-var media_id = String();
+/** Get media */
+var media_id = 12345;
 try {
   var response = await pinterest.media.get(media_id);
 } catch (error) {
@@ -2300,6 +2354,7 @@ try {
 ```
 
 ```js
+/** Get all media */
 try {
   var query = {
     bookmark: String(),
@@ -2312,6 +2367,7 @@ try {
 ```
 
 ```js
+/** Register media */
 var payload = {
   media_type: String(),
 };
@@ -2325,6 +2381,7 @@ try {
 > ### OAUTH
 
 ```js
+/** Create oauth access token */
 const refresh_token_payload = {
   username: "username",
   password: "password",
@@ -2350,8 +2407,9 @@ try {
 > ### ORDER_LINES
 
 ```js
-var ad_account_id = String();
-var order_line_id = String();
+/** Get order lines */
+var ad_account_id = 12345;
+var order_line_id = 12345;
 try {
   var response = await pinterest.order_lines.get(ad_account_id, order_line_id);
 } catch (error) {
@@ -2360,7 +2418,8 @@ try {
 ```
 
 ```js
-var ad_account_id = String();
+/** Get all order lines */
+var ad_account_id = 12345;
 var query = {
   page_size: Number(),
   order: String(),
@@ -2376,6 +2435,7 @@ try {
 > ### PINS
 
 ```js
+/** Create pin */
 var payload = {
   link: "https://www.pinterest.com/",
   title: "string",
@@ -2399,7 +2459,8 @@ try {
 ```
 
 ```js
-var pin_id = String();
+/** Delete pin */
+var pin_id = 12345;
 try {
   var response = await pinterest.pins.delete(pin_id);
 } catch (error) {
@@ -2408,7 +2469,8 @@ try {
 ```
 
 ```js
-var pin_id = String();
+/** Get pin */
+var pin_id = 12345;
 var query = {
   ad_account_id: String(),
 };
@@ -2420,7 +2482,8 @@ try {
 ```
 
 ```js
-var pin_id = String();
+/** Get pin analytics */
+var pin_id = 12345;
 var query = {
   start_date: String(Date()),
   end_date: String(Date()),
@@ -2438,7 +2501,8 @@ try {
 ```
 
 ```js
-var pin_id = String();
+/** Save pin */
+var pin_id = 12345;
 var payload = {
   board_id: "string",
   board_section_id: "string",
@@ -2453,7 +2517,8 @@ try {
 > ### PRODUCT_GROUP_PROMOTIONS
 
 ```js
-var ad_account_id = String();
+/** Create product group promotions */
+var ad_account_id = 12345;
 var payload = {
   product_group_promotion: [
     {
@@ -2495,8 +2560,9 @@ try {
 ```
 
 ```js
-var ad_account_id = String();
-var product_group_promotion_id = String();
+/** Get product group promotions */
+var ad_account_id = 12345;
+var product_group_promotion_id = 12345;
 try {
   var response = await pinterest.product_group_promotions.get(
     ad_account_id,
@@ -2510,7 +2576,8 @@ try {
 ```
 
 ```js
-var ad_account_id = String();
+/** Get all product group promotions */
+var ad_account_id = 12345;
 var query = {
   product_group_promotion_ids: Array(String()),
   entity_statuses: Array(String()),
@@ -2532,7 +2599,8 @@ try {
 ```
 
 ```js
-var ad_account_id = String();
+/** Get product group promotions analytics */
+var ad_account_id = 12345;
 var query = {
   start_date: String(Date()),
   end_date: String(Date()),
@@ -2557,7 +2625,8 @@ try {
 ```
 
 ```js
-var ad_account_id = String();
+/** Update product group promotions */
+var ad_account_id = 12345;
 var payload = {
   product_group_promotion: [
     {
@@ -2602,6 +2671,7 @@ try {
 > ### RESOURCES
 
 ```js
+/** Get resources account countries */
 var query = {
   report_type: String(),
 };
@@ -2615,6 +2685,7 @@ try {
 ```
 
 ```js
+/** Get resources available metrics */
 try {
   var query = {
     report_type: String(),
@@ -2628,8 +2699,9 @@ try {
 ```
 
 ```js
+/** Get resource interest */
 try {
-  var interest_id = String();
+  var interest_id = 12345;
   var response = await pinterest.resources.getInterest(interest_id);
   console.log(response);
 } catch (error) {
@@ -2639,6 +2711,7 @@ try {
 ```
 
 ```js
+/** Get resources metrics ready state */
 try {
   var query = {
     date: String(),
@@ -2652,8 +2725,9 @@ try {
 ```
 
 ```js
+/** Get targeting options */
 try {
-  var targeting_type = String();
+  var targeting_type = 12345;
   var query = {
     client_id: String(),
     oauth_signature: String(),
@@ -2673,6 +2747,7 @@ try {
 > ### TERMS
 
 ```js
+/** Get related terms */
 try {
   var query = {
     terms: Array(String()),
@@ -2686,6 +2761,7 @@ try {
 ```
 
 ```js
+/** Get suggested terms */
 try {
   var query = {
     term: String(),
@@ -2702,8 +2778,9 @@ try {
 > ### TERMS_OF_SERVICE
 
 ```js
+/** Get terms of service */
 try {
-  var ad_account_id = String();
+  var ad_account_id = 12345;
   var query = {
     include_html: Boolean(),
     tos_type: String(),
@@ -2719,6 +2796,7 @@ try {
 > ### USER_ACCOUNT
 
 ```js
+/** Get user account */
 var query = {
   ad_account_id: String(),
 };
@@ -2732,6 +2810,7 @@ try {
 ```
 
 ```js
+/** Get user account analytics */
 try {
   var query = {
     start_date: String(Date()),
@@ -2752,6 +2831,7 @@ try {
 ```
 
 ```js
+/** Get user account top pin analytics */
 try {
   var query = {
     start_date: String(Date()),
@@ -2774,6 +2854,7 @@ try {
 ```
 
 ```js
+/** Get user account top video pin analytics */
 try {
   var query = {
     start_date: String(Date()),

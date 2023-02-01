@@ -11,7 +11,7 @@ pinterest.setUserToken(userToken);
 var usersRequest = async function () {
 
   try {
-    var ad_account_id = String();
+    var ad_account_id = 12345;
     var query = {
       include_html: Boolean(),
       tos_type: String()

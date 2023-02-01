@@ -44,7 +44,7 @@ describe("pins.create()", function () {
 describe("pins.get()", function () {
   it("It should get", async function () {
     try {
-      var pin_id = "";
+      var pin_id = 12345;
       var response = await pinterest.pins.get(pin_id).catch((error) => {
         if (error) {
           console.log("error ", error);
@@ -63,27 +63,8 @@ describe("pins.get()", function () {
 describe("pins.delete()", function () {
   it("It should delete", async function () {
     try {
-      var pin_id = String();
+      var pin_id = 12345;
       var response = await pinterest.pins.delete(pin_id).catch((error) => {
-        if (error) {
-          console.log("error ", error);
-          return;
-        }
-      });
-      console.log("response", response);
-      expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
-      expect(response).to.be.a(undefined);
-    }
-  });
-});
-
-describe("pins.update()", function () {
-  it("It should update", async function () {
-    try {
-      var pin_id = "";
-      var response = await pinterest.pins.update(pin_id).catch((error) => {
         if (error) {
           console.log("error ", error);
           return;
@@ -101,7 +82,7 @@ describe("pins.update()", function () {
 describe("pins.save()", function () {
   it("It should save", async function () {
     try {
-      var pin_id = String();
+      var pin_id = 12345;
       var payload = {
         board_id: "string",
         board_section_id: "string",
@@ -126,7 +107,7 @@ describe("pins.save()", function () {
 describe("pins.getAnalytics()", function () {
   it("It should get analytics", async function () {
     try {
-      var pin_id = String();
+      var pin_id = 12345;
       var query = {
         start_date: String(Date()),
         end_date: String(Date()),

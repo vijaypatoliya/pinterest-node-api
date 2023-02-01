@@ -5,6 +5,10 @@ var userToken = process.env.PINTEREST_USER_TOKEN;
 var pinterest = require("../../../lib")(userToken);
 
 var pinsRequest = async function () {
+  /**
+   * GET SECTIONS
+   * 
+   * */
   var payload = {
     default_country: "US",
     default_availability: "IN_STOCK",

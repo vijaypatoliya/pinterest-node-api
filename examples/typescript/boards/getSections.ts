@@ -14,7 +14,7 @@ var boardsRequest = async function () {
    * -------------------
    * board (The board id)
    */
-  var board_id = String();
+  var board_id = 12345;
   var query = {
     bookmark: String(),
     page_size: Number()

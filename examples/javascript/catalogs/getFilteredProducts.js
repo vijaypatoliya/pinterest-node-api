@@ -6,6 +6,9 @@ var pinterest = require("../../../lib")(userToken);
 
 var pinsRequest = async function () {
   try {
+    /**
+   * GET SECTIONS
+   * */
     var payload = {
       feed_id: "2680059592705",
       filters: {

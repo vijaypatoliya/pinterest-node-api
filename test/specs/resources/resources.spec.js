@@ -82,7 +82,7 @@ describe("resources.getMetricsReadyState()", function () {
 describe("resources.getInterest()", function () {
   it("It should get interest", async function () {
     try {
-      var interest_id = String();
+      var interest_id = 12345;
       var response = await pinterest.resources
         .getInterest(interest_id)
         .catch((error) => {

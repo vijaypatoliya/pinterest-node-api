@@ -13,7 +13,7 @@ var base64Encoded = require("../data.json").base64Encoded;
 describe("terms_of_service.get()", function () {
   it("It should get terms of services", async function () {
     try {
-      var ad_account_id = String();
+      var ad_account_id = 12345;
       var query = {
         include_html: Boolean(),
         tos_type: String(),

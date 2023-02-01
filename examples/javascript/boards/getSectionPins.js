@@ -6,12 +6,15 @@ var pinterest = require("../../../../lib")(userToken);
 
 var boardsRequest = async function () {
   /**
-   * passing parameters
-   * -------------------
-   * board (The board id)
-   */
-  var board_id = String();
-  var section_id = String();
+   * GET BOARD SECTION PIN
+   * 
+   * Passing Path Parameters:
+   * ------------------------
+   * board_id: required(string())
+   * section_id: required(string())
+   * */
+  var board_id = 12345;
+  var section_id = 12345;
   var query = {
     bookmark: String(),
     page_size: Number()

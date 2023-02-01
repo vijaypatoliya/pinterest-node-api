@@ -7,12 +7,11 @@ import * as PinterestAPI from 'pinterest-node-api';
 const pinterest = new PinterestAPI();
 pinterest.setUserToken(userToken);
 
-
 var pinsRequest = async function () {
-  var product_group_id = String();
+  var product_group_id = 12345;
   var query = {
     bookmark: String(),
-    page_size: Integer(),
+    page_size: Number(),
     ad_account_id: String(),
   }
   try {

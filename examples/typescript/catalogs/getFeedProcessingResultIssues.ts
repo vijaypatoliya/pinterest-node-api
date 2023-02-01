@@ -10,7 +10,7 @@ pinterest.setUserToken(userToken);
 
 var pinsRequest = async function () {
 
-  var processing_result_id = String();
+  var processing_result_id = 12345;
   var query = {
     bookmark: String(),
     page_size: Number(),

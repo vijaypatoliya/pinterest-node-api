@@ -10,7 +10,7 @@ pinterest.setUserToken(userToken);
 
 var pinsRequest = async function () {
   try {
-    var ad_account_id = String();
+    var ad_account_id = 12345;
     var createFromImgPayload = {
       image_url: "https://somewebsite.com/someimage.jpg",
       title: "My Preview Image",

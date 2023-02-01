@@ -5,8 +5,16 @@ var userToken = process.env.PINTEREST_USER_TOKEN;
 var pinterest = require('../../../lib')(userToken);
 
 var usersRequest = async function () {
+  /**
+   * GET SECTIONS
+   *
+   * Passing Path Parameters:
+   * ------------------------
+   *
+   * targeting_type
+   * */
   try {
-    var targeting_type = String();
+    var targeting_type = 12345;
     var query = {
       client_id: String(),
       oauth_signature: String(),

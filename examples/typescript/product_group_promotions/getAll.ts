@@ -9,7 +9,7 @@ pinterest.setUserToken(userToken);
 
 
 var usersRequest = async function () {
-  var ad_account_id = String();
+  var ad_account_id = 12345;
   var query = {
     product_group_promotion_ids: Array(String()),
     entity_statuses: Array(String()),

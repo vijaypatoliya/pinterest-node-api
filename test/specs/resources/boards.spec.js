@@ -57,7 +57,7 @@ describe("boards.create()", function () {
 describe("boards.get()", function () {
   it("It should get", async function () {
     try {
-      var board_id = String();
+      var board_id = 12345;
       var response = await pinterest.boards.get(board_id).catch((error) => {
         if (error) {
           console.log("error ", error);
@@ -81,7 +81,7 @@ describe("boards.update()", function () {
         description: "your board description",
       };
 
-      var board_id = String();
+      var board_id = 12345;
       var response = await pinterest.boards
         .update(board_id, payload)
         .catch((error) => {
@@ -102,7 +102,7 @@ describe("boards.update()", function () {
 describe("boards.delete()", function () {
   it("It should delete", async function () {
     try {
-      var board_id = String();
+      var board_id = 12345;
       var response = await pinterest.boards.delete(board_id).catch((error) => {
         if (error) {
           console.log("error ", error);
@@ -121,7 +121,7 @@ describe("boards.delete()", function () {
 describe("boards.getSections()", function () {
   it("It should get all sections", async function () {
     try {
-      var board_id = String();
+      var board_id = 12345;
       var query = {
         bookmark: String(),
         page_size: Number(),
@@ -150,7 +150,7 @@ describe("boards.createSection()", function () {
         name: String(),
       };
 
-      var board_id = String();
+      var board_id = 12345;
 
       var response = await pinterest.boards
         .createSection(board_id, payload)
@@ -176,8 +176,8 @@ describe("boards.updateSection()", function () {
         name: String(),
       };
 
-      var board_id = String();
-      var section_id = String();
+      var board_id = 12345;
+      var section_id = 12345;
 
       var response = await pinterest.boards
         .updateSection(board_id, section_id, payload)
@@ -199,8 +199,8 @@ describe("boards.updateSection()", function () {
 describe("boards.deleteSection()", function () {
   it("It should delete", async function () {
     try {
-      var board_id = String();
-      var section_id = String();
+      var board_id = 12345;
+      var section_id = 12345;
       var response = await pinterest.boards
         .deleteSection(board_id, section_id)
         .catch((error) => {
@@ -221,8 +221,8 @@ describe("boards.deleteSection()", function () {
 describe("boards.getSectionPins()", function () {
   it("It should get section pins", async function () {
     try {
-      var board_id = String();
-      var section_id = String();
+      var board_id = 12345;
+      var section_id = 12345;
       var query = {
         bookmark: String(),
         page_size: Number(),
@@ -247,7 +247,7 @@ describe("boards.getSectionPins()", function () {
 describe("boards.getPins()", function () {
   it("It should get pins", async function () {
     try {
-      var board_id = String();
+      var board_id = 12345;
       var query = {
         bookmark: String(),
         page_size: Number(),
