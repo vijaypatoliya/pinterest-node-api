@@ -7,6 +7,7 @@ import * as PinterestAPI from 'pinterest-node-api';
 const pinterest = new PinterestAPI();
 pinterest.setUserToken(userToken);
 
+
 var pinsRequest = async function () {
 
   var ad_account_id = String();
@@ -22,7 +23,7 @@ var pinsRequest = async function () {
     conversion_report_time: String()
   }
   try {
-    var response = await pinterest.campaigns.getAnalytics(ad_account_id, query);
+    var response = await pinterest.campaigns.getAnalytics(ad_account_id, { query });
   } catch (error) {
     return;
   }

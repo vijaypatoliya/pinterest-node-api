@@ -51,7 +51,7 @@ declare class Boards extends BaseClient {
   get(params: string): Promise<any>;
   update(board_id: string, params: any): Promise<any>;
   delete(params: string): Promise<any>;
-  getAllSections(params: string): Promise<any>;
+  getSections(params: string): Promise<any>;
   createSection(params: any): Promise<any>;
   getSectionPins(params: string): Promise<any>;
   updateSection(board_id: string, section_id: string, params: any): Promise<any>;

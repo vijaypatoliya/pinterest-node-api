@@ -15,7 +15,7 @@ var usersRequest = async function () {
     bookmark: String(),
   };
   try {
-    var response = await pinterest.product_group_promotions.get(ad_account_id, { query });
+    var response = await pinterest.product_group_promotions.getAll(ad_account_id, { query });
     console.log(response);
   } catch (error) {
     console.log("error", error);

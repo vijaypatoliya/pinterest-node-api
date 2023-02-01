@@ -7,6 +7,7 @@ import * as PinterestAPI from 'pinterest-node-api';
 const pinterest = new PinterestAPI();
 pinterest.setUserToken(userToken);
 
+
 var usersRequest = async function () {
   try {
     var query = {

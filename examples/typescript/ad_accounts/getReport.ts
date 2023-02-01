@@ -7,9 +7,10 @@ import * as PinterestAPI from 'pinterest-node-api';
 const pinterest = new PinterestAPI();
 pinterest.setUserToken(userToken);
 
+
 var pinsRequest = async function () {
 
-  var ad_account_id = 12345;
+  var ad_account_id = String();
   var query = { token: String() }
   try {
     var response = await pinterest.ad_accounts.getReport(ad_account_id, { query });

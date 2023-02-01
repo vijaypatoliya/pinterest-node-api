@@ -8,17 +8,20 @@ var expect = chai.expect;
 
 var pinterest = require("../../../lib")(userToken);
 
-var base64Encoded = require("../data.json").base64Encoded;
-
 describe("user_account.get()", function () {
   it("It should get the logged in user's information", async function () {
     try {
-      var response = await pinterest.user_account.get(data).catch((error) => {
-        if (error) {
-          console.log("error ", error);
-          return;
-        }
-      });
+      var query = {
+        ad_account_id: String(),
+      };
+      var response = await pinterest.user_account
+        .get({ query })
+        .catch((error) => {
+          if (error) {
+            console.log("error ", error);
+            return;
+          }
+        });
       console.log("response", response);
       expect(response).to.be.a("object");
     } catch (error) {
@@ -31,12 +34,24 @@ describe("user_account.get()", function () {
 describe("user_account.getAnalytics()", function () {
   it("It should get user analytics", async function () {
     try {
-      var response = await pinterest.user_account.getAnalytics().catch((error) => {
-        if (error) {
-          console.log("error ", error);
-          return;
-        }
-      });
+      var query = {
+        start_date: String(Date()),
+        end_date: String(Date()),
+        from_claimed_content: String(),
+        pin_format: String(),
+        app_types: String(),
+        metric_types: Array(String()),
+        split_field: String(),
+        ad_account_id: String(),
+      };
+      var response = await pinterest.user_account
+        .getAnalytics({ query })
+        .catch((error) => {
+          if (error) {
+            console.log("error ", error);
+            return;
+          }
+        });
       console.log("response", response);
       expect(response).to.be.a("object");
     } catch (error) {
@@ -49,12 +64,26 @@ describe("user_account.getAnalytics()", function () {
 describe("user_account.getTopPinsAnalytics()", function () {
   it("It should get user top pins analytics", async function () {
     try {
-      var response = await pinterest.user_account.getTopPinsAnalytics().catch((error) => {
-        if (error) {
-          console.log("error ", error);
-          return;
-        }
-      });
+      var query = {
+        start_date: String(Date()),
+        end_date: String(Date()),
+        sort_by: String(),
+        from_claimed_content: String(),
+        pin_format: String(),
+        app_types: String(),
+        metric_types: Array(String()),
+        num_of_pins: Number(),
+        created_in_last_n_days: Number(),
+        ad_account_id: String(),
+      };
+      var response = await pinterest.user_account
+        .getTopPinsAnalytics({ query })
+        .catch((error) => {
+          if (error) {
+            console.log("error ", error);
+            return;
+          }
+        });
       console.log("response", response);
       expect(response).to.be.a("object");
     } catch (error) {
@@ -67,30 +96,14 @@ describe("user_account.getTopPinsAnalytics()", function () {
 describe("user_account.getTopVideoPinsAnalytics()", function () {
   it("It should get user top video pins analytics", async function () {
     try {
-      var response = await pinterest.user_account.getTopVideoPinsAnalytics().catch((error) => {
-        if (error) {
-          console.log("error ", error);
-          return;
-        }
-      });
-      console.log("response", response);
-      expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
-      expect(response).to.be.a(undefined);
-    }
-  });
-});
-
-describe("user_account.getTopVideoPinsAnalytics()", function () {
-  it("It should get user top video pins analytics", async function () {
-    try {
-      var response = await pinterest.user_account.getTopVideoPinsAnalytics().catch((error) => {
-        if (error) {
-          console.log("error ", error);
-          return;
-        }
-      });
+      var response = await pinterest.user_account
+        .getTopVideoPinsAnalytics()
+        .catch((error) => {
+          if (error) {
+            console.log("error ", error);
+            return;
+          }
+        });
       console.log("response", response);
       expect(response).to.be.a("object");
     } catch (error) {

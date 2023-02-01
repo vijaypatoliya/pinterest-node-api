@@ -8,17 +8,21 @@ var expect = chai.expect;
 
 var pinterest = require("../../../lib")(userToken);
 
-var base64Encoded = require("../data.json").base64Encoded;
-
 describe("terms.getSuggested()", function () {
   it("It should get suggested terms", async function () {
     try {
-      var response = await pinterest.terms.getSuggested().catch((error) => {
-        if (error) {
-          console.log("error ", error);
-          return;
-        }
-      });
+      var query = {
+        term: String(),
+        limit: Number(),
+      };
+      var response = await pinterest.terms
+        .getSuggested({ query })
+        .catch((error) => {
+          if (error) {
+            console.log("error ", error);
+            return;
+          }
+        });
       console.log("response", response);
       expect(response).to.be.a("object");
     } catch (error) {
@@ -31,12 +35,17 @@ describe("terms.getSuggested()", function () {
 describe("terms.getRelated()", function () {
   it("It should get related terms", async function () {
     try {
-      var response = await pinterest.terms.getRelated().catch((error) => {
-        if (error) {
-          console.log("error ", error);
-          return;
-        }
-      });
+      var query = {
+        terms: Array(String()),
+      };
+      var response = await pinterest.terms
+        .getRelated({ query })
+        .catch((error) => {
+          if (error) {
+            console.log("error ", error);
+            return;
+          }
+        });
       console.log("response", response);
       expect(response).to.be.a("object");
     } catch (error) {

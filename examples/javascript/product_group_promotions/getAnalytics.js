@@ -18,7 +18,7 @@ var usersRequest = async function () {
     conversion_report_time: String(),
   };
   try {
-    var response = await pinterest.product_group_promotions.getAnalytics(ad_account_id, query);
+    var response = await pinterest.product_group_promotions.getAnalytics(ad_account_id, { query });
     console.log(response);
   } catch (error) {
     console.log("error", error);

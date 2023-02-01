@@ -11,7 +11,7 @@ var pinsRequest = async function () {
     campaign_ids: Array(String()),
     entity_statuses: Array(String()),
     page_size: Number(),
-    order: Number(),
+    order: String(),
     bookmark: String(),
   }
   try {

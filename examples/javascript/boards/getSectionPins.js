@@ -17,7 +17,7 @@ var boardsRequest = async function () {
     page_size: Number()
   }
   try {
-    var response = await pinterest.boards.getAllSections(board_id, section_id, { query });
+    var response = await pinterest.boards.getSectionPins(board_id, section_id, { query });
   } catch (error) {
     return;
   }

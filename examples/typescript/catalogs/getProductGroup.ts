@@ -7,6 +7,7 @@ import * as PinterestAPI from 'pinterest-node-api';
 const pinterest = new PinterestAPI();
 pinterest.setUserToken(userToken);
 
+
 var pinsRequest = async function () {
   var product_group_id = String();
   var query = {

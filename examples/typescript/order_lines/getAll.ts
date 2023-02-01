@@ -7,6 +7,7 @@ import * as PinterestAPI from 'pinterest-node-api';
 const pinterest = new PinterestAPI();
 pinterest.setUserToken(userToken);
 
+
 var pinsRequest = async function () {
   var ad_account_id = String();
   var query = {
@@ -15,7 +16,7 @@ var pinsRequest = async function () {
     bookmark: String()
   }
   try {
-    var response = await pinterest.order_lines.get(ad_account_id, { query });
+    var response = await pinterest.order_lines.getAll(ad_account_id, { query });
   } catch (error) {
     return;
   }

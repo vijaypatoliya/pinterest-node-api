@@ -9,10 +9,10 @@ var pinsRequest = async function () {
   var ad_account_id = String();
   try {
     var query = {
-      start_date: Date(),
-      end_date: Date(),
-      targeting_types: [String()],
-      columns: [String()],
+      start_date: String(Date()),
+      end_date: String(Date()),
+      targeting_types: Array(String()),
+      columns: Array(String()),
       granularity: String(),
       click_window_days: Number(),
       engagement_window_days: Number(),

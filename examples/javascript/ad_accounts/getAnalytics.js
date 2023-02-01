@@ -7,9 +7,9 @@ var pinterest = require("../../../lib")(userToken);
 var pinsRequest = async function () {
   try {
     var query = {
-      start_date: String(),
-      end_date: String(),
-      columns: String(),
+      start_date: String(Date()),
+      end_date: String(Date()),
+      columns: Array(String()),
       granularity: String(),
       click_window_days: Number(),
       engagement_window_days: Number(),

@@ -11,7 +11,7 @@ var pinsRequest = async function () {
     keywords: Array(String())
   }
   try {
-    var response = await pinterest.keywords.getCountryKeywordMetrics(ad_account_id, query);
+    var response = await pinterest.keywords.getCountryKeywordMetrics(ad_account_id, { query });
   } catch (error) {
     return;
   }

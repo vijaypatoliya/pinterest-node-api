@@ -7,9 +7,10 @@ import * as PinterestAPI from 'pinterest-node-api';
 const pinterest = new PinterestAPI();
 pinterest.setUserToken(userToken);
 
+
 var pinsRequest = async function () {
   try {
-    var ad_account_id = 12345;
+    var ad_account_id = String();
     var payload = {
       ad_account_id: "549755885175",
       name: "string",

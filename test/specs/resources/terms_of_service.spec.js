@@ -13,13 +13,19 @@ var base64Encoded = require("../data.json").base64Encoded;
 describe("terms_of_service.get()", function () {
   it("It should get terms of services", async function () {
     try {
-      var ad_account_id = ''
-      var response = await pinterest.terms.get(ad_account_id).catch((error) => {
-        if (error) {
-          console.log("error ", error);
-          return;
-        }
-      });
+      var ad_account_id = String();
+      var query = {
+        include_html: Boolean(),
+        tos_type: String(),
+      };
+      var response = await pinterest.terms_of_service
+        .get(ad_account_id, { query })
+        .catch((error) => {
+          if (error) {
+            console.log("error ", error);
+            return;
+          }
+        });
       console.log("response", response);
       expect(response).to.be.a("object");
     } catch (error) {

@@ -12,7 +12,7 @@ var boardsRequest = async function () {
    */
   var board_id = String();
   try {
-    var response = await pinterest.boards.getBoard(board_id);
+    var response = await pinterest.boards.get(board_id);
   } catch (error) {
     return;
   }

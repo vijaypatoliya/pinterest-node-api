@@ -7,6 +7,7 @@ import * as PinterestAPI from 'pinterest-node-api';
 const pinterest = new PinterestAPI();
 pinterest.setUserToken(userToken);
 
+
 var pinsRequest = async function () {
   var payload = {
     keywords: [
@@ -20,7 +21,7 @@ var pinsRequest = async function () {
 
   var ad_account_id = String();
   try {
-    var response = await pinterest.keywords.create(ad_account_id, payload);
+    var response = await pinterest.keywords.update(ad_account_id, payload);
   } catch (error) {
     return;
   }

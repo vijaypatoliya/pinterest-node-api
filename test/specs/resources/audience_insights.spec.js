@@ -11,9 +11,12 @@ var pinterest = require("../../../lib")(userToken);
 describe("audience_insights.get()", function () {
   it("It should get", async function () {
     try {
-      var ad_account_id = ''
+      var ad_account_id = String();
+      var query = {
+        audience_insight_type: String(),
+      };
       var response = await pinterest.audience_insights
-        .get(ad_account_id)
+        .get(ad_account_id, { query })
         .catch((error) => {
           if (error) {
             console.log("error ", error);

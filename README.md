@@ -67,8 +67,6 @@ Originally by [Vijay Patoliya](https://github.com/vijaypatoliya) (osi.vijay@gmai
 > ### AD_ACCOUNTS
 
 ```js
-/* Create */
-
 var payload = {
   country: "US",
   owner_user_id: "383791336903426391",
@@ -85,8 +83,6 @@ try {
 ```
 
 ```js
-/* CREATE REPORT */
-
 var payload = {
   start_date: "2020-12-20",
   end_date: "2020-12-20",
@@ -112,9 +108,12 @@ var payload = {
   level: "CAMPAIGN",
   report_format: "JSON",
 };
-
+var ad_account_id = String();
 try {
-  var response = await pinterest.ad_accounts.createReport(payload);
+  var response = await pinterest.ad_accounts.createReport(
+    ad_account_id,
+    payload
+  );
   console.log(response);
 } catch (error) {
   console.log(error);
@@ -125,9 +124,9 @@ try {
 ```js
 /* GET */
 
-var payload = {};
+var ad_account_id = String();
 try {
-  var response = await pinterest.ad_accounts.get("12345");
+  var response = await pinterest.ad_accounts.get(ad_account_id);
   console.log(response);
 } catch (error) {
   console.log(error);
@@ -138,8 +137,13 @@ try {
 ```js
 /* GET ALL */
 
+var query = {
+  bookmark: String(),
+  page_size: Number(),
+  include_shared_accounts: Boolean(),
+};
 try {
-  var response = await pinterest.ad_accounts.getAll({});
+  var response = await pinterest.ad_accounts.getAll({ query });
   console.log(response);
 } catch (error) {
   return;
@@ -147,22 +151,36 @@ try {
 ```
 
 ```js
-/* GET ANALYTICS */
-
-const ad_account_id = 12345
-    var response = await pinterest.ad_accounts.getAnalytics(ad_account_id)
-    console.log(response)
-  } catch (error) {
-    return;
-  }
+try {
+  var query = {
+    start_date: String(Date()),
+    end_date: String(Date()),
+    columns: Array(String()),
+    granularity: String(),
+    click_window_days: Number(),
+    engagement_window_days: Number(),
+    view_window_days: Number(),
+    conversion_report_time: String(),
+  };
+  var ad_account_id = String();
+  var response = await pinterest.ad_accounts.getAnalytics(ad_account_id, {
+    query,
+  });
+  console.log(response);
+} catch (error) {
+  return;
+}
 ```
 
 ```js
 /* GET REPORT */
 
-var ad_account_id = 12345;
+var ad_account_id = String();
+var query = { token: String() };
 try {
-  var response = await pinterest.ad_accounts.getReport(ad_account_id);
+  var response = await pinterest.ad_accounts.getReport(ad_account_id, {
+    query,
+  });
   console.log(response);
 } catch (error) {
   console.log(error);
@@ -173,25 +191,23 @@ try {
 ```js
 /* GET TARGETED ANALYTICS */
 
-var ad_account_id = 12345;
+var ad_account_id = String();
 try {
+  var query = {
+    start_date: String(Date()),
+    end_date: String(Date()),
+    targeting_types: Array(String()),
+    columns: Array(String()),
+    granularity: String(),
+    click_window_days: Number(),
+    engagement_window_days: Number(),
+    view_window_days: Number(),
+    conversion_report_time: String(),
+    attribution_types: String(),
+  };
   var response = await pinterest.ad_accounts.getTargetedAnalytics(
-    ad_account_id
-  );
-  console.log(response);
-} catch (error) {
-  console.log(error);
-  return;
-}
-```
-
-```js
-/* GET TARGETED ANALYTICS */
-
-var ad_account_id = 12345;
-try {
-  var response = await pinterest.ad_accounts.getTargetedAnalytics(
-    ad_account_id
+    ad_account_id,
+    { query }
   );
   console.log(response);
 } catch (error) {
@@ -203,8 +219,6 @@ try {
 > ### AD_GROUPS
 
 ```js
-/* CREACT */
-
 var payload = [
   {
     name: "Ad Group For Pin: 687195905986",
@@ -272,7 +286,7 @@ var payload = [
     billable_event: "CLICKTHROUGH",
   },
 ];
-var ad_account_id = 12345;
+var ad_account_id = String();
 try {
   var response = await pinterest.ad_groups.create(ad_account_id, payload);
   console.log(response);
@@ -285,8 +299,8 @@ try {
 ```js
 /* GET */
 
-var ad_account_id = 12345;
-var ad_group_id = 12345;
+var ad_account_id = String();
+var ad_group_id = String();
 try {
   var response = await pinterest.ad_groups.get(ad_account_id, ad_group_id);
   console.log(response);
@@ -297,9 +311,18 @@ try {
 ```
 
 ```js
-var ad_account_id = 12345;
+var ad_account_id = String();
+var query = {
+  campaign_ids: Array(String()),
+  ad_group_ids: Array(String()),
+  entity_statuses: Array(String()),
+  page_size: Number(),
+  order: String(),
+  bookmark: String(),
+  translate_interests_to_names: Boolean(),
+};
 try {
-  var response = await pinterest.ad_groups.getAll(ad_account_id);
+  var response = await pinterest.ad_groups.getAll(ad_account_id, { query });
   console.log(response);
 } catch (error) {
   console.log(error);
@@ -308,9 +331,22 @@ try {
 ```
 
 ```js
-var ad_account_id = 12345;
+var ad_account_id = String();
+var query = {
+  start_date: String(Date()),
+  end_date: String(Date()),
+  ad_group_ids: Array(String()),
+  columns: Array(String()),
+  granularity: Array(String()),
+  click_window_days: Number(),
+  engagement_window_days: Number(),
+  view_window_days: Number(),
+  conversion_report_time: String(),
+};
 try {
-  var response = await pinterest.ad_groups.getAnalytics(ad_account_id);
+  var response = await pinterest.ad_groups.getAnalytics(ad_account_id, {
+    query,
+  });
   console.log(response);
 } catch (error) {
   console.log(error);
@@ -319,9 +355,91 @@ try {
 ```
 
 ```js
-var ad_account_id = 12345;
+var ad_account_id = String();
+var payload = {
+  targeting_spec: {
+    GEO: ["BE-VOV"],
+    LOCATION: ["US"],
+    LOCALE: ["cs"],
+    AGE_BUCKET: ["25-34"],
+    AUDIENCE_INCLUDE: ["2542620905473"],
+    SHOPPING_RETARGETING: [
+      {
+        lookback_window: 30,
+        exclusion_window: 14,
+        tag_types: [0, 6],
+      },
+      {
+        lookback_window: 30,
+        exclusion_window: 14,
+        tag_types: [0, 6],
+      },
+    ],
+    GENDER: ["male"],
+    TARGETING_STRATEGY: ["CHOOSE_YOUR_OWN"],
+    APPTYPE: ["iphone"],
+    AUDIENCE_EXCLUDE: ["2542620905475"],
+    INTEREST: ["925056443165"],
+  },
+  bid_floor_specs: [
+    {
+      billable_event: "CLICKTHROUGH",
+      creative_type: "REGULAR",
+      currency: "USD",
+      countries: ["US", "US"],
+      optimization_goal_metadata: {
+        frequency_goal_metadata: {
+          timerange: "DAY",
+          frequency: 5,
+        },
+        conversion_tag_v3_goal_metadata: {
+          attribution_windows: {
+            view_window_days: 1,
+            click_window_days: 0,
+            engagement_window_days: 6,
+          },
+          conversion_tag_id: "123456789",
+          learning_mode_type: "ACTIVE",
+          conversion_event: "PAGE_VISIT",
+          is_roas_optimized: true,
+          cpa_goal_value_in_micro_currency: "123456789",
+        },
+        scrollup_goal_metadata: {
+          scrollup_goal_value_in_micro_currency: "123456789",
+        },
+      },
+    },
+    {
+      billable_event: "CLICKTHROUGH",
+      creative_type: "REGULAR",
+      currency: "USD",
+      countries: ["US", "US"],
+      optimization_goal_metadata: {
+        frequency_goal_metadata: {
+          timerange: "DAY",
+          frequency: 5,
+        },
+        conversion_tag_v3_goal_metadata: {
+          attribution_windows: {
+            view_window_days: 1,
+            click_window_days: 0,
+            engagement_window_days: 6,
+          },
+          conversion_tag_id: "123456789",
+          learning_mode_type: "ACTIVE",
+          conversion_event: "PAGE_VISIT",
+          is_roas_optimized: true,
+          cpa_goal_value_in_micro_currency: "123456789",
+        },
+        scrollup_goal_metadata: {
+          scrollup_goal_value_in_micro_currency: "123456789",
+        },
+      },
+    },
+  ],
+};
 try {
-  var response = await pinterest.ad_groups.getBidFloors(ad_account_id);
+  var response = await pinterest.ad_groups.getBidFloors(ad_account_id, payload);
   console.log(response);
 } catch (error) {
   console.log(error);
@@ -330,9 +448,24 @@ try {
 ```
 
 ```js
-var ad_account_id = 12345;
+var ad_account_id = String();
+var query = {
+  ad_group_ids: Array(String()),
+  start_date: String(Date()),
+  end_date: String(Date()),
+  targeting_types: Array(String()),
+  columns: Array(String()),
+  granularity: String(),
+  click_window_days: Number(),
+  engagement_window_days: Number(),
+  view_window_days: Number(),
+  conversion_report_time: String(),
+  attribution_types: String(),
+};
 try {
-  var response = await pinterest.ad_groups.getBidFloors(ad_account_id);
+  var response = await pinterest.ad_groups.getTargetedAnalytics(ad_account_id, {
+    query,
+  });
   console.log(response);
 } catch (error) {
   console.log(error);
@@ -392,6 +525,7 @@ var payload = [
     id: "2680060704746",
   },
 ];
+var ad_account_id = String();
 try {
   var response = await pinterest.ad_groups.update(ad_account_id, payload);
   console.log(response);
@@ -401,64 +535,62 @@ try {
 }
 ```
 
-### ADS
+> ### ADS
 
 ```js
-
-var ad_account_id = 12345;
-    var payload = [
-      {
-        ad_group_id: "2680059592705",
-        android_deep_link: "string",
-        carousel_android_deep_links: ["string"],
-        carousel_destination_urls: ["string"],
-        carousel_ios_deep_links: ["string"],
-        click_tracking_url: "string",
-        creative_type: "REGULAR",
-        destination_url: "string",
-        ios_deep_link: "string",
-        is_pin_deleted: false,
-        is_removable: false,
-        name: "string",
-        status: "ACTIVE",
-        tracking_urls: {
-          impression: ["URL1", "URL2"],
-          click: ["URL1", "URL2"],
-          engagement: ["URL1", "URL2"],
-          buyable_button: ["URL1", "URL2"],
-          audience_verification: ["URL1", "URL2"],
-        },
-        view_tracking_url: "string",
-        pin_id: "394205773611545468",
+try {
+  var ad_account_id = String();
+  var payload = [
+    {
+      ad_group_id: "2680059592705",
+      android_deep_link: "string",
+      carousel_android_deep_links: ["string"],
+      carousel_destination_urls: ["string"],
+      carousel_ios_deep_links: ["string"],
+      click_tracking_url: "string",
+      creative_type: "REGULAR",
+      destination_url: "string",
+      ios_deep_link: "string",
+      is_pin_deleted: false,
+      is_removable: false,
+      name: "string",
+      status: "ACTIVE",
+      tracking_urls: {
+        impression: ["URL1", "URL2"],
+        click: ["URL1", "URL2"],
+        engagement: ["URL1", "URL2"],
+        buyable_button: ["URL1", "URL2"],
+        audience_verification: ["URL1", "URL2"],
       },
-    ];
-    var response = await pinterest.ads.create(ad_account_id, payload);
-  } catch (error) {
-    return;
-  }
-
-
+      view_tracking_url: "string",
+      pin_id: "394205773611545468",
+    },
+  ];
+  var response = await pinterest.ads.create(ad_account_id, payload);
+} catch (error) {
+  return;
+}
 ```
 
 ```js
 try {
-  var ad_account_id = 12345;
-  var createFromImg = {
+  var ad_account_id = String();
+  var createFromImgPayload = {
     image_url: "https://somewebsite.com/someimage.jpg",
     title: "My Preview Image",
   };
 
-  var createFromPin = {
+  var createFromPinPayload = {
     pin_id: "7389479023",
   };
 
   var createFromImgResponse = await pinterest.ads.createPreview(
     ad_account_id,
-    createFromImg
+    createFromImgPayload
   );
   var createFromPinResponse = await pinterest.ads.createPreview(
     ad_account_id,
-    createFromPin
+    createFromPinPayload
   );
 } catch (error) {
   return;
@@ -467,8 +599,8 @@ try {
 
 ```js
 try {
-  var ad_account_id = 12345;
-  var ads_id = 12345;
+  var ad_account_id = String();
+  var ads_id = String();
 
   var response = await pinterest.ads.get(ad_account_id, ads_id);
 } catch (error) {
@@ -478,9 +610,18 @@ try {
 
 ```js
 try {
-  var ad_account_id = 12345;
-
-  var response = await pinterest.ads.getAll(ad_account_id);
+  var ad_account_id = String();
+  var query = {
+    campaign_ids: Array(String()),
+    ad_group_ids: Array(String()),
+    ad_ids: Array(String()),
+    entity_statuses: Array(String()),
+    entity_statuses: Array(String()),
+    page_size: Number(),
+    order: String(),
+    bookmark: String(),
+  };
+  var response = await pinterest.ads.getAll(ad_account_id, { query });
 } catch (error) {
   return;
 }
@@ -488,9 +629,20 @@ try {
 
 ```js
 try {
-  var ad_account_id = 12345;
+  var ad_account_id = String();
+  var query = {
+    start_date: String(Date()),
+    end_date: String(Date()),
+    ad_ids: Array(String()),
+    columns: Array(String()),
+    granularity: String(),
+    click_window_days: Number(),
+    engagement_window_days: Number(),
+    view_window_days: Number(),
+    conversion_report_time: String(),
+  };
 
-  var response = await pinterest.ads.getAnalytics(ad_account_id);
+  var response = await pinterest.ads.getAnalytics(ad_account_id, { query });
 } catch (error) {
   return;
 }
@@ -498,9 +650,23 @@ try {
 
 ```js
 try {
-  var ad_account_id = 12345;
-
-  var response = await pinterest.ads.getTargetedAnalytics(ad_account_id);
+  var ad_account_id = String();
+  var query = {
+    ad_ids: Array(String()),
+    start_date: String(Date()),
+    end_date: String(Date()),
+    targeting_types: Array(String()),
+    columns: Array(String()),
+    granularity: String(),
+    click_window_days: Number(),
+    engagement_window_days: Number(),
+    view_window_days: Number(),
+    conversion_report_time: String(),
+    attribution_types: String(),
+  };
+  var response = await pinterest.ads.getTargetedAnalytics(ad_account_id, {
+    query,
+  });
 } catch (error) {
   return;
 }
@@ -528,36 +694,61 @@ try {
  * fields (link)
  */
 
-var payload = {
-  board: "pideveloper/board-2",
-  note: "it's a test pin desc.",
-  image_url:
-    "https://www.birmingham.ac.uk/Images/College-EPS-only/outreach/engineering/aerospace-engineering.jpg",
-};
+var payload = [
+  {
+    ad_group_id: "2680059592705",
+    android_deep_link: "string",
+    carousel_android_deep_links: ["string"],
+    carousel_destination_urls: ["string"],
+    carousel_ios_deep_links: ["string"],
+    click_tracking_url: "string",
+    creative_type: "REGULAR",
+    destination_url: "string",
+    ios_deep_link: "string",
+    is_pin_deleted: false,
+    is_removable: false,
+    name: "string",
+    status: "ACTIVE",
+    tracking_urls: {
+      impression: ["URL1", "URL2"],
+      click: ["URL1", "URL2"],
+      engagement: ["URL1", "URL2"],
+      buyable_button: ["URL1", "URL2"],
+      audience_verification: ["URL1", "URL2"],
+    },
+    view_tracking_url: "string",
+    id: "687195134316",
+  },
+];
+var ad_account_id = String();
 try {
-  var response = await pinterest.pins.createPin(payload);
+  var response = await pinterest.ads.update(ad_account_id, payload);
 } catch (error) {
   return;
 }
 ```
 
-### AUDIENCE_INSIGHTS
+> ### AUDIENCE_INSIGHTS
 
 ```js
 try {
-  var ad_account_id = 12345;
-
-  var response = await pinterest.audience_insights.get(ad_account_id);
+  var ad_account_id = String();
+  var query = {
+    audience_insight_type: String(),
+  };
+  var response = await pinterest.audience_insights.get(ad_account_id, {
+    query,
+  });
 } catch (error) {
   return;
 }
 ```
 
-### AUDIENCES
+> ### AUDIENCES
 
 ```js
 try {
-  var ad_account_id = 12345;
+  var ad_account_id = String();
   var payload = {
     ad_account_id: "549755885175",
     name: "string",
@@ -619,8 +810,8 @@ try {
 
 ```js
 try {
-  var ad_account_id = 12345;
-  var audience_id = 12345;
+  var ad_account_id = String();
+  var audience_id = String();
 
   var response = await pinterest.audiences.get(ad_account_id, audience_id);
 } catch (error) {
@@ -630,9 +821,14 @@ try {
 
 ```js
 try {
-  var ad_account_id = 12345;
+  var ad_account_id = String();
+  var query = {
+    bookmark: String(),
+    order: String(),
+    page_size: Number(),
+  };
 
-  var response = await pinterest.audiences.getAll(ad_account_id);
+  var response = await pinterest.audiences.getAll(ad_account_id, { query });
 } catch (error) {
   return;
 }
@@ -640,8 +836,8 @@ try {
 
 ```js
 try {
-  var ad_account_id = 12345;
-  var audience_id = 12345;
+  var ad_account_id = String();
+  var audience_id = String();
 
   var payload = {
     ad_account_id: "549755885175",
@@ -706,7 +902,7 @@ try {
 }
 ```
 
-### BOARD
+> ### BOARD
 
 ```js
 var payload = {
@@ -722,13 +918,21 @@ try {
 ```
 
 ```js
-/**
- * passing parameters
- * -------------------
- *
- * board (The board id)
- */
-var board_id = "board_id";
+var payload = {
+  name: String(),
+};
+
+var board_id = String();
+
+try {
+  var response = await pinterest.boards.createSection(board_id, payload);
+} catch (error) {
+  return;
+}
+```
+
+```js
+var board_id = String();
 try {
   var response = await pinterest.boards.delete(board_id);
 } catch (error) {
@@ -737,14 +941,8 @@ try {
 ```
 
 ```js
-/**
- * passing parameters
- * -------------------
- *
- * board (The board id)
- */
-var board_id = "board_id";
-var section_id = "section_id";
+var board_id = String();
+var section_id = String();
 try {
   var response = await pinterest.boards.deleteSection(board_id, section_id);
 } catch (error) {
@@ -753,32 +951,22 @@ try {
 ```
 
 ```js
-/**
- * passing parameters
- * -------------------
- * board (The board id)
- */
-var board_id = "board_id";
+var board_id = String();
 try {
-  var response = await pinterest.boards.getBoard(board_id);
+  var response = await pinterest.boards.get(board_id);
 } catch (error) {
   return;
 }
 ```
 
 ```js
-/**
- * passing parameters
- * -------------------
- * board (The board id)
- */
+var query = {
+  bookmark: String(),
+  page_size: Number(),
+  privacy: String(),
+};
 try {
-  var response = await pinterest.boards.getAll({
-    query: {
-      page_size: 1,
-      privacy: "PROTECTED",
-    },
-  });
+  var response = await pinterest.boards.getAll({ query });
   console.log(response);
 } catch (error) {
   console.log(error);
@@ -787,52 +975,54 @@ try {
 ```
 
 ```js
-/**
- * passing parameters
- * -------------------
- * board (The board id)
- */
-var board_id = "board_id";
+var board_id = String();
+var query = {
+  bookmark: String(),
+  page_size: Number(),
+};
 try {
-  var response = await pinterest.boards.getPins(board_id);
+  var response = await pinterest.boards.getPins(board_id, { query });
 } catch (error) {
   return;
 }
 ```
 
 ```js
-/**
- * passing parameters
- * -------------------
- * board (The board id)
- */
-var board_id = "board_id";
+var board_id = String();
+var section_id = String();
+var query = {
+  bookmark: String(),
+  page_size: Number(),
+};
 try {
-  var response = await pinterest.boards.getAllSections(board_id);
+  var response = await pinterest.boards.getSectionPins(board_id, section_id, {
+    query,
+  });
 } catch (error) {
   return;
 }
 ```
 
 ```js
-/**
- * passing parameters
- * -------------------
- *
- * board (The board name in the format: <username>/<board_name>)
- * name
- * description
- *
- * (optional)
- * fields (privacy: Enum ["PUBLIC" "SECRET"])
- */
+var board_id = String();
+var query = {
+  bookmark: String(),
+  page_size: Number(),
+};
+try {
+  var response = await pinterest.boards.getSections(board_id, { query });
+} catch (error) {
+  return;
+}
+```
 
+```js
 var payload = {
   name: "your board name",
   description: "your board description",
 };
 
-var board_id = "board_id";
+var board_id = String();
 
 try {
   var response = await pinterest.boards.update(board_id, payload);
@@ -842,24 +1032,12 @@ try {
 ```
 
 ```js
-/**
- * passing parameters
- * -------------------
- *
- * board (The board name in the format: <username>/<board_name>)
- * name
- * description
- *
- * (optional)
- * fields (privacy: Enum ["PUBLIC" "SECRET"])
- */
-
 var payload = {
-  name: "Salads",
+  name: String(),
 };
 
-var board_id = "board_id";
-var section_id = "section_id";
+var board_id = String();
+var section_id = String();
 
 try {
   var response = await pinterest.boards.updateSection(
@@ -872,11 +1050,11 @@ try {
 }
 ```
 
-### BULK
+> ### BULK
 
 ```js
-var ad_account_id = "ad_account_id";
-var bulk_request_id = "bulk_request_id";
+var ad_account_id = String();
+var bulk_request_id = String();
 try {
   var response = await pinterest.bulk.download(ad_account_id, bulk_request_id);
 } catch (error) {
@@ -898,7 +1076,7 @@ var payload = {
   },
   output_format: "CSV",
 };
-var ad_account_id = "ad_account_id";
+var ad_account_id = String();
 try {
   var response = await pinterest.bulk.get(ad_account_id, payload);
 } catch (error) {
@@ -1213,15 +1391,15 @@ var payload = {
   },
 };
 
-var ad_account_id = "ad_account_id";
+var ad_account_id = String();
 try {
-  var response = await pinterest.pins.createPin(ad_account_id, payload);
+  var response = await pinterest.bulk.upsert(ad_account_id, payload);
 } catch (error) {
   return;
 }
 ```
 
-### CAMPAIGNS
+> ### CAMPAIGNS
 
 ```js
 var payload = [
@@ -1249,7 +1427,7 @@ var payload = [
     objective_type: "AWARENESS",
   },
 ];
-var ad_account_id = "ad_account_id";
+var ad_account_id = String();
 try {
   var response = await pinterest.campaigns.create(ad_account_id, payload);
 } catch (error) {
@@ -1258,8 +1436,8 @@ try {
 ```
 
 ```js
-var ad_account_id = "ad_account_id";
-var campaign_id = "campaign_id";
+var ad_account_id = String();
+var campaign_id = String();
 try {
   var response = await pinterest.campaigns.get(ad_account_id, campaign_id);
 } catch (error) {
@@ -1268,42 +1446,102 @@ try {
 ```
 
 ```js
-var ad_account_id = "ad_account_id";
+var ad_account_id = String();
+var query = {
+  campaign_ids: Array(String()),
+  entity_statuses: Array(String()),
+  page_size: Number(),
+  order: String(),
+  bookmark: String(),
+};
 try {
-  var response = await pinterest.campaigns.getAll(ad_account_id);
+  var response = await pinterest.campaigns.getAll(ad_account_id, { query });
 } catch (error) {
   return;
 }
 ```
 
 ```js
-var ad_account_id = "ad_account_id";
+var ad_account_id = String();
+var query = {
+  start_date: String(Date()),
+  end_date: String(Date()),
+  campaign_ids: Array(String()),
+  columns: Array(String()),
+  granularity: String(),
+  click_window_days: Number(),
+  engagement_window_days: Number(),
+  view_window_days: Number(),
+  conversion_report_time: String(),
+};
 try {
-  var response = await pinterest.campaigns.getAnalytics(ad_account_id);
+  var response = await pinterest.campaigns.getAnalytics(ad_account_id, {
+    query,
+  });
 } catch (error) {
   return;
 }
 ```
 
 ```js
-var ad_account_id = "ad_account_id";
+var ad_account_id = String();
+var query = {
+  campaign_ids: Array(String()),
+  start_Date: String(Date()),
+  end_Date: String(Date()),
+  targeting_types: Array(String()),
+  columns: Array(String()),
+  granularity: String(),
+  click_window_days: Number(),
+  engagement_window_days: Number(),
+  view_window_days: Number(),
+  conversion_report_time: String(),
+  attribution_types: String(),
+};
 try {
-  var response = await pinterest.campaigns.getTargetedAnalytics(ad_account_id);
+  var response = await pinterest.campaigns.getTargetedAnalytics(ad_account_id, {
+    query,
+  });
 } catch (error) {
   return;
 }
 ```
 
 ```js
-var ad_account_id = "ad_account_id";
+var ad_account_id = String();
+var payload = [
+  {
+    id: "549755885175",
+    ad_account_id: "549755885175",
+    name: "ACME Tools",
+    status: "ACTIVE",
+    lifetime_spend_cap: 1432744744,
+    daily_spend_cap: 1432744744,
+    order_line_id: "549755885175",
+    tracking_urls: {
+      impression: ["URL1", "URL2"],
+      click: ["URL1", "URL2"],
+      engagement: ["URL1", "URL2"],
+      buyable_button: ["URL1", "URL2"],
+      audience_verification: ["URL1", "URL2"],
+    },
+    start_time: 1580865126,
+    end_time: 1644023526,
+    summary_status: "RUNNING",
+    is_campaign_budget_optimization: true,
+    is_flexible_daily_budgets: true,
+    default_ad_group_budget_in_micro_currency: 0,
+    is_automated_campaign: true,
+  },
+];
 try {
-  var response = await pinterest.campaigns.get(ad_account_id);
+  var response = await pinterest.campaigns.update(ad_account_id, payload);
 } catch (error) {
   return;
 }
 ```
 
-### CATALOGS
+> ### CATALOGS
 
 ```js
 var payload = {
@@ -1323,8 +1561,11 @@ var payload = {
     timezone: "Africa/Abidjan",
   },
 };
+var query = {
+  ad_account_id: String(),
+};
 try {
-  var response = await pinterest.catalogs.createFeed(payload);
+  var response = await pinterest.catalogs.createFeed({ query }, payload);
 } catch (error) {
   return;
 }
@@ -1348,45 +1589,13 @@ var payload = {
   },
   feed_id: "2680059592705",
 };
+var query = {
+  ad_account_id: String(),
+};
 try {
-  var response = await pinterest.catalogs.createProductGroup(payload);
-} catch (error) {
-  return;
-}
-```
-
-```js
-var feed_id = "feed_id";
-try {
-  var response = await pinterest.catalogs.deleteFeed(feed_id);
-} catch (error) {
-  return;
-}
-```
-
-```js
-var product_group_id = "product_group_id";
-try {
-  var response = await pinterest.catalogs.deleteProductGroup(product_group_id);
-} catch (error) {
-  return;
-}
-```
-
-```js
-var feed_id = "feed_id";
-try {
-  var response = await pinterest.catalogs.getFeed(feed_id);
-} catch (error) {
-  return;
-}
-```
-
-```js
-var processing_result_id = "processing_result_id";
-try {
-  var response = await pinterest.catalogs.getFeedProcessingResultIssues(
-    processing_result_id
+  var response = await pinterest.catalogs.createProductGroup(
+    { query },
+    payload
   );
 } catch (error) {
   return;
@@ -1394,17 +1603,86 @@ try {
 ```
 
 ```js
-var feed_id = "feed_id";
+var feed_id = String();
+var query = {
+  ad_account_id: String(),
+};
 try {
-  var response = await pinterest.catalogs.getFeedProcessingResults(feed_id);
+  var response = await pinterest.catalogs.deleteFeed(feed_id, { query });
 } catch (error) {
   return;
 }
 ```
 
 ```js
+var product_group_id = String();
+var query = {
+  ad_account_id: String(),
+};
 try {
-  var response = await pinterest.catalogs.getFeeds();
+  var response = await pinterest.catalogs.deleteProductGroup(product_group_id, {
+    query,
+  });
+} catch (error) {
+  return;
+}
+```
+
+```js
+var feed_id = String();
+var query = {
+  ad_account_id: String(),
+};
+try {
+  var response = await pinterest.catalogs.getFeed(feed_id, { query });
+} catch (error) {
+  return;
+}
+```
+
+```js
+var processing_result_id = String();
+var query = {
+  bookmark: String(),
+  page_size: Number(),
+  item_numbers: Array(Number()),
+  item_validation_issue: String(),
+  ad_account_id: String(),
+};
+try {
+  var response = await pinterest.catalogs.getFeedProcessingResultIssues(
+    processing_result_id,
+    { query }
+  );
+} catch (error) {
+  return;
+}
+```
+
+```js
+var feed_id = String();
+var query = {
+  bookmark: String(),
+  page_size: Number(),
+  ad_account_id: String(),
+};
+try {
+  var response = await pinterest.catalogs.getFeedProcessingResults(feed_id, {
+    query,
+  });
+} catch (error) {
+  return;
+}
+```
+
+```js
+var query = {
+  bookmark: String(),
+  page_size: Number(),
+  ad_account_id: String(),
+};
+try {
+  var response = await pinterest.catalogs.getFeeds({ query });
 } catch (error) {
   return;
 }
@@ -1426,59 +1704,99 @@ try {
       ],
     },
   };
-  var response = await pinterest.pins.getFilteredProducts(payload);
+  var query = {
+    bookmark: String(),
+    page_size: Number(),
+    ad_account_id: String(),
+  };
+  var response = await pinterest.catalogs.getFilteredProducts(
+    { query },
+    payload
+  );
 } catch (error) {
   return;
 }
 ```
 
 ```js
+var query = {
+  country: String(),
+  item_ids: Array(String()),
+  language: String(),
+  ad_account_id: String(),
+};
 try {
-  var response = await pinterest.catalogs.getItems();
+  var response = await pinterest.catalogs.getItems({ query });
 } catch (error) {
   return;
 }
 ```
 
 ```js
-var batch_id = "batch_id";
+var batch_id = String();
+var query = {
+  ad_account_id: String(),
+};
 try {
-  var response = await pinterest.catalogs.getItemsBatch(batch_id);
+  var response = await pinterest.catalogs.getItemsBatch(batch_id, { query });
 } catch (error) {
   return;
 }
 ```
 
 ```js
-var product_group_id = "product_group_id";
+var product_group_id = String();
+var query = {
+  ad_account_id: String(),
+};
 try {
-  var response = await pinterest.catalogs.getProductCount(product_group_id);
+  var response = await pinterest.catalogs.getProductCount(product_group_id, {
+    query,
+  });
 } catch (error) {
   return;
 }
 ```
 
 ```js
-var product_group_id = "product_group_id";
+var product_group_id = String();
+var query = {
+  ad_account_id: String(),
+};
 try {
-  var response = await pinterest.catalogs.getProductGroup(product_group_id);
+  var response = await pinterest.catalogs.getProductGroup(product_group_id, {
+    query,
+  });
 } catch (error) {
   return;
 }
 ```
 
 ```js
+var query = {
+  feed_id: String(),
+  bookmark: String(),
+  page_size: Number(),
+  ad_account_id: String(),
+};
 try {
-  var response = await pinterest.catalogs.getProductGroups();
+  var response = await pinterest.catalogs.getProductGroups({ query });
 } catch (error) {
   return;
 }
 ```
 
 ```js
-var product_group_id = "product_group_id";
+var product_group_id = String();
+var query = {
+  bookmark: String(),
+  page_size: Integer(),
+  ad_account_id: String(),
+};
 try {
-  var response = await pinterest.catalogs.getProducts(product_group_id);
+  var response = await pinterest.catalogs.getProducts(product_group_id, {
+    query,
+  });
 } catch (error) {
   return;
 }
@@ -1622,8 +1940,14 @@ var delete_discontinued = {
     },
   ],
 };
+
+var query = {
+  ad_account_id: String(),
+};
+
 try {
   var response = await pinterest.catalogs.operateItemBatch(
+    { query },
     create || update || delete_discontinued
   );
 } catch (error) {
@@ -1632,7 +1956,7 @@ try {
 ```
 
 ```js
-var feed_id = "feed_id";
+var feed_id = String();
 var payload = {
   default_availability: "IN_STOCK",
   default_currency: "USD",
@@ -1649,15 +1973,25 @@ var payload = {
   },
   status: "ACTIVE",
 };
+var query = {
+  ad_account_id: String(),
+};
 try {
-  var response = await pinterest.catalogs.updateFeed(feed_id, payload);
+  var response = await pinterest.catalogs.updateFeed(
+    feed_id,
+    { query },
+    payload
+  );
 } catch (error) {
   return;
 }
 ```
 
 ```js
-var product_group_id = "product_group_id";
+var product_group_id = String();
+var query = {
+  ad_account_id: String(),
+};
 var payload = {
   name: "string",
   description: "string",
@@ -1677,6 +2011,7 @@ var payload = {
 try {
   var response = await pinterest.catalogs.updateProductGroup(
     product_group_id,
+    { query },
     payload
   );
 } catch (error) {
@@ -1684,12 +2019,12 @@ try {
 }
 ```
 
-### CONVERSION_EVENTS
+> ### CONVERSION_EVENTS
 
 ```js
-var ad_account_id = "ad_account_id";
-var body = {
-  payload: [
+var ad_account_id = String();
+var payload = {
+  data: [
     {
       event_name: "checkout",
       action_source: "app_ios",
@@ -1730,29 +2065,39 @@ var body = {
     },
   ],
 };
+
+var query = {
+  test: Boolean(),
+};
+
 try {
-  var response = await pinterest.conversion_events.send(ad_account_id, payload);
+  var response = await pinterest.conversion_events.send(
+    ad_account_id,
+    { query },
+    payload
+  );
 } catch (error) {
   return;
 }
 ```
 
-### CONVERSION_TAGS
+> ### CONVERSION_TAGS
 
 ```js
 var payload = {
   name: "ACME Tools Tag",
 };
+var ad_account_id = String();
 try {
-  var response = await pinterest.conversion_tags.create(payload);
+  var response = await pinterest.conversion_tags.create(ad_account_id, payload);
 } catch (error) {
   return;
 }
 ```
 
 ```js
-var ad_account_id = "ad_account_id";
-var conversion_tag_id = "conversion_tag_id";
+var ad_account_id = String();
+var conversion_tag_id = String();
 try {
   var response = await pinterest.conversion_tags.get(
     ad_account_id,
@@ -1764,16 +2109,21 @@ try {
 ```
 
 ```js
-var ad_account_id = "ad_account_id";
+var ad_account_id = String();
+var query = {
+  filter_deleted: Boolean(),
+};
 try {
-  var response = await pinterest.conversion_tags.getAll(ad_account_id);
+  var response = await pinterest.conversion_tags.getAll(ad_account_id, {
+    query,
+  });
 } catch (error) {
   return;
 }
 ```
 
 ```js
-var ad_account_id = "ad_account_id";
+var ad_account_id = String();
 try {
   var response = await pinterest.conversion_tags.getOcpmEligible(ad_account_id);
 } catch (error) {
@@ -1782,18 +2132,25 @@ try {
 ```
 
 ```js
-var ad_account_id = "ad_account_id";
+var ad_account_id = String();
+var query = {
+  page_size: Number(),
+  order: String(),
+  bookmark: String(),
+};
 try {
-  var response = await pinterest.conversion_tags.getPageVisit(ad_account_id);
+  var response = await pinterest.conversion_tags.getPageVisit(ad_account_id, {
+    query,
+  });
 } catch (error) {
   return;
 }
 ```
 
-### CUSTOMER_LISTS
+> ### CUSTOMER_LISTS
 
 ```js
-var ad_account_id = "ad_account_id";
+var ad_account_id = String();
 var payload = {
   name: "The Glengarry Glen Ross leads",
   records: "email1@pinterest.com,email2@pinterest.com,..<more records>",
@@ -1808,8 +2165,8 @@ try {
 ```
 
 ```js
-var ad_account_id = "ad_account_id";
-var customer_list_id = "customer_list_id";
+var ad_account_id = String();
+var customer_list_id = String();
 try {
   var response = await pinterest.customer_lists.get(
     ad_account_id,
@@ -1821,17 +2178,24 @@ try {
 ```
 
 ```js
-var ad_account_id = "ad_account_id";
+var ad_account_id = String();
+var query = {
+  page_size: Number(),
+  order: String(),
+  bookmark: String(),
+};
 try {
-  var response = await pinterest.customer_lists.getAll(ad_account_id);
+  var response = await pinterest.customer_lists.getAll(ad_account_id, {
+    query,
+  });
 } catch (error) {
   return;
 }
 ```
 
 ```js
-var ad_account_id = "ad_account_id";
-var customer_list_id = "customer_list_id";
+var ad_account_id = String();
+var customer_list_id = String();
 var payload = {
   records: "email2@pinterest.com,email6@pinterest.com,",
   operation_type: "REMOVE",
@@ -1851,7 +2215,7 @@ try {
 }
 ```
 
-### KEYWORDS
+> ### KEYWORDS
 
 ```js
 var payload = {
@@ -1865,7 +2229,7 @@ var payload = {
   parent_id: "383791336903426391",
 };
 
-var ad_account_id = "ad_account_id";
+var ad_account_id = String();
 try {
   var response = await pinterest.keywords.create(ad_account_id, payload);
 } catch (error) {
@@ -1874,29 +2238,60 @@ try {
 ```
 
 ```js
-var ad_account_id = "ad_account_id";
+var ad_account_id = String();
+var query = {
+  campaign_id: String(),
+  ad_group_id: String(),
+  match_types: Array(String()),
+  page_size: Number(),
+  bookmark: String(),
+};
 try {
-  var response = await pinterest.keywords.get(ad_account_id);
+  var response = await pinterest.keywords.get(ad_account_id, { query });
 } catch (error) {
   return;
 }
 ```
 
 ```js
-var ad_account_id = "ad_account_id";
+var ad_account_id = String();
+var query = {
+  country_code: String(),
+  keywords: Array(String()),
+};
 try {
   var response = await pinterest.keywords.getCountryKeywordMetrics(
-    ad_account_id
+    ad_account_id,
+    { query }
   );
 } catch (error) {
   return;
 }
 ```
 
-### MEDIA
+```js
+var payload = {
+  keywords: [
+    {
+      id: "2886364308355",
+      archived: false,
+      bid: 200000,
+    },
+  ],
+};
+
+var ad_account_id = String();
+try {
+  var response = await pinterest.keywords.update(ad_account_id, payload);
+} catch (error) {
+  return;
+}
+```
+
+> ### MEDIA
 
 ```js
-var media_id = "media_id";
+var media_id = String();
 try {
   var response = await pinterest.media.get(media_id);
 } catch (error) {
@@ -1906,7 +2301,11 @@ try {
 
 ```js
 try {
-  var response = await pinterest.media.getAll();
+  var query = {
+    bookmark: String(),
+    page_size: Number(),
+  };
+  var response = await pinterest.media.getAll({ query });
 } catch (error) {
   return;
 }
@@ -1914,7 +2313,7 @@ try {
 
 ```js
 var payload = {
-  media_type: "video",
+  media_type: String(),
 };
 try {
   var response = await pinterest.media.register(payload);
@@ -1923,7 +2322,7 @@ try {
 }
 ```
 
-### OAUTH
+> ### OAUTH
 
 ```js
 const refresh_token_payload = {
@@ -1948,11 +2347,11 @@ try {
 }
 ```
 
-### ORDER_LINES
+> ### ORDER_LINES
 
 ```js
-var ad_account_id = "ad_account_id";
-var order_line_id = "order_line_id";
+var ad_account_id = String();
+var order_line_id = String();
 try {
   var response = await pinterest.order_lines.get(ad_account_id, order_line_id);
 } catch (error) {
@@ -1961,15 +2360,20 @@ try {
 ```
 
 ```js
-var ad_account_id = "ad_account_id";
+var ad_account_id = String();
+var query = {
+  page_size: Number(),
+  order: String(),
+  bookmark: String(),
+};
 try {
-  var response = await pinterest.order_lines.get(ad_account_id);
+  var response = await pinterest.order_lines.getAll(ad_account_id, { query });
 } catch (error) {
   return;
 }
 ```
 
-### PINS
+> ### PINS
 
 ```js
 var payload = {
@@ -1995,34 +2399,46 @@ try {
 ```
 
 ```js
-var pin = "pin_id";
+var pin_id = String();
 try {
-  var response = await pinterest.pins.delete(pin);
+  var response = await pinterest.pins.delete(pin_id);
 } catch (error) {
   return;
 }
 ```
 
 ```js
-var pin_id = "pin_id";
+var pin_id = String();
+var query = {
+  ad_account_id: String(),
+};
 try {
-  var response = await pinterest.pins.get(pin_id);
+  var response = await pinterest.pins.get(pin_id, { query });
 } catch (error) {
   return;
 }
 ```
 
 ```js
-var pin_id = "pin_id";
+var pin_id = String();
+var query = {
+  start_date: String(Date()),
+  end_date: String(Date()),
+  app_types: String(),
+  app_types: String(),
+  metric_types: Array(String()) || String(),
+  split_field: String(),
+  ad_account_id: String(),
+};
 try {
-  var response = await pinterest.pins.getAnalytics(pin_id);
+  var response = await pinterest.pins.getAnalytics(pin_id, { query });
 } catch (error) {
   return;
 }
 ```
 
 ```js
-var pin_id = "pin_id";
+var pin_id = String();
 var payload = {
   board_id: "string",
   board_section_id: "string",
@@ -2034,10 +2450,10 @@ try {
 }
 ```
 
-### PRODUCT_GROUP_PROMOTIONS
+> ### PRODUCT_GROUP_PROMOTIONS
 
 ```js
-var ad_account_id = "ad_account_id";
+var ad_account_id = String();
 var payload = {
   product_group_promotion: [
     {
@@ -2065,6 +2481,7 @@ var payload = {
   ],
   ad_group_id: "2680059592705",
 };
+
 try {
   var response = await pinterest.product_group_promotions.create(
     ad_account_id,
@@ -2078,8 +2495,8 @@ try {
 ```
 
 ```js
-var ad_account_id = "ad_account_id";
-var product_group_promotion_id = "product_group_promotion_id";
+var ad_account_id = String();
+var product_group_promotion_id = String();
 try {
   var response = await pinterest.product_group_promotions.get(
     ad_account_id,
@@ -2093,21 +2510,19 @@ try {
 ```
 
 ```js
-var ad_account_id = "ad_account_id";
+var ad_account_id = String();
+var query = {
+  product_group_promotion_ids: Array(String()),
+  entity_statuses: Array(String()),
+  ad_group_id: String(),
+  page_size: Number(),
+  order: String(),
+  bookmark: String(),
+};
 try {
-  var response = await pinterest.product_group_promotions.get(ad_account_id);
-  console.log(response);
-} catch (error) {
-  console.log("error", error);
-  return;
-}
-```
-
-```js
-var ad_account_id = "ad_account_id";
-try {
-  var response = await pinterest.product_group_promotions.getAnalytics(
-    ad_account_id
+  var response = await pinterest.product_group_promotions.getAll(
+    ad_account_id,
+    { query }
   );
   console.log(response);
 } catch (error) {
@@ -2117,7 +2532,32 @@ try {
 ```
 
 ```js
-var ad_account_id = "ad_account_id";
+var ad_account_id = String();
+var query = {
+  start_date: String(Date()),
+  end_date: String(Date()),
+  product_group_ids: Array(String()),
+  columns: Array(String()),
+  granularity: String(),
+  click_window_days: Number(),
+  engagement_window_days: Number(),
+  view_window_days: Number(),
+  conversion_report_time: String(),
+};
+try {
+  var response = await pinterest.product_group_promotions.getAnalytics(
+    ad_account_id,
+    { query }
+  );
+  console.log(response);
+} catch (error) {
+  console.log("error", error);
+  return;
+}
+```
+
+```js
+var ad_account_id = String();
 var payload = {
   product_group_promotion: [
     {
@@ -2159,11 +2599,14 @@ try {
 }
 ```
 
-### RESOURCES
+> ### RESOURCES
 
 ```js
+var query = {
+  report_type: String(),
+};
 try {
-  var response = await pinterest.resources.getAdAccountCountries();
+  var response = await pinterest.resources.getAdAccountCountries({ query });
   console.log(response);
 } catch (error) {
   console.log("error", error);
@@ -2173,7 +2616,10 @@ try {
 
 ```js
 try {
-  var response = await pinterest.resources.getAvailableMetrics();
+  var query = {
+    report_type: String(),
+  };
+  var response = await pinterest.resources.getAvailableMetrics({ query });
   console.log(response);
 } catch (error) {
   console.log("error", error);
@@ -2183,7 +2629,7 @@ try {
 
 ```js
 try {
-  var interest_id = "interest_id";
+  var interest_id = String();
   var response = await pinterest.resources.getInterest(interest_id);
   console.log(response);
 } catch (error) {
@@ -2194,7 +2640,10 @@ try {
 
 ```js
 try {
-  var response = await pinterest.resources.getMetricsReadyState();
+  var query = {
+    date: String(),
+  };
+  var response = await pinterest.resources.getMetricsReadyState({ query });
   console.log(response);
 } catch (error) {
   console.log("error", error);
@@ -2204,8 +2653,16 @@ try {
 
 ```js
 try {
-  var targeting_type = "targeting_type";
-  var response = await pinterest.resources.getTargetingOptions(targeting_type);
+  var targeting_type = String();
+  var query = {
+    client_id: String(),
+    oauth_signature: String(),
+    timestamp: String(),
+  };
+
+  var response = await pinterest.resources.getTargetingOptions(targeting_type, {
+    query,
+  });
   console.log(response);
 } catch (error) {
   console.log("error", error);
@@ -2213,46 +2670,14 @@ try {
 }
 ```
 
-### TERMS
+> ### TERMS
 
 ```js
 try {
-  var response = await pinterest.terms.getRelated();
-  console.log(response);
-} catch (error) {
-  console.log("error", error);
-  return;
-}
-```
-
-```js
-try {
-  var response = await pinterest.terms.getSuggested();
-  console.log(response);
-} catch (error) {
-  console.log("error", error);
-  return;
-}
-```
-
-### TERMS_OF_SERVICE
-
-```js
-try {
-  var ad_account_id = "ad_account_id";
-  var response = await pinterest.terms_of_service.get(ad_account_id);
-  console.log(response);
-} catch (error) {
-  console.log("error", error);
-  return;
-}
-```
-
-### USER_ACCOUNT
-
-```js
-try {
-  var response = await pinterest.user_account.get();
+  var query = {
+    terms: Array(String()),
+  };
+  var response = await pinterest.terms.getRelated({ query });
   console.log(response);
 } catch (error) {
   console.log("error", error);
@@ -2262,7 +2687,43 @@ try {
 
 ```js
 try {
-  var response = await pinterest.user_account.getAnalytics();
+  var query = {
+    term: String(),
+    limit: Number(),
+  };
+  var response = await pinterest.terms.getSuggested({ query });
+  console.log(response);
+} catch (error) {
+  console.log("error", error);
+  return;
+}
+```
+
+> ### TERMS_OF_SERVICE
+
+```js
+try {
+  var ad_account_id = String();
+  var query = {
+    include_html: Boolean(),
+    tos_type: String(),
+  };
+  var response = await pinterest.terms_of_service.get(ad_account_id, { query });
+  console.log(response);
+} catch (error) {
+  console.log("error", error);
+  return;
+}
+```
+
+> ### USER_ACCOUNT
+
+```js
+var query = {
+  ad_account_id: String(),
+};
+try {
+  var response = await pinterest.user_account.get({ query });
   console.log(response);
 } catch (error) {
   console.log("error", error);
@@ -2272,7 +2733,17 @@ try {
 
 ```js
 try {
-  var response = await pinterest.user_account.getTopPinsAnalytics();
+  var query = {
+    start_date: String(Date()),
+    end_date: String(Date()),
+    from_claimed_content: String(),
+    pin_format: String(),
+    app_types: String(),
+    metric_types: Array(String()),
+    split_field: String(),
+    ad_account_id: String(),
+  };
+  var response = await pinterest.user_account.getAnalytics({ query });
   console.log(response);
 } catch (error) {
   console.log("error", error);
@@ -2282,7 +2753,43 @@ try {
 
 ```js
 try {
-  var response = await pinterest.user_account.getTopVideoPinsAnalytics();
+  var query = {
+    start_date: String(Date()),
+    end_date: String(Date()),
+    sort_by: String(),
+    from_claimed_content: String(),
+    pin_format: String(),
+    app_types: String(),
+    metric_types: Array(String()),
+    num_of_pins: Number(),
+    created_in_last_n_days: Number(),
+    ad_account_id: String(),
+  };
+  var response = await pinterest.user_account.getTopPinsAnalytics({ query });
+  console.log(response);
+} catch (error) {
+  console.log("error", error);
+  return;
+}
+```
+
+```js
+try {
+  var query = {
+    start_date: String(Date()),
+    end_date: String(Date()),
+    sort_by: String(),
+    from_claimed_content: String(),
+    pin_format: String(),
+    app_types: String(),
+    metric_types: Array(String()),
+    num_of_pins: Number(),
+    created_in_last_n_days: Number(),
+    ad_account_id: String(),
+  };
+  var response = await pinterest.user_account.getTopVideoPinsAnalytics({
+    query,
+  });
   console.log(response);
 } catch (error) {
   console.log("error", error);

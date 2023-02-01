@@ -11,9 +11,12 @@ var pinterest = require("../../../lib")(userToken);
 describe("conversion_tags.getAll()", function () {
   it("It should getAll", async function () {
     try {
-      var ad_account_id = ''
+      var ad_account_id = String();
+      var query = {
+        filter_deleted: Boolean(),
+      };
       var response = await pinterest.conversion_tags
-        .getAll(ad_account_id)
+        .getAll(ad_account_id, { query })
         .catch((error) => {
           if (error) {
             console.log("error ", error);
@@ -32,9 +35,12 @@ describe("conversion_tags.getAll()", function () {
 describe("conversion_tags.create()", function () {
   it("It should create", async function () {
     try {
-      var ad_account_id = ''
+      var payload = {
+        name: "ACME Tools Tag",
+      };
+      var ad_account_id = String();
       var response = await pinterest.conversion_tags
-        .create(ad_account_id)
+        .create(ad_account_id, payload)
         .catch((error) => {
           if (error) {
             console.log("error ", error);
@@ -53,9 +59,10 @@ describe("conversion_tags.create()", function () {
 describe("conversion_tags.get()", function () {
   it("It should get", async function () {
     try {
-      var ad_account_id = "";
+      var ad_account_id = String();
+      var conversion_tag_id = String();
       var response = await pinterest.conversion_tags
-        .get(ad_account_id)
+        .get(ad_account_id, conversion_tag_id)
         .catch((error) => {
           if (error) {
             console.log("error ", error);
@@ -74,9 +81,14 @@ describe("conversion_tags.get()", function () {
 describe("conversion_tags.getPageVisit()", function () {
   it("It should get page visit", async function () {
     try {
-      var ad_account_id = "";
+      var ad_account_id = String();
+      var query = {
+        page_size: Number(),
+        order: String(),
+        bookmark: String(),
+      };
       var response = await pinterest.conversion_tags
-        .getPageVisit(ad_account_id)
+        .getPageVisit(ad_account_id, { query })
         .catch((error) => {
           if (error) {
             console.log("error ", error);
@@ -95,7 +107,7 @@ describe("conversion_tags.getPageVisit()", function () {
 describe("conversion_tags.getOcpmEligible()", function () {
   it("It should get ocpm eligible", async function () {
     try {
-      var ad_account_id = "";
+      var ad_account_id = String();
       var response = await pinterest.conversion_tags
         .getOcpmEligible(ad_account_id)
         .catch((error) => {

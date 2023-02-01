@@ -7,6 +7,7 @@ import * as PinterestAPI from 'pinterest-node-api';
 const pinterest = new PinterestAPI();
 pinterest.setUserToken(userToken);
 
+
 var boardsRequest = async function () {
   /**
    * passing parameters
@@ -19,7 +20,7 @@ var boardsRequest = async function () {
     page_size: Number()
   }
   try {
-    var response = await pinterest.boards.getAllSections(board_id, { query });
+    var response = await pinterest.boards.getSections(board_id, { query });
   } catch (error) {
     return;
   }

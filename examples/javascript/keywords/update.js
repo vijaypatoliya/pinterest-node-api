@@ -17,7 +17,7 @@ var pinsRequest = async function () {
 
   var ad_account_id = String();
   try {
-    var response = await pinterest.keywords.create(ad_account_id, payload);
+    var response = await pinterest.keywords.update(ad_account_id, payload);
   } catch (error) {
     return;
   }

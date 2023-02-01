@@ -7,12 +7,13 @@ import * as PinterestAPI from 'pinterest-node-api';
 const pinterest = new PinterestAPI();
 pinterest.setUserToken(userToken);
 
+
 var pinsRequest = async function () {
   var ad_account_id = 12345;
   var query = {
     ad_group_ids: Array(String()),
-    start_date: Date(),
-    end_date: Date(),
+    start_date: String(Date()),
+    end_date: String(Date()),
     targeting_types: Array(String()),
     columns: Array(String()),
     granularity: String(),
@@ -23,7 +24,7 @@ var pinsRequest = async function () {
     attribution_types: String()
   }
   try {
-    var response = await pinterest.ad_groups.getBidFloors(ad_account_id, query);
+    var response = await pinterest.ad_groups.getTargetedAnalytics(ad_account_id, { query });
     console.log(response);
   } catch (error) {
     console.log(error);
