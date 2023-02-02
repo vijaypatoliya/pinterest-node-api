@@ -7,7 +7,7 @@ var pinterest = require('../../../lib')(userToken);
 var boardsRequest = async function () {
 
   /**
-   * GET SECTIONS
+   * UPDATE BOARD
    * 
    * Passing Path Parameters:
    * ------------------------
@@ -15,16 +15,16 @@ var boardsRequest = async function () {
    * board_id
    * */
 
+  var board_id = 12345;
+
   var payload = {
     name: 'your board name',
     description: 'your board description'
   };
 
-  var board_id = 12345;
-
   try {
     var response = await pinterest.boards.update(board_id, payload);
-  } catch (error) {
+} catch (error) {
     return;
   }
 };

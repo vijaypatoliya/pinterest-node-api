@@ -9,16 +9,16 @@ var boardsRequest = async function () {
    * GET ALL BOARD
    * 
    * */
+
   var query = {
     bookmark: String(),
     page_size: Number(),
     privacy: String(),
   };
+
   try {
     var response = await pinterest.boards.getAll({ query });
-    console.log(response);
-  } catch (error) {
-    console.log(error);
+   } catch (error) {
     return;
   }
 };

@@ -6,21 +6,21 @@ var pinterest = require('../../../lib')(userToken);
 
 var usersRequest = async function () {
   /**
-   * GET SECTIONS
+   * GET AD ACCOUNT COUNTRIES
    * 
    * Passing Path Parameters:
    * ------------------------
+   * ad_account_id: String
    * 
-   * ad_account_id
    * */
+
   var query = {
     report_type: String()
   }
+
   try {
     var response = await pinterest.resources.getAdAccountCountries({ query });
-    console.log(response)
-  } catch (error) {
-    console.log('error', error)
+   } catch (error) {
     return;
   }
 };

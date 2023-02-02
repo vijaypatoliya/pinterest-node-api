@@ -10,10 +10,12 @@ pinterest.setUserToken(userToken);
 
 var boardsRequest = async function () {
   /**
-   * passing parameters 
-   * -------------------
-   * board (The board id)
-   */
+   * GET BOARD PINS
+   * 
+   * Passing Path Parameters:
+   * ------------------------
+   * board_id: String
+   * */
   var board_id = 12345;
   var query = {
     bookmark: String(),
@@ -21,7 +23,7 @@ var boardsRequest = async function () {
   }
   try {
     var response = await pinterest.boards.getPins(board_id, { query });
-  } catch (error) {
+} catch (error) {
     return;
   }
 };

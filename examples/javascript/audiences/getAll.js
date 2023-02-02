@@ -6,21 +6,23 @@ var pinterest = require("../../../lib")(userToken);
 
 var pinsRequest = async function () {
   /**
-   * GET ALL AUDIENCE
+   * GET ALL AUDIENCES
    *
    * Passing Path Parameters:
-   * - ad_account_id: required(string())
+   * ad_account_id: String
    * */
-  try {
-    var ad_account_id = 12345;
-    var query = {
-      bookmark: String(),
-      order: String(),
-      page_size: Number(),
-    };
 
+  var ad_account_id = 12345;
+
+  var query = {
+    bookmark: String(),
+    order: String(),
+    page_size: Number(),
+  };
+
+  try {
     var response = await pinterest.audiences.getAll(ad_account_id, { query });
-  } catch (error) {
+} catch (error) {
     return;
   }
 };

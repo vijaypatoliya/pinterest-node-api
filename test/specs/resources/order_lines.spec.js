@@ -21,14 +21,13 @@ describe("order_lines.getAll()", function () {
         .getAll(ad_account_id, { query })
         .catch((error) => {
           if (error) {
-            console.log("error ", error);
+            
             return;
           }
         });
-      console.log("response", response);
+      
       expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
       expect(response).to.be.a(undefined);
     }
   });
@@ -43,14 +42,13 @@ describe("order_lines.get()", function () {
         .get(ad_account_id, order_line_id)
         .catch((error) => {
           if (error) {
-            console.log("error ", error);
+            
             return;
           }
         });
-      console.log("response", response);
+      
       expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
       expect(response).to.be.a(undefined);
     }
   });

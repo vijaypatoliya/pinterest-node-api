@@ -6,14 +6,16 @@ var pinterest = require("../../../lib")(userToken);
 
 var pinsRequest = async function () {
   /**
-   * GET SECTIONS
+   * GET FEED PROCESSING RESULTS
    * 
    * Passing Path Parameters:
    * ------------------------
    * 
    * feed_id
    * */
+
   var feed_id = 12345;
+
   var query = {
     bookmark: String(),
     page_size: Number(),
@@ -21,7 +23,7 @@ var pinsRequest = async function () {
   }
   try {
     var response = await pinterest.catalogs.getFeedProcessingResults(feed_id, { query });
-  } catch (error) {
+} catch (error) {
     return;
   }
 };

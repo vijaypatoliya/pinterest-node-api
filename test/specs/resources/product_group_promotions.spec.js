@@ -29,14 +29,13 @@ describe("product_group_promotions.getAnalytics()", function () {
         .getAnalytics(ad_account_id, { query })
         .catch((error) => {
           if (error) {
-            console.log("error ", error);
+            
             return;
           }
         });
-      console.log("response", response);
+      
       expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
       expect(response).to.be.a(undefined);
     }
   });
@@ -77,14 +76,13 @@ describe("product_group_promotions.create()", function () {
         .create(ad_account_id, payload)
         .catch((error) => {
           if (error) {
-            console.log("error ", error);
+            
             return;
           }
         });
-      console.log("response", response);
+      
       expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
       expect(response).to.be.a(undefined);
     }
   });
@@ -127,14 +125,13 @@ describe("product_group_promotions.update()", function () {
         .update(ad_account_id, payload)
         .catch((error) => {
           if (error) {
-            console.log("error ", error);
+            
             return;
           }
         });
-      console.log("response", response);
+      
       expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
       expect(response).to.be.a(undefined);
     }
   });
@@ -156,14 +153,13 @@ describe("product_group_promotions.getAll()", function () {
         .getAll(ad_account_id, { query })
         .catch((error) => {
           if (error) {
-            console.log("error ", error);
+            
             return;
           }
         });
-      console.log("response", response);
+      
       expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
       expect(response).to.be.a(undefined);
     }
   });
@@ -178,14 +174,13 @@ describe("product_group_promotions.get()", function () {
         .get(ad_account_id, product_group_promotion_id)
         .catch((error) => {
           if (error) {
-            console.log("error ", error);
+            
             return;
           }
         });
-      console.log("response", response);
+      
       expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
       expect(response).to.be.a(undefined);
     }
   });

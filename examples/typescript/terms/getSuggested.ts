@@ -9,15 +9,23 @@ pinterest.setUserToken(userToken);
 
 
 var usersRequest = async function () {
+  /**
+   * GET SUGGESTED TERMS
+   *
+   * Passing Path Parameters:
+   * ------------------------
+   *
+   * targeting_type
+   * */
+
+  var query = {
+    term: String(),
+    limit: Number()
+  }
+
   try {
-    var query = {
-      term: String(),
-      limit: Number()
-    }
     var response = await pinterest.terms.getSuggested({ query });
-    console.log(response)
-  } catch (error) {
-    console.log('error', error)
+   } catch (error) {
     return;
   }
 };

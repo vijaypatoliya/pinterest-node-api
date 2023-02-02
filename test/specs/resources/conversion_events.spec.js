@@ -62,14 +62,13 @@ describe("conversion_events.send()", function () {
         .send(ad_account_id, { query }, payload)
         .catch((error) => {
           if (error) {
-            console.log("error ", error);
+            
             return;
           }
         });
-      console.log("response", response);
+      
       expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
       expect(response).to.be.a(undefined);
     }
   });

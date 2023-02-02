@@ -20,14 +20,13 @@ describe("catalogs.getFeeds()", function () {
         .getFeeds({ query })
         .catch((error) => {
           if (error) {
-            console.log("error ", error);
+            
             return;
           }
         });
-      console.log("response", response);
+      
       expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
       expect(response).to.be.a(undefined);
     }
   });
@@ -60,14 +59,13 @@ describe("catalogs.createFeed()", function () {
         .createFeed({ query }, payload)
         .catch((error) => {
           if (error) {
-            console.log("error ", error);
+            
             return;
           }
         });
-      console.log("response", response);
+      
       expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
       expect(response).to.be.a(undefined);
     }
   });
@@ -84,14 +82,13 @@ describe("catalogs.getFeed()", function () {
         .getFeed(feed_id, { query })
         .catch((error) => {
           if (error) {
-            console.log("error ", error);
+            
             return;
           }
         });
-      console.log("response", response);
+      
       expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
       expect(response).to.be.a(undefined);
     }
   });
@@ -124,14 +121,13 @@ describe("catalogs.updateFeed()", function () {
         .updateFeed(feed_id, { query }, payload)
         .catch((error) => {
           if (error) {
-            console.log("error ", error);
+            
             return;
           }
         });
-      console.log("response", response);
+      
       expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
       expect(response).to.be.a(undefined);
     }
   });
@@ -148,14 +144,13 @@ describe("catalogs.deleteFeed()", function () {
         .deleteFeed(feed_id, { query })
         .catch((error) => {
           if (error) {
-            console.log("error ", error);
+            
             return;
           }
         });
-      console.log("response", response);
+      
       expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
       expect(response).to.be.a(undefined);
     }
   });
@@ -176,14 +171,13 @@ describe("catalogs.getFeedProcessingResultIssues()", function () {
         .getFeedProcessingResultIssues(processing_result_id, { query })
         .catch((error) => {
           if (error) {
-            console.log("error ", error);
+            
             return;
           }
         });
-      console.log("response", response);
+      
       expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
       expect(response).to.be.a(undefined);
     }
   });
@@ -202,14 +196,13 @@ describe("catalogs.getFeedProcessingResults()", function () {
         .getFeedProcessingResults(feed_id, { query })
         .catch((error) => {
           if (error) {
-            console.log("error ", error);
+            
             return;
           }
         });
-      console.log("response", response);
+      
       expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
       expect(response).to.be.a(undefined);
     }
   });
@@ -228,14 +221,13 @@ describe("catalogs.getItems()", function () {
         .getItems({ query })
         .catch((error) => {
           if (error) {
-            console.log("error ", error);
+            
             return;
           }
         });
-      console.log("response", response);
+      
       expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
       expect(response).to.be.a(undefined);
     }
   });
@@ -252,14 +244,13 @@ describe("catalogs.getItemsBatch()", function () {
         .getItemsBatch(batch_id, { query })
         .catch((error) => {
           if (error) {
-            console.log("error ", error);
+            
             return;
           }
         });
-      console.log("response", response);
+      
       expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
       expect(response).to.be.a(undefined);
     }
   });
@@ -412,14 +403,13 @@ describe("catalogs.operateItemBatch()", function () {
         .operateItemBatch({ query }, create || update || delete_discontinued)
         .catch((error) => {
           if (error) {
-            console.log("error ", error);
+            
             return;
           }
         });
-      console.log("response", response);
+      
       expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
       expect(response).to.be.a(undefined);
     }
   });
@@ -451,14 +441,13 @@ describe("catalogs.getFilteredProducts()", function () {
         .getFilteredProducts({ query }, payload)
         .catch((error) => {
           if (error) {
-            console.log("error ", error);
+            
             return;
           }
         });
-      console.log("response", response);
+      
       expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
       expect(response).to.be.a(undefined);
     }
   });
@@ -475,14 +464,13 @@ describe("catalogs.getProductGroup()", function () {
         .getProductGroup(product_group_id, { query })
         .catch((error) => {
           if (error) {
-            console.log("error ", error);
+            
             return;
           }
         });
-      console.log("response", response);
+      
       expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
       expect(response).to.be.a(undefined);
     }
   });
@@ -499,14 +487,13 @@ describe("catalogs.deleteProductGroup()", function () {
         .deleteProductGroup(product_group_id, { query })
         .catch((error) => {
           if (error) {
-            console.log("error ", error);
+            
             return;
           }
         });
-      console.log("response", response);
+      
       expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
       expect(response).to.be.a(undefined);
     }
   });
@@ -539,14 +526,13 @@ describe("catalogs.updateProductGroup()", function () {
         .updateProductGroup(product_group_id, { query }, payload)
         .catch((error) => {
           if (error) {
-            console.log("error ", error);
+            
             return;
           }
         });
-      console.log("response", response);
+      
       expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
       expect(response).to.be.a(undefined);
     }
   });
@@ -565,14 +551,13 @@ describe("catalogs.getProducts()", function () {
         .getProducts(product_group_id, { query })
         .catch((error) => {
           if (error) {
-            console.log("error ", error);
+            
             return;
           }
         });
-      console.log("response", response);
+      
       expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
       expect(response).to.be.a(undefined);
     }
   });
@@ -589,14 +574,13 @@ describe("catalogs.getProductCount()", function () {
         .getProductCount(product_group_id, { query })
         .catch((error) => {
           if (error) {
-            console.log("error ", error);
+            
             return;
           }
         });
-      console.log("response", response);
+      
       expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
       expect(response).to.be.a(undefined);
     }
   });
@@ -615,14 +599,13 @@ describe("catalogs.getProductGroups()", function () {
         .getProductGroups({ query })
         .catch((error) => {
           if (error) {
-            console.log("error ", error);
+            
             return;
           }
         });
-      console.log("response", response);
+      
       expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
       expect(response).to.be.a(undefined);
     }
   });
@@ -655,14 +638,13 @@ describe("catalogs.createProductGroup()", function () {
         .createProductGroup({ query }, payload)
         .catch((error) => {
           if (error) {
-            console.log("error ", error);
+            
             return;
           }
         });
-      console.log("response", response);
+      
       expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
       expect(response).to.be.a(undefined);
     }
   });

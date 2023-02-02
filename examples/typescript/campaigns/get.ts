@@ -9,11 +9,22 @@ pinterest.setUserToken(userToken);
 
 
 var pinsRequest = async function () {
-  var ad_account_id = 12345
-  var campaign_id = 12345
+  /**
+   * GET CAMPAIGN
+   * 
+   * Passing Path Parameters:
+   * ------------------------ 
+   * ad_account_id: String
+   * campaign_id: String
+   * 
+   * */
+
+  var ad_account_id = 12345;
+  var campaign_id = 12345;
+
   try {
     var response = await pinterest.campaigns.get(ad_account_id, campaign_id);
-  } catch (error) {
+} catch (error) {
     return;
   }
 };

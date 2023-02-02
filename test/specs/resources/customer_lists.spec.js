@@ -22,14 +22,13 @@ describe("customer_list.create()", function () {
         .create(ad_account_id, payload)
         .catch((error) => {
           if (error) {
-            console.log("error ", error);
+            
             return;
           }
         });
-      console.log("response", response);
+      
       expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
       expect(response).to.be.a(undefined);
     }
   });
@@ -48,14 +47,13 @@ describe("customer_list.getAll()", function () {
         .getAll(ad_account_id, { query })
         .catch((error) => {
           if (error) {
-            console.log("error ", error);
+            
             return;
           }
         });
-      console.log("response", response);
+      
       expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
       expect(response).to.be.a(undefined);
     }
   });
@@ -70,14 +68,13 @@ describe("customer_list.get()", function () {
         .get(ad_account_id, customer_list_id)
         .catch((error) => {
           if (error) {
-            console.log("error ", error);
+            
             return;
           }
         });
-      console.log("response", response);
+      
       expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
       expect(response).to.be.a(undefined);
     }
   });
@@ -100,14 +97,13 @@ describe("customer_list.update()", function () {
         .update(ad_account_id, customer_list_id, payload)
         .catch((error) => {
           if (error) {
-            console.log("error ", error);
+            
             return;
           }
         });
-      console.log("response", response);
+      
       expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
       expect(response).to.be.a(undefined);
     }
   });

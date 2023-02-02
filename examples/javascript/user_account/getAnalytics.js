@@ -6,28 +6,28 @@ var pinterest = require('../../../lib')(userToken);
 
 var usersRequest = async function () {
   /**
-   * GET SECTIONS
+   * GET USER ACCOUNT ANALYTICS
    *
    * Passing Path Parameters:
    * ------------------------
-   *
-   * ad_account_id
+   * ad_account_id: String
+   * 
    * */
+
+  var query = {
+    start_date: String(Date()),
+    end_date: String(Date()),
+    from_claimed_content: String(),
+    pin_format: String(),
+    app_types: String(),
+    metric_types: Array(String()),
+    split_field: String(),
+    ad_account_id: String(),
+  }
+
   try {
-    var query = {
-      start_date: String(Date()),
-      end_date: String(Date()),
-      from_claimed_content: String(),
-      pin_format: String(),
-      app_types: String(),
-      metric_types: Array(String()),
-      split_field: String(),
-      ad_account_id: String(),
-    }
     var response = await pinterest.user_account.getAnalytics({ query });
-    console.log(response)
-  } catch (error) {
-    console.log('error', error)
+   } catch (error) {
     return;
   }
 };

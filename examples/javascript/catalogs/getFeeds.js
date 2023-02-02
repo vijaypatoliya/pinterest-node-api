@@ -6,7 +6,7 @@ var pinterest = require("../../../lib")(userToken);
 
 var pinsRequest = async function () {
   /**
-   * GET SECTIONS
+   * GET FEEDS
    * 
    * Passing Path Parameters:
    * ------------------------
@@ -18,9 +18,10 @@ var pinsRequest = async function () {
     page_size: Number(),
     ad_account_id: String(),
   }
+
   try {
     var response = await pinterest.catalogs.getFeeds({ query });
-  } catch (error) {
+} catch (error) {
     return;
   }
 };

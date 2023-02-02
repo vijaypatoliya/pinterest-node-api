@@ -9,6 +9,13 @@ pinterest.setUserToken(userToken);
 
 
 var pinsRequest = async function () {
+  /**
+   * GET AD GROUP BID FLOORS
+   *
+   * Passing Path Parameters:
+   * ad_account_id: String
+   *
+   * */
   var ad_account_id = 12345;
   var payload = {
     targeting_spec: {
@@ -94,9 +101,7 @@ var pinsRequest = async function () {
   };
   try {
     var response = await pinterest.ad_groups.getBidFloors(ad_account_id, payload);
-    console.log(response);
-  } catch (error) {
-    console.log(error);
+   } catch (error) {
     return;
   }
 };

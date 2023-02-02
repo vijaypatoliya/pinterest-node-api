@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 var userToken = process.env.PINTEREST_USER_TOKEN;
 
@@ -9,13 +9,16 @@ pinterest.setUserToken(userToken);
 
 
 var pinsRequest = async function () {
+  /** GET ALL MEDIA  */
+
+  var query = {
+    bookmark: String(),
+    page_size: Number(),
+  };
+
   try {
-    var query = {
-      bookmark: String(),
-      page_size: Number()
-    }
     var response = await pinterest.media.getAll({ query });
-  } catch (error) {
+} catch (error) {
     return;
   }
 };

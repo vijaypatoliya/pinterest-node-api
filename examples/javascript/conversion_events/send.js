@@ -6,14 +6,20 @@ var pinterest = require("../../../lib")(userToken);
 
 var pinsRequest = async function () {
   /**
-   * GET SECTIONS
+   * SEND CONVERSION EVENTS
    * 
    * Passing Path Parameters:
    * ------------------------
+   * ad_account_id: String
    * 
-   * ad_account_id
    * */
+
   var ad_account_id = 12345;
+
+  var query = {
+    test: Boolean(),
+  }
+
   var payload = {
     data: [
       {
@@ -57,13 +63,9 @@ var pinsRequest = async function () {
     ],
   };
 
-  var query = {
-    test: Boolean(),
-  }
-
   try {
     var response = await pinterest.conversion_events.send(ad_account_id, { query }, payload);
-  } catch (error) {
+} catch (error) {
     return;
   }
 };

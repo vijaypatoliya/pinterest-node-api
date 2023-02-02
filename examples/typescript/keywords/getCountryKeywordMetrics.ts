@@ -9,14 +9,25 @@ pinterest.setUserToken(userToken);
 
 
 var pinsRequest = async function () {
+  /**
+   * GET COUNTRY KEYWORD METRICS
+   * 
+   * Passing Path Parameters:
+   * ------------------------
+   * ad_account_id: String
+   * 
+   * */
+
   var ad_account_id = 12345;
+
   var query = {
     country_code: String(),
     keywords: Array(String())
   }
+
   try {
     var response = await pinterest.keywords.getCountryKeywordMetrics(ad_account_id, { query });
-  } catch (error) {
+} catch (error) {
     return;
   }
 };

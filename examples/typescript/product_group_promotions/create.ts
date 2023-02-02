@@ -9,7 +9,17 @@ pinterest.setUserToken(userToken);
 
 
 var usersRequest = async function () {
+  /**
+   * CREATE PRODUCT GROUP PROMOTIONS
+   * 
+   * Passing Path Parameters:
+   * ------------------------
+   * ad_account_id: String
+   *
+   * */
+
   var ad_account_id = 12345;
+
   var payload = {
     product_group_promotion: [
       {
@@ -40,9 +50,7 @@ var usersRequest = async function () {
 
   try {
     var response = await pinterest.product_group_promotions.create(ad_account_id, payload);
-    console.log(response);
-  } catch (error) {
-    console.log("error", error);
+   } catch (error) {
     return;
   }
 };

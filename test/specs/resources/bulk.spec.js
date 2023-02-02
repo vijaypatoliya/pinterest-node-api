@@ -29,14 +29,13 @@ describe("bulk.get()", function () {
         .get(ad_account_id, payload)
         .catch((error) => {
           if (error) {
-            console.log("error ", error);
+            
             return;
           }
         });
-      console.log("response", response);
+      
       expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
       expect(response).to.be.a(undefined);
     }
   });
@@ -356,14 +355,14 @@ describe("bulk.upsert()", function () {
         .upsert(ad_account_id, payload)
         .catch((error) => {
           if (error) {
-            console.log("error ", error);
+            
             return;
           }
         });
-      console.log("response", response);
+      
       // expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
+      
       // expect(response).to.be.a(undefined);
     }
   });
@@ -378,14 +377,13 @@ describe("bulk.download()", function () {
         .download(ad_account_id, bulk_request_id)
         .catch((error) => {
           if (error) {
-            console.log("error ", error);
+            
             return;
           }
         });
-      console.log("response", response);
+      
       expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
       expect(response).to.be.a(undefined);
     }
   });

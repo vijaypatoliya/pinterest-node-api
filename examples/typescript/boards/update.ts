@@ -11,27 +11,24 @@ pinterest.setUserToken(userToken);
 var boardsRequest = async function () {
 
   /**
-   * passing parameters 
-   * -------------------
+   * UPDATE BOARD
    * 
-   * board (The board name in the format: <username>/<board_name>)
-   * name
-   * description
+   * Passing Path Parameters:
+   * ------------------------
    * 
-   * (optional)
-   * fields (privacy: Enum ["PUBLIC" "SECRET"])
-   */
+   * board_id
+   * */
+
+  var board_id = 12345;
 
   var payload = {
     name: 'your board name',
     description: 'your board description'
   };
 
-  var board_id = 12345;
-
   try {
     var response = await pinterest.boards.update(board_id, payload);
-  } catch (error) {
+} catch (error) {
     return;
   }
 };

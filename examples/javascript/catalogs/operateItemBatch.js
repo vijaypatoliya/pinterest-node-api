@@ -6,9 +6,13 @@ var pinterest = require("../../../lib")(userToken);
 
 var pinsRequest = async function () {
   /**
-   * GET SECTIONS
+   * OPERATE ITEM BATCH
    * 
    * */
+  var query = {
+    ad_account_id: String(),
+  }
+
   var update = {
     country: "US",
     language: "EN",
@@ -147,13 +151,9 @@ var pinsRequest = async function () {
     ],
   };
 
-  var query = {
-    ad_account_id: String(),
-  }
-
   try {
     var response = await pinterest.catalogs.operateItemBatch({ query }, create || update || delete_discontinued);
-  } catch (error) {
+} catch (error) {
     return;
   }
 };

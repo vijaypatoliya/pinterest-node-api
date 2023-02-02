@@ -9,7 +9,17 @@ pinterest.setUserToken(userToken);
 
 
 var usersRequest = async function () {
-  var ad_account_id = 12345
+  /**
+   * GET PRODUCT GROUP PROMOTIONS ANALYTICS
+   * 
+   * Passing Path Parameters:
+   * ------------------------
+   * ad_account_id: String
+   *
+   * */
+
+  var ad_account_id = 12345;
+
   var query = {
     start_date: String(Date()),
     end_date: String(Date()),
@@ -21,11 +31,10 @@ var usersRequest = async function () {
     view_window_days: Number(),
     conversion_report_time: String(),
   };
+
   try {
     var response = await pinterest.product_group_promotions.getAnalytics(ad_account_id, { query });
-    console.log(response);
-  } catch (error) {
-    console.log("error", error);
+   } catch (error) {
     return;
   }
 };

@@ -11,9 +11,10 @@ var boardsRequest = async function () {
     description: "My favorite summer recipes",
     privacy: "PUBLIC",
   };
+
   try {
     var response = await pinterest.boards.create(payload);
-  } catch (error) {
+} catch (error) {
     return;
   }
 };

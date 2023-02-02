@@ -6,13 +6,15 @@ var pinterest = require("../../../lib")(userToken);
 
 var pinsRequest = async function () {
   /**
-   * GET SECTIONS
+   * GET BULK
    * 
    * Passing Path Parameters:
    * ------------------------
+   * ad_account_id: String
    * 
-   * ad_account_id
    * */
+
+  var ad_account_id = 12345;
   var payload = {
     entity_types: ["CAMPAIGN", "AD_GROUP"],
     entity_ids: ["string"],
@@ -26,10 +28,9 @@ var pinsRequest = async function () {
     },
     output_format: "CSV",
   };
-  var ad_account_id = 12345
   try {
     var response = await pinterest.bulk.get(ad_account_id, payload);
-  } catch (error) {
+} catch (error) {
     return;
   }
 };

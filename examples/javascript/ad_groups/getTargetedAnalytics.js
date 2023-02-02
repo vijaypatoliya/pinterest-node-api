@@ -9,7 +9,7 @@ var pinsRequest = async function () {
    * GET AD GROUP TARGETED ANALYTICS
    *
    * Passing Path Parameters:
-   * - ad_account_id: required(string())
+   * ad_account_id: String
    *
    * */
   var ad_account_id = 12345;
@@ -28,9 +28,7 @@ var pinsRequest = async function () {
   }
   try {
     var response = await pinterest.ad_groups.getTargetedAnalytics(ad_account_id, { query });
-    console.log(response);
-  } catch (error) {
-    console.log(error);
+   } catch (error) {
     return;
   }
 };

@@ -6,9 +6,10 @@ var pinterest = require("../../../lib")(userToken);
 
 var pinsRequest = async function () {
   /**
-   * GET SECTIONS
+   * CREATE PIN
    * 
    * */
+
   var payload = {
     link: "https://www.pinterest.com/",
     title: "string",
@@ -24,9 +25,10 @@ var pinsRequest = async function () {
     },
     parent_pin_id: "string",
   };
+
   try {
     var response = await pinterest.pins.create(payload);
-  } catch (error) {
+} catch (error) {
     return;
   }
 };

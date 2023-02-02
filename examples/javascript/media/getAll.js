@@ -1,21 +1,20 @@
-'use strict';
+"use strict";
 
 var userToken = process.env.PINTEREST_USER_TOKEN;
 
-var pinterest = require('../../../lib')(userToken);
+var pinterest = require("../../../lib")(userToken);
 
 var pinsRequest = async function () {
+  /** GET ALL MEDIA  */
+
+  var query = {
+    bookmark: String(),
+    page_size: Number(),
+  };
+
   try {
-    /**
-   * GET SECTIONS
-   * 
-   * */
-    var query = {
-      bookmark: String(),
-      page_size: Number()
-    }
     var response = await pinterest.media.getAll({ query });
-  } catch (error) {
+} catch (error) {
     return;
   }
 };

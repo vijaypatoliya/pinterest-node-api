@@ -6,7 +6,7 @@ var pinterest = require('../../../lib')(userToken);
 
 var pinsRequest = async function () {
   /**
-   * GET SECTIONS
+   * GET PRODUCT GROUPS
    * 
    * */
   var query = {
@@ -15,9 +15,10 @@ var pinsRequest = async function () {
     page_size: Number(),
     ad_account_id: String()
   }
+
   try {
     var response = await pinterest.catalogs.getProductGroups({ query });
-  } catch (error) {
+} catch (error) {
     return;
   }
 };

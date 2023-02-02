@@ -9,6 +9,13 @@ pinterest.setUserToken(userToken);
 
 
 var pinsRequest = async function () {
+  /**
+   * CREATE PRODUCT GROUP
+   * 
+   * */
+  var query = {
+    ad_account_id: String()
+  }
   var payload = {
     name: "string",
     description: "string",
@@ -26,12 +33,10 @@ var pinsRequest = async function () {
     },
     feed_id: "2680059592705",
   };
-  var query = {
-    ad_account_id: String()
-  }
+
   try {
     var response = await pinterest.catalogs.createProductGroup({ query }, payload);
-  } catch (error) {
+} catch (error) {
     return;
   }
 };

@@ -9,6 +9,16 @@ pinterest.setUserToken(userToken);
 
 
 var pinsRequest = async function () {
+  /**
+   * UPDATE ADS
+   *
+   * Passing Path Parameters:
+   * ad_account_id: String
+   *
+   * */
+
+  var ad_account_id = 12345;
+
   var payload = [
     {
       ad_group_id: "2680059592705",
@@ -35,10 +45,9 @@ var pinsRequest = async function () {
       id: "687195134316",
     },
   ];
-  var ad_account_id = 12345;
   try {
     var response = await pinterest.ads.update(ad_account_id, payload);
-  } catch (error) {
+} catch (error) {
     return;
   }
 };

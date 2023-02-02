@@ -9,16 +9,17 @@ var pinsRequest = async function () {
    * GET ADS
    *
    * Passing Path Parameters:
-   * - ad_account_id: required(string())
-   * - ads_id: required(string())
+   * ad_account_id: String
+   * ads_id: String
    *
    * */
-  try {
-    var ad_account_id = 12345;
-    var ads_id = 12345;
 
+  var ad_account_id = 12345;
+  var ads_id = 12345;
+
+  try {
     var response = await pinterest.ads.get(ad_account_id, ads_id);
-  } catch (error) {
+} catch (error) {
     return;
   }
 };

@@ -17,14 +17,13 @@ describe("media.getAll()", function () {
       };
       var response = await pinterest.media.getAll({ query }).catch((error) => {
         if (error) {
-          console.log("error ", error);
+          
           return;
         }
       });
-      console.log("response", response);
+      
       expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
       expect(response).to.be.a(undefined);
     }
   });
@@ -38,14 +37,13 @@ describe("media.register()", function () {
       };
       var response = await pinterest.media.register(payload).catch((error) => {
         if (error) {
-          console.log("error ", error);
+          
           return;
         }
       });
-      console.log("response", response);
+      
       expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
       expect(response).to.be.a(undefined);
     }
   });
@@ -57,14 +55,13 @@ describe("media.get()", function () {
       var media_id = 12345;
       var response = await pinterest.media.get(media_id).catch((error) => {
         if (error) {
-          console.log("error ", error);
+          
           return;
         }
       });
-      console.log("response", response);
+      
       expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
       expect(response).to.be.a(undefined);
     }
   });

@@ -10,15 +10,17 @@ pinterest.setUserToken(userToken);
 
 var boardsRequest = async function () {
   /**
-   * passing parameters 
-   * -------------------
+   * DELETE BOARD
    * 
-   * board (The board id)
-   */
+   * Passing Path Parameters:
+   * ------------------------
+   * board_id: String
+   * 
+   * */
   var board_id = 12345;
   try {
     var response = await pinterest.boards.delete(board_id);
-  } catch (error) {
+} catch (error) {
     return;
   }
 };

@@ -9,7 +9,17 @@ pinterest.setUserToken(userToken);
 
 
 var pinsRequest = async function () {
+  /**
+   * GET FEED PROCESSING RESULTS
+   * 
+   * Passing Path Parameters:
+   * ------------------------
+   * 
+   * feed_id
+   * */
+
   var feed_id = 12345;
+
   var query = {
     bookmark: String(),
     page_size: Number(),
@@ -17,7 +27,7 @@ var pinsRequest = async function () {
   }
   try {
     var response = await pinterest.catalogs.getFeedProcessingResults(feed_id, { query });
-  } catch (error) {
+} catch (error) {
     return;
   }
 };

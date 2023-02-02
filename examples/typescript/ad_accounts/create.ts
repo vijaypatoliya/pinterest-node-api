@@ -9,7 +9,7 @@ pinterest.setUserToken(userToken);
 
 
 var pinsRequest = async function () {
-
+  /** CREATE AD ACCOUNT */
   var payload = {
     country: "US",
     owner_user_id: "383791336903426391",
@@ -18,9 +18,7 @@ var pinsRequest = async function () {
 
   try {
     var response = await pinterest.ad_accounts.create(payload);
-    console.log(response);
-  } catch (error) {
-    console.log(error);
+   } catch (error) {
     return;
   }
 };

@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 var userToken = process.env.PINTEREST_USER_TOKEN;
 
@@ -9,18 +9,29 @@ pinterest.setUserToken(userToken);
 
 
 var usersRequest = async function () {
-  try {
-    var targeting_type = 12345;
-    var query = {
-      client_id: String(),
-      oauth_signature: String(),
-      timestamp: String()
-    }
+  /**
+   * GET TARGETTING OPTIONS
+   *
+   * Passing Path Parameters:
+   * ------------------------
+   * targeting_type
+   *
+   * */
 
-    var response = await pinterest.resources.getTargetingOptions(targeting_type, { query });
-    console.log(response);
-  } catch (error) {
-    console.log("error", error);
+  var targeting_type = 12345;
+
+  var query = {
+    client_id: String(),
+    oauth_signature: String(),
+    timestamp: String(),
+  };
+
+  try {
+    var response = await pinterest.resources.getTargetingOptions(
+      targeting_type,
+      { query }
+    );
+   } catch (error) {
     return;
   }
 };

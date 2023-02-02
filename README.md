@@ -42,7 +42,7 @@ var pinterest = require("pinterest-node-api")("YOUR_ACCESS_TOKEN");
 
 ```js
 import * as PinterestAPI from "pinterest-node-api";
-const pinterest = new PinterestAPI();
+var pinterest = new PinterestAPI();
 pinterest.setUserToken("YOUR_ACCESS_TOKEN");
 ```
 
@@ -63,8 +63,57 @@ Originally by [Vijay Patoliya](https://github.com/vijaypatoliya) (osi.vijay@gmai
 ```
 
 ## Examples
+---
 
-> ### AD_ACCOUNTS
+## Index
+
+1) [AD_ACCOUNTS](#ad_accounts)
+
+2) [AD_GROUPS](#ad_groups)
+
+3) [ADS](#ads)
+
+4) [AUDIENCE_INSIGHTS](#audience_insights)
+
+5) [AUDIENCES](#audiences)
+
+6) [BOARD](#board)
+
+7) [BULK](#bulk)
+
+8) [CAMPAIGNS](#campaigns)
+
+9) [CATALOGS](#catalogs)
+
+10) [CONVERSION_EVENTS](#conversion_events)
+
+11) [CONVERSION_TAGS](#conversion_tags)
+
+12) [CUSTOMER_LISTS](#customer_lists)
+
+13) [KEYWORDS](#keywords)
+
+14) [MEDIA](#media)
+
+15) [OAUTH](#oauth)
+
+16) [ORDER_LINES](#order_lines)
+
+17) [PINS](#pins)
+
+18) [PRODUCT_GROUP_PROMOTIONS](#product_group_promotions)
+
+19) [RESOURCES](#resources)
+
+20) [TERMS](#terms)
+
+21) [TERMS_OF_SERVICE](#terms_of_service)
+
+22) [USER_ACCOUNT](#user_account)
+
+
+---
+> ### [AD_ACCOUNTS](#index)
 
 ```js
 /** Create ad account */
@@ -76,9 +125,9 @@ var payload = {
 
 try {
   var response = await pinterest.ad_accounts.create(payload);
-  console.log(response);
+  
 } catch (error) {
-  console.log(error);
+  
   return;
 }
 ```
@@ -116,9 +165,9 @@ try {
     ad_account_id,
     payload
   );
-  console.log(response);
+  
 } catch (error) {
-  console.log(error);
+  
   return;
 }
 ```
@@ -129,9 +178,9 @@ try {
 var ad_account_id = 12345;
 try {
   var response = await pinterest.ad_accounts.get(ad_account_id);
-  console.log(response);
+  
 } catch (error) {
-  console.log(error);
+  
   return;
 }
 ```
@@ -146,7 +195,7 @@ var query = {
 };
 try {
   var response = await pinterest.ad_accounts.getAll({ query });
-  console.log(response);
+  
 } catch (error) {
   return;
 }
@@ -169,7 +218,7 @@ try {
   var response = await pinterest.ad_accounts.getAnalytics(ad_account_id, {
     query,
   });
-  console.log(response);
+  
 } catch (error) {
   return;
 }
@@ -184,9 +233,9 @@ try {
   var response = await pinterest.ad_accounts.getReport(ad_account_id, {
     query,
   });
-  console.log(response);
+  
 } catch (error) {
-  console.log(error);
+  
   return;
 }
 ```
@@ -212,14 +261,14 @@ try {
     ad_account_id,
     { query }
   );
-  console.log(response);
+  
 } catch (error) {
-  console.log(error);
+  
   return;
 }
 ```
 
-> ### AD_GROUPS
+> ### [AD_GROUPS](#index)
 
 ```js
 /** Create ad group */
@@ -293,9 +342,9 @@ var payload = [
 var ad_account_id = 12345;
 try {
   var response = await pinterest.ad_groups.create(ad_account_id, payload);
-  console.log(response);
+  
 } catch (error) {
-  console.log(error);
+  
   return;
 }
 ```
@@ -307,9 +356,9 @@ var ad_account_id = 12345;
 var ad_group_id = 12345;
 try {
   var response = await pinterest.ad_groups.get(ad_account_id, ad_group_id);
-  console.log(response);
+  
 } catch (error) {
-  console.log(error);
+  
   return;
 }
 ```
@@ -328,9 +377,9 @@ var query = {
 };
 try {
   var response = await pinterest.ad_groups.getAll(ad_account_id, { query });
-  console.log(response);
+  
 } catch (error) {
-  console.log(error);
+  
   return;
 }
 ```
@@ -353,9 +402,9 @@ try {
   var response = await pinterest.ad_groups.getAnalytics(ad_account_id, {
     query,
   });
-  console.log(response);
+  
 } catch (error) {
-  console.log(error);
+  
   return;
 }
 ```
@@ -447,9 +496,9 @@ var payload = {
 };
 try {
   var response = await pinterest.ad_groups.getBidFloors(ad_account_id, payload);
-  console.log(response);
+  
 } catch (error) {
-  console.log(error);
+  
   return;
 }
 ```
@@ -474,9 +523,9 @@ try {
   var response = await pinterest.ad_groups.getTargetedAnalytics(ad_account_id, {
     query,
   });
-  console.log(response);
+  
 } catch (error) {
-  console.log(error);
+  
   return;
 }
 ```
@@ -537,14 +586,14 @@ var payload = [
 var ad_account_id = 12345;
 try {
   var response = await pinterest.ad_groups.update(ad_account_id, payload);
-  console.log(response);
+  
 } catch (error) {
-  console.log(error);
+  
   return;
 }
 ```
 
-> ### ADS
+> ### [ADS](#index)
 
 ```js
 /** Create ads */
@@ -724,7 +773,7 @@ try {
 }
 ```
 
-> ### AUDIENCE_INSIGHTS
+> ### [AUDIENCE_INSIGHTS](#index)
 
 ```js
 /** Get audience insight */
@@ -741,7 +790,7 @@ try {
 }
 ```
 
-> ### AUDIENCES
+> ### [AUDIENCES](#index)
 
 ```js
 /** Create audiences */
@@ -903,7 +952,7 @@ try {
 }
 ```
 
-> ### BOARD
+> ### [BOARD](#index)
 
 ```js
 /** Create board */
@@ -974,9 +1023,9 @@ var query = {
 };
 try {
   var response = await pinterest.boards.getAll({ query });
-  console.log(response);
+  
 } catch (error) {
-  console.log(error);
+  
   return;
 }
 ```
@@ -1062,7 +1111,7 @@ try {
 }
 ```
 
-> ### BULK
+> ### [BULK](#index)
 
 ```js
 /** Download bulk */
@@ -1414,7 +1463,7 @@ try {
 }
 ```
 
-> ### CAMPAIGNS
+> ### [CAMPAIGNS](#index)
 
 ```js
 /** Create campaign */
@@ -1562,7 +1611,7 @@ try {
 }
 ```
 
-> ### CATALOGS
+> ### [CATALOGS](#index)
 
 ```js
 /** Create catalogs feed */
@@ -2058,7 +2107,7 @@ try {
 }
 ```
 
-> ### CONVERSION_EVENTS
+> ### [CONVERSION_EVENTS](#index)
 
 ```js
 /** Send conversion events */
@@ -2121,7 +2170,7 @@ try {
 }
 ```
 
-> ### CONVERSION_TAGS
+> ### [CONVERSION_TAGS](#index)
 
 ```js
 /** Create conversion tags */
@@ -2192,7 +2241,7 @@ try {
 }
 ```
 
-> ### CUSTOMER_LISTS
+> ### [CUSTOMER_LISTS](#index)
 
 ```js
 /** Create customer lists */
@@ -2264,7 +2313,7 @@ try {
 }
 ```
 
-> ### KEYWORDS
+> ### [KEYWORDS](#index)
 
 ```js
 /** Create keyword */
@@ -2341,7 +2390,7 @@ try {
 }
 ```
 
-> ### MEDIA
+> ### [MEDIA](#index)
 
 ```js
 /** Get media */
@@ -2378,17 +2427,17 @@ try {
 }
 ```
 
-> ### OAUTH
+> ### [OAUTH](#index)
 
 ```js
 /** Create oauth access token */
-const refresh_token_payload = {
+var refresh_token_payload = {
   username: "username",
   password: "password",
   grant_type: "refresh_token",
   refresh_token: "your refresh token",
 };
-const authorization_code_payload = {
+var authorization_code_payload = {
   username: "username",
   password: "password",
   grant_type: "authorization_code",
@@ -2404,7 +2453,7 @@ try {
 }
 ```
 
-> ### ORDER_LINES
+> ### [ORDER_LINES](#index)
 
 ```js
 /** Get order lines */
@@ -2432,7 +2481,7 @@ try {
 }
 ```
 
-> ### PINS
+> ### [PINS](#index)
 
 ```js
 /** Create pin */
@@ -2514,7 +2563,7 @@ try {
 }
 ```
 
-> ### PRODUCT_GROUP_PROMOTIONS
+> ### [PRODUCT_GROUP_PROMOTIONS](#index)
 
 ```js
 /** Create product group promotions */
@@ -2552,9 +2601,9 @@ try {
     ad_account_id,
     payload
   );
-  console.log(response);
+  
 } catch (error) {
-  console.log("error", error);
+  
   return;
 }
 ```
@@ -2568,9 +2617,9 @@ try {
     ad_account_id,
     product_group_promotion_id
   );
-  console.log(response);
+  
 } catch (error) {
-  console.log("error", error);
+  
   return;
 }
 ```
@@ -2591,9 +2640,9 @@ try {
     ad_account_id,
     { query }
   );
-  console.log(response);
+  
 } catch (error) {
-  console.log("error", error);
+  
   return;
 }
 ```
@@ -2617,9 +2666,9 @@ try {
     ad_account_id,
     { query }
   );
-  console.log(response);
+  
 } catch (error) {
-  console.log("error", error);
+  
   return;
 }
 ```
@@ -2661,14 +2710,14 @@ try {
     ad_account_id,
     payload
   );
-  console.log(response);
+  
 } catch (error) {
-  console.log("error", error);
+  
   return;
 }
 ```
 
-> ### RESOURCES
+> ### [RESOURCES](#index)
 
 ```js
 /** Get resources account countries */
@@ -2677,9 +2726,9 @@ var query = {
 };
 try {
   var response = await pinterest.resources.getAdAccountCountries({ query });
-  console.log(response);
+  
 } catch (error) {
-  console.log("error", error);
+  
   return;
 }
 ```
@@ -2691,9 +2740,9 @@ try {
     report_type: String(),
   };
   var response = await pinterest.resources.getAvailableMetrics({ query });
-  console.log(response);
+  
 } catch (error) {
-  console.log("error", error);
+  
   return;
 }
 ```
@@ -2703,9 +2752,9 @@ try {
 try {
   var interest_id = 12345;
   var response = await pinterest.resources.getInterest(interest_id);
-  console.log(response);
+  
 } catch (error) {
-  console.log("error", error);
+  
   return;
 }
 ```
@@ -2717,9 +2766,9 @@ try {
     date: String(),
   };
   var response = await pinterest.resources.getMetricsReadyState({ query });
-  console.log(response);
+  
 } catch (error) {
-  console.log("error", error);
+  
   return;
 }
 ```
@@ -2737,14 +2786,14 @@ try {
   var response = await pinterest.resources.getTargetingOptions(targeting_type, {
     query,
   });
-  console.log(response);
+  
 } catch (error) {
-  console.log("error", error);
+  
   return;
 }
 ```
 
-> ### TERMS
+> ### [TERMS](#index)
 
 ```js
 /** Get related terms */
@@ -2753,9 +2802,9 @@ try {
     terms: Array(String()),
   };
   var response = await pinterest.terms.getRelated({ query });
-  console.log(response);
+  
 } catch (error) {
-  console.log("error", error);
+  
   return;
 }
 ```
@@ -2768,14 +2817,14 @@ try {
     limit: Number(),
   };
   var response = await pinterest.terms.getSuggested({ query });
-  console.log(response);
+  
 } catch (error) {
-  console.log("error", error);
+  
   return;
 }
 ```
 
-> ### TERMS_OF_SERVICE
+> ### [TERMS_OF_SERVICE](#index)
 
 ```js
 /** Get terms of service */
@@ -2786,14 +2835,14 @@ try {
     tos_type: String(),
   };
   var response = await pinterest.terms_of_service.get(ad_account_id, { query });
-  console.log(response);
+  
 } catch (error) {
-  console.log("error", error);
+  
   return;
 }
 ```
 
-> ### USER_ACCOUNT
+> ### [USER_ACCOUNT](#index)
 
 ```js
 /** Get user account */
@@ -2802,9 +2851,9 @@ var query = {
 };
 try {
   var response = await pinterest.user_account.get({ query });
-  console.log(response);
+  
 } catch (error) {
-  console.log("error", error);
+  
   return;
 }
 ```
@@ -2823,9 +2872,9 @@ try {
     ad_account_id: String(),
   };
   var response = await pinterest.user_account.getAnalytics({ query });
-  console.log(response);
+  
 } catch (error) {
-  console.log("error", error);
+  
   return;
 }
 ```
@@ -2846,9 +2895,9 @@ try {
     ad_account_id: String(),
   };
   var response = await pinterest.user_account.getTopPinsAnalytics({ query });
-  console.log(response);
+  
 } catch (error) {
-  console.log("error", error);
+  
   return;
 }
 ```
@@ -2871,9 +2920,9 @@ try {
   var response = await pinterest.user_account.getTopVideoPinsAnalytics({
     query,
   });
-  console.log(response);
+  
 } catch (error) {
-  console.log("error", error);
+  
   return;
 }
 ```

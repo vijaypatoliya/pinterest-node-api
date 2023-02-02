@@ -10,16 +10,21 @@ pinterest.setUserToken(userToken);
 
 var boardsRequest = async function () {
   /**
-   * passing parameters 
-   * -------------------
+   * DELETE BOARD SECTION
    * 
-   * board (The board id)
-   */
+   * Passing Path Parameters:
+   * ------------------------
+   * board_id: String
+   * section_id: String
+   * 
+   * */
+
   var board_id = 12345;
-  var section_id = 12345
+  var section_id = 12345;
+
   try {
     var response = await pinterest.boards.deleteSection(board_id, section_id);
-  } catch (error) {
+} catch (error) {
     return;
   }
 };

@@ -6,14 +6,15 @@ var pinterest = require("../../../lib")(userToken);
 
 var pinsRequest = async function () {
   /**
-   * GET SECTIONS
+   * UPDATE CAMPAIGN
    * 
    * Passing Path Parameters:
    * ------------------------
+   * ad_account_id: String
    * 
-   * ad_account_id
    * */
   var ad_account_id = 12345;
+
   var payload = [
     {
       id: "549755885175",
@@ -39,9 +40,10 @@ var pinsRequest = async function () {
       is_automated_campaign: true,
     },
   ];
+
   try {
     var response = await pinterest.campaigns.update(ad_account_id, payload);
-  } catch (error) {
+} catch (error) {
     return;
   }
 };

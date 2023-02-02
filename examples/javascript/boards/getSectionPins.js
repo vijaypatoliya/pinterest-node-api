@@ -6,12 +6,12 @@ var pinterest = require("../../../../lib")(userToken);
 
 var boardsRequest = async function () {
   /**
-   * GET BOARD SECTION PIN
+   * GET BOARD SECTION PINS
    * 
    * Passing Path Parameters:
    * ------------------------
-   * board_id: required(string())
-   * section_id: required(string())
+   * board_id: String
+   * section_id: String
    * */
   var board_id = 12345;
   var section_id = 12345;
@@ -21,7 +21,7 @@ var boardsRequest = async function () {
   }
   try {
     var response = await pinterest.boards.getSectionPins(board_id, section_id, { query });
-  } catch (error) {
+} catch (error) {
     return;
   }
 };

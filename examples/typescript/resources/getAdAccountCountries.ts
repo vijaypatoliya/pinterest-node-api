@@ -9,14 +9,22 @@ pinterest.setUserToken(userToken);
 
 
 var usersRequest = async function () {
+  /**
+   * GET AD ACCOUNT COUNTRIES
+   * 
+   * Passing Path Parameters:
+   * ------------------------
+   * ad_account_id: String
+   * 
+   * */
+
   var query = {
     report_type: String()
   }
+
   try {
     var response = await pinterest.resources.getAdAccountCountries({ query });
-    console.log(response)
-  } catch (error) {
-    console.log('error', error)
+   } catch (error) {
     return;
   }
 };

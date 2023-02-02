@@ -10,12 +10,13 @@ var boardsRequest = async function () {
    * 
    * Passing Path Parameters:
    * ------------------------
-   * board_id: required(string())
+   * board_id: String
+   * 
    * */
   var board_id = 12345;
   try {
     var response = await pinterest.boards.delete(board_id);
-  } catch (error) {
+} catch (error) {
     return;
   }
 };

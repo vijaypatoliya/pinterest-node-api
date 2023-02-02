@@ -9,10 +9,21 @@ pinterest.setUserToken(userToken);
 
 
 var pinsRequest = async function () {
+  /**
+   * UPDATE PRODUCT GROUP
+   * 
+   * Passing Path Parameters:
+   * ------------------------
+   * product_group_id
+   * 
+   * */
+
   var product_group_id = 12345;
+
   var query = {
     ad_account_id: String()
   }
+
   var payload = {
     name: "string",
     description: "string",
@@ -29,13 +40,14 @@ var pinsRequest = async function () {
       ],
     },
   };
+
   try {
     var response = await pinterest.catalogs.updateProductGroup(
       product_group_id,
       { query },
       payload
     );
-  } catch (error) {
+} catch (error) {
     return;
   }
 };

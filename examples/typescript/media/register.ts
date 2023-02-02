@@ -9,12 +9,18 @@ pinterest.setUserToken(userToken);
 
 
 var pinsRequest = async function () {
+  /**
+   * REGISTER MEDIA
+   *
+   * */
+
   var payload = {
     media_type: String(),
   };
+
   try {
     var response = await pinterest.media.register(payload);
-  } catch (error) {
+} catch (error) {
     return;
   }
 };

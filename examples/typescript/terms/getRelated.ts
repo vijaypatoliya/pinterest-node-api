@@ -9,15 +9,22 @@ pinterest.setUserToken(userToken);
 
 
 var usersRequest = async function () {
+  /**
+   * GET RELATED TERMS
+   *
+   * Passing Path Parameters:
+   * ------------------------
+   * targeting_type
+   * 
+   * */
+
+  var query = {
+    terms: Array(String())
+  }
 
   try {
-    var query = {
-      terms: Array(String())
-    }
     var response = await pinterest.terms.getRelated({ query });
-    console.log(response)
-  } catch (error) {
-    console.log('error', error)
+   } catch (error) {
     return;
   }
 };

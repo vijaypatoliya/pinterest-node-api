@@ -6,7 +6,7 @@ var pinterest = require("../../../lib")(userToken);
 
 var pinsRequest = async function () {
   /**
-   * GET SECTIONS
+   * UPDATE FEED
    * 
    * Passing Path Parameters:
    * ------------------------
@@ -14,6 +14,11 @@ var pinsRequest = async function () {
    * feed_id
    * */
   var feed_id = 12345;
+
+  var query = {
+    ad_account_id: String()
+  }
+
   var payload = {
     default_availability: "IN_STOCK",
     default_currency: "USD",
@@ -30,12 +35,10 @@ var pinsRequest = async function () {
     },
     status: "ACTIVE",
   };
-  var query = {
-    ad_account_id: String()
-  }
+
   try {
     var response = await pinterest.catalogs.updateFeed(feed_id, { query }, payload);
-  } catch (error) {
+} catch (error) {
     return;
   }
 };

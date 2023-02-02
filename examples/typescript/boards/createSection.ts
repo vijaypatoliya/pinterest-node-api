@@ -9,19 +9,27 @@ pinterest.setUserToken(userToken);
 
 
 var boardsRequest = async function () {
+  /**
+   * CREATE BOARD SECTION
+   * 
+   * Passing Path Parameters:
+   * ------------------------
+   * board_id: String
+   * 
+   * */
+
+  var board_id = 12345;
 
   var payload = {
     name: String(),
   };
-
-  var board_id = 12345;
 
   try {
     var response = await pinterest.boards.createSection(
       board_id,
       payload
     );
-  } catch (error) {
+} catch (error) {
     return;
   }
 };

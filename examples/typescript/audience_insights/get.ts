@@ -9,14 +9,24 @@ pinterest.setUserToken(userToken);
 
 
 var pinsRequest = async function () {
-  try {
+  /**
+   * GET AUDIENCE INSIGHTS
+   *
+   * Passing Path Parameters:
+   * ad_account_id: String
+   *
+   * */
+  var ad_account_id = 12345;
 
-    var ad_account_id = 12345
-    var query = {
-      audience_insight_type: String()
-    }
-    var response = await pinterest.audience_insights.get(ad_account_id, { query });
-  } catch (error) {
+  var query = {
+    audience_insight_type: String(),
+  };
+
+  try {
+    var response = await pinterest.audience_insights.get(ad_account_id, {
+      query,
+    });
+} catch (error) {
     return;
   }
 };

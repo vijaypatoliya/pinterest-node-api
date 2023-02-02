@@ -18,14 +18,13 @@ describe("boards.getAll()", function () {
       };
       var response = await pinterest.boards.getAll({ query }).catch((error) => {
         if (error) {
-          console.log("error ", error);
+          
           return;
         }
       });
-      console.log("response", response);
+      
       expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
       expect(response).to.be.a(undefined);
     }
   });
@@ -41,14 +40,13 @@ describe("boards.create()", function () {
       };
       var response = await pinterest.boards.create(payload).catch((error) => {
         if (error) {
-          console.log("error ", error);
+          
           return;
         }
       });
-      console.log("response", response);
+      
       expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
       expect(response).to.be.a(undefined);
     }
   });
@@ -60,14 +58,13 @@ describe("boards.get()", function () {
       var board_id = 12345;
       var response = await pinterest.boards.get(board_id).catch((error) => {
         if (error) {
-          console.log("error ", error);
+          
           return;
         }
       });
-      console.log("response", response);
+      
       expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
       expect(response).to.be.a(undefined);
     }
   });
@@ -86,14 +83,13 @@ describe("boards.update()", function () {
         .update(board_id, payload)
         .catch((error) => {
           if (error) {
-            console.log("error ", error);
+            
             return;
           }
         });
-      console.log("response", response);
+      
       expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
       expect(response).to.be.a(undefined);
     }
   });
@@ -105,14 +101,13 @@ describe("boards.delete()", function () {
       var board_id = 12345;
       var response = await pinterest.boards.delete(board_id).catch((error) => {
         if (error) {
-          console.log("error ", error);
+          
           return;
         }
       });
-      console.log("response", response);
+      
       expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
       expect(response).to.be.a(undefined);
     }
   });
@@ -130,14 +125,13 @@ describe("boards.getSections()", function () {
         .getSections(board_id, { query })
         .catch((error) => {
           if (error) {
-            console.log("error ", error);
+            
             return;
           }
         });
-      console.log("response", response);
+      
       expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
       expect(response).to.be.a(undefined);
     }
   });
@@ -156,14 +150,13 @@ describe("boards.createSection()", function () {
         .createSection(board_id, payload)
         .catch((error) => {
           if (error) {
-            console.log("error ", error);
+            
             return;
           }
         });
-      console.log("response", response);
+      
       expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
       expect(response).to.be.a(undefined);
     }
   });
@@ -183,14 +176,13 @@ describe("boards.updateSection()", function () {
         .updateSection(board_id, section_id, payload)
         .catch((error) => {
           if (error) {
-            console.log("error ", error);
+            
             return;
           }
         });
-      console.log("response", response);
+      
       expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
       expect(response).to.be.a(undefined);
     }
   });
@@ -205,14 +197,13 @@ describe("boards.deleteSection()", function () {
         .deleteSection(board_id, section_id)
         .catch((error) => {
           if (error) {
-            console.log("error ", error);
+            
             return;
           }
         });
-      console.log("response", response);
+      
       expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
       expect(response).to.be.a(undefined);
     }
   });
@@ -231,14 +222,13 @@ describe("boards.getSectionPins()", function () {
         .getSectionPins(board_id, section_id, { query })
         .catch((error) => {
           if (error) {
-            console.log("error ", error);
+            
             return;
           }
         });
-      console.log("response", response);
+      
       expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
       expect(response).to.be.a(undefined);
     }
   });
@@ -256,14 +246,13 @@ describe("boards.getPins()", function () {
         .getPins(board_id, { query })
         .catch((error) => {
           if (error) {
-            console.log("error ", error);
+            
             return;
           }
         });
-      console.log("response", response);
+      
       expect(response).to.be.a("object");
-    } catch (error) {
-      console.log("error ", error);
+ } catch (error) {
       expect(response).to.be.a(undefined);
     }
   });

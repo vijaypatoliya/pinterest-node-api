@@ -6,15 +6,17 @@ var pinterest = require("../../../lib")(userToken);
 
 var pinsRequest = async function () {
   /**
-   * GET SECTIONS
-   * 
+   * REGISTER MEDIA
+   *
    * */
+
   var payload = {
     media_type: String(),
   };
+
   try {
     var response = await pinterest.media.register(payload);
-  } catch (error) {
+} catch (error) {
     return;
   }
 };

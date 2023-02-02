@@ -9,9 +9,10 @@ var pinsRequest = async function () {
    * UPDATE AD GROUP
    *
    * Passing Path Parameters:
-   * - ad_account_id: required(string())
+   * ad_account_id: String
    *
    * */
+  var ad_account_id = 12345;
   var payload = [
     {
       name: "Ad Group For Pin: 687195905986",
@@ -63,12 +64,9 @@ var pinsRequest = async function () {
       id: "2680060704746",
     },
   ];
-  var ad_account_id = 12345;
   try {
     var response = await pinterest.ad_groups.update(ad_account_id, payload);
-    console.log(response);
-  } catch (error) {
-    console.log(error);
+   } catch (error) {
     return;
   }
 };

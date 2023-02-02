@@ -9,7 +9,17 @@ pinterest.setUserToken(userToken);
 
 
 var usersRequest = async function () {
+  /**
+   * UPDATE PRODUCT GROUP PROMOTION
+   * 
+   * Passing Path Parameters:
+   * ------------------------
+   * ad_account_id: String
+   * 
+   * */
+
   var ad_account_id = 12345;
+
   var payload = {
     product_group_promotion: [
       {
@@ -39,14 +49,13 @@ var usersRequest = async function () {
     ],
     ad_group_id: "26823439592705",
   };
+
   try {
     var response = await pinterest.product_group_promotions.update(
       ad_account_id,
       payload
     );
-    console.log(response);
-  } catch (error) {
-    console.log("error", error);
+   } catch (error) {
     return;
   }
 };

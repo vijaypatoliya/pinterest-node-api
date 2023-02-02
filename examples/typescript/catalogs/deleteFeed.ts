@@ -9,14 +9,24 @@ pinterest.setUserToken(userToken);
 
 
 var pinsRequest = async function () {
-  
+  /**
+   * DELETE FEED
+   * 
+   * Passing Path Parameters:
+   * ------------------------
+   * 
+   * feed_id
+   * */
+
   var feed_id = 12345;
+
   var query = {
     ad_account_id: String()
   }
+
   try {
     var response = await pinterest.catalogs.deleteFeed(feed_id, { query });
-  } catch (error) {
+} catch (error) {
     return;
   }
 };

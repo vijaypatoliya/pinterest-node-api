@@ -9,6 +9,14 @@ pinterest.setUserToken(userToken);
 
 
 var pinsRequest = async function () {
+  /**
+   * GET ALL AD GROUP
+   *
+   * Passing Path Parameters:
+   * ad_account_id: String
+   * ad_group_id: String
+   *
+   * */
   var ad_account_id = 12345;
   var query = {
     campaign_ids: Array(String()),
@@ -21,9 +29,7 @@ var pinsRequest = async function () {
   }
   try {
     var response = await pinterest.ad_groups.getAll(ad_account_id, { query });
-    console.log(response);
-  } catch (error) {
-    console.log(error);
+   } catch (error) {
     return;
   }
 };

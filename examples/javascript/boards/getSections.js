@@ -10,7 +10,7 @@ var boardsRequest = async function () {
    * 
    * Passing Path Parameters:
    * ------------------------
-   * board_id: required(string())
+   * board_id: String
    * */
   var board_id = 12345;
   var query = {
@@ -19,7 +19,7 @@ var boardsRequest = async function () {
   }
   try {
     var response = await pinterest.boards.getSections(board_id, { query });
-  } catch (error) {
+} catch (error) {
     return;
   }
 };

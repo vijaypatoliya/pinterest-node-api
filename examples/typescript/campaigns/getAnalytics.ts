@@ -9,8 +9,17 @@ pinterest.setUserToken(userToken);
 
 
 var pinsRequest = async function () {
+  /**
+   * GET CAMPAIGN ANALYTICS
+   * 
+   * Passing Path Parameters:
+   * ------------------------
+   * ad_account_id: String
+
+   * */
 
   var ad_account_id = 12345;
+
   var query = {
     start_date: String(Date()),
     end_date: String(Date()),
@@ -22,9 +31,10 @@ var pinsRequest = async function () {
     view_window_days: Number(),
     conversion_report_time: String()
   }
+
   try {
     var response = await pinterest.campaigns.getAnalytics(ad_account_id, { query });
-  } catch (error) {
+} catch (error) {
     return;
   }
 };

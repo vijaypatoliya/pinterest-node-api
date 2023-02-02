@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 var userToken = process.env.PINTEREST_USER_TOKEN;
 
@@ -9,14 +9,22 @@ pinterest.setUserToken(userToken);
 
 
 var usersRequest = async function () {
+  /**
+   * GET METRICS READY STATE
+   *
+   * Passing Path Parameters:
+   * ------------------------
+   * interest_id
+   *
+   * */
+
+  var query = {
+    date: String(),
+  };
+
   try {
-    var query = {
-      date: String()
-    }
     var response = await pinterest.resources.getMetricsReadyState({ query });
-    console.log(response);
-  } catch (error) {
-    console.log("error", error);
+   } catch (error) {
     return;
   }
 };

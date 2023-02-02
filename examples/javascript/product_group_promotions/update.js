@@ -6,14 +6,16 @@ var pinterest = require("../../../lib")(userToken);
 
 var usersRequest = async function () {
   /**
-   * GET SECTIONS
+   * UPDATE PRODUCT GROUP PROMOTION
    * 
    * Passing Path Parameters:
    * ------------------------
+   * ad_account_id: String
    * 
-   * ad_account_id
    * */
+
   var ad_account_id = 12345;
+
   var payload = {
     product_group_promotion: [
       {
@@ -43,14 +45,13 @@ var usersRequest = async function () {
     ],
     ad_group_id: "26823439592705",
   };
+
   try {
     var response = await pinterest.product_group_promotions.update(
       ad_account_id,
       payload
     );
-    console.log(response);
-  } catch (error) {
-    console.log("error", error);
+   } catch (error) {
     return;
   }
 };

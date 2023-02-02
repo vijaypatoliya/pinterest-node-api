@@ -6,14 +6,16 @@ var pinterest = require('../../../lib')(userToken);
 
 var pinsRequest = async function () {
   /**
-   * GET SECTIONS
+   * GET ALL CAMPAIGNS
    * 
    * Passing Path Parameters:
    * ------------------------
-   * 
-   * ad_account_id
+   * ad_account_id: String
+   *
    * */
+
   var ad_account_id = 12345;
+
   var query = {
     campaign_ids: Array(String()),
     entity_statuses: Array(String()),
@@ -21,9 +23,10 @@ var pinsRequest = async function () {
     order: String(),
     bookmark: String(),
   }
+
   try {
     var response = await pinterest.campaigns.getAll(ad_account_id, { query });
-  } catch (error) {
+} catch (error) {
     return;
   }
 };
