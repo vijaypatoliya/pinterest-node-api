@@ -1,5 +1,8 @@
 /node_modules/
 package-lock.json
 
+# Avoid environment variables file
+.env
+
 # Avoid pushing WebStorm configuration
 .idea
