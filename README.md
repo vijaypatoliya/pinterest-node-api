@@ -58,9 +58,9 @@ npm run test.mocha
 export DEBUG=pinterest:*
 ```
 
-```
-Originally by [Vijay Patoliya](https://github.com/vijaypatoliya) (osi.vijay@gmail.com).
-```
+
+Originally by osi.vijay@gmail.com : [Vijay Patoliya](https://github.com/vijaypatoliya)
+
 
 ## Examples
 ---
@@ -2432,18 +2432,19 @@ try {
 ```js
 /** Create oauth access token */
 var refresh_token_payload = {
-  username: "username",
-  password: "password",
   grant_type: "refresh_token",
   refresh_token: "your refresh token",
 };
+
 var authorization_code_payload = {
-  username: "username",
-  password: "password",
   grant_type: "authorization_code",
   code: "code",
   redirect_uri: "redirect_uri",
 };
+
+/** Set pinterest clientId and clientSecret */
+pinterest.setApiKey('clientId', 'clientSecret');
+
 try {
   var response = await pinterest.oauth.createAccessToken(
     authorization_code_payload || refresh_token_payload

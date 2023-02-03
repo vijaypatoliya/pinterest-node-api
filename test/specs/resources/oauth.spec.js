@@ -11,15 +11,12 @@ var pinterest = require("../../../lib")(userToken);
 describe("oauth.createAccessToken()", function () {
   it("It should create access token", async function () {
     try {
+      pinterest.setApiKey('clientId', 'clientSecret');
       var refresh_token_payload = {
-        username: "username",
-        password: "password",
         grant_type: "refresh_token",
         refresh_token: "your refresh token",
       };
       var authorization_code_payload = {
-        username: "username",
-        password: "password",
         grant_type: "authorization_code",
         code: "code",
         redirect_uri: "redirect_uri",

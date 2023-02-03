@@ -10,27 +10,32 @@ pinterest.setUserToken(userToken);
 
 var pinsRequest = async function () {
   /**
-   * CREATE ACCESS TOKEN
-   * 
-   * */
+ * CREATE ACCESS TOKEN
+ *
+ * */
+
+  var clientId = process.env.PINTEREST_CLIENT_ID;
+  var clientSecret = process.env.PINTREST_CLIENT_SECRET;
+
   var refresh_token_payload = {
-    username: 'username',
-    password: 'password',
-    grant_type: 'refresh_token',
-    refresh_token: 'your refresh token'
-  }
+    grant_type: "refresh_token",
+    refresh_token: "refresh_token",
+  };
 
   var authorization_code_payload = {
-    username: 'username',
-    password: 'password',
-    grant_type: 'authorization_code',
-    code: 'code',
-    redirect_uri: 'redirect_uri'
-  }
+    grant_type: "authorization_code",
+    code: "code",
+    redirect_uri: "redirect_uri",
+  };
+
+  /** Set pinterest clientId and clientSecret */
+  pinterest.setApiKey(clientId, clientSecret);
 
   try {
-    var response = await pinterest.oauth.createAccessToken(authorization_code_payload || refresh_token_payload);
-} catch (error) {
+    var response = await pinterest.oauth.createAccessToken(
+      refresh_token_payload || authorization_code_payload
+    );
+  } catch (error) {
     return;
   }
 };
