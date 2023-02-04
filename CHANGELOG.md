@@ -1,4 +1,7 @@
-0.0.4 January 23, 2023
+0.0.5 February 4, 2023
+  - Fix oauth methods
+
+0.0.4 February 02, 2023
   - Initial release with v5 support
 
 0.0.3 January 01, 2019
