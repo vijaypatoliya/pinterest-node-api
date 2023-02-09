@@ -1,3 +1,6 @@
+0.0.7 February 9, 2023
+  - Update documentation
+
 0.0.6 February 9, 2023
   - Update documentation
 

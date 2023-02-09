@@ -26,8 +26,7 @@ You can find [examples of JavaScript And TypeScript](https://github.com/vijaypat
 Using the Pinterest API wrapper for Node.js is really simple.
 Given that you already have a Node.js project with an NPM setup just follow these steps:
 
-**Install the dependency**
-
+## Installation
 ```bash
 npm install pinterest-node-api --save
 ```
@@ -39,7 +38,7 @@ npm install pinterest-node-api --save
 
 
 ## Do you need an expert?
-Are you finding a developer or team for your world-class enterprise product development? If yes, please send email to. Submit your project request here. Originally by Vijay Patoliya(mailto:osi.vijay@gmail.com).
+Are you finding a developer or team for your world-class enterprise product development? If yes, please send email to. Submit your project request [here](mailto:osi.vijay@gmail.com). Originally by [Vijay Patoliya](https://github.com/vijaypatoliya).
 
 
 ## Get Access Token From Using Below Link and Overview Details
@@ -70,7 +69,6 @@ Originally by osi.vijay@gmail.com : [Vijay Patoliya](https://github.com/vijaypat
 
 ## Examples
 
-### Index
 
 1) [AD_ACCOUNTS](#ad_accounts)
 
