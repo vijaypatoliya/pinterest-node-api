@@ -69,7 +69,6 @@ Originally by osi.vijay@gmail.com : [Vijay Patoliya](https://github.com/vijaypat
 
 
 ## Examples
----
 
 ### Index
 
