@@ -2,16 +2,24 @@
 
 [![Build Status](https://travis-ci.org/vijaypatoliya/pinterest-node-api.svg?branch=master)](https://travis-ci.org/vijaypatoliya/pinterest-node-api) [![Stackoverflow Thread](https://img.shields.io/badge/stackoverflow-pinterest--node--api-yellowgreen.svg)](https://stackoverflow.com/search?q=nodejs-pinterest-node-api)
 
-This API supported Pinterest's standard REST API that accepts/returns JSON requests. Here is the [API reference] (https://developers.pinterest.com/docs/api/overview/)
+This API supported Pinterest's standard REST API that accepts/returns JSON requests. Here is the [API reference](https://developers.pinterest.com/docs/api/v5/)
 
 You can find [examples of JavaScript And TypeScript](https://github.com/vijaypatoliya/pinterest-node-api/tree/master/examples). This will help you with faster implementation of Pinterest APIs.
-It supports ECMAScript 5, ECMAScript 6, ECMAScript 8, TypeScript, async-await, Promises, and Callback!!!
 
-It also supports AWS Lambda like a serverless cloud function call.
+
+##### It does supports EcmaScript 5, EcmaScript 6,  EcmaScript 8, TypeScript, async-await, Promises, Callback!!!
+
+##### It does also supports for AWS Lambda like serverless cloud function call.
 
 ##### It supports pure JSON response.
 
 ##### All methods support Promise and Callback both.
+
+##### Please Feel free to create issue for any help!
+
+##### All developers/contributors are requested to open Pull Request/Merge Request on develop branch. 
+
+##### Please make sure Test Cases be passed.  
 
 ## Get started
 
@@ -20,9 +28,19 @@ Given that you already have a Node.js project with an NPM setup just follow thes
 
 **Install the dependency**
 
+```bash
+npm install pinterest-node-api --save
 ```
-npm install --save pinterest-node-api
-```
+
+
+## Pull Request
+- Contributors can send their Pull Request to `develop` branch.
+- Kindly validate test cases & linting before opening new PR.
+
+
+## Do you need an expert?
+Are you finding a developer or team for your world-class enterprise product development? If yes, please send email to. Submit your project request here. Originally by Vijay Patoliya(mailto:osi.vijay@gmail.com).
+
 
 ## Get Access Token From Using Below Link and Overview Details
 
@@ -46,26 +64,13 @@ var pinterest = new PinterestAPI();
 pinterest.setUserToken("YOUR_ACCESS_TOKEN");
 ```
 
-## Test Cases
-
-```bash
-npm run test.mocha
-```
-
-## Debugging
-
-```bash
-export DEBUG=pinterest:*
-```
-
 
 Originally by osi.vijay@gmail.com : [Vijay Patoliya](https://github.com/vijaypatoliya)
 
 
 ## Examples
----
 
-## Index
+### Index
 
 1) [AD_ACCOUNTS](#ad_accounts)
 
