@@ -6,8 +6,7 @@ This API supported Pinterest's standard REST API that accepts/returns JSON reque
 
 You can find [examples of JavaScript And TypeScript](https://github.com/vijaypatoliya/pinterest-node-api/tree/master/examples). This will help you with faster implementation of Pinterest APIs.
 
-
-##### It does supports EcmaScript 5, EcmaScript 6,  EcmaScript 8, TypeScript, async-await, Promises, Callback!!!
+##### It does supports EcmaScript 5, EcmaScript 6, EcmaScript 8, TypeScript, async-await, Promises, Callback!!!
 
 ##### It does also supports for AWS Lambda like serverless cloud function call.
 
@@ -17,9 +16,9 @@ You can find [examples of JavaScript And TypeScript](https://github.com/vijaypat
 
 ##### Please Feel free to create issue for any help!
 
-##### All developers/contributors are requested to open Pull Request/Merge Request on develop branch. 
+##### All developers/contributors are requested to open Pull Request/Merge Request on develop branch.
 
-##### Please make sure Test Cases be passed.  
+##### Please make sure Test Cases be passed.
 
 ## Get started
 
@@ -27,19 +26,19 @@ Using the Pinterest API wrapper for Node.js is really simple.
 Given that you already have a Node.js project with an NPM setup just follow these steps:
 
 ## Installation
+
 ```bash
 npm install pinterest-node-api --save
 ```
 
-
 ## Pull Request
+
 - Contributors can send their Pull Request to `develop` branch.
 - Kindly validate test cases & linting before opening new PR.
 
-
 ## Do you need an expert?
-Are you finding a developer or team for your world-class enterprise product development? If yes, please send email to. Submit your project request [here](mailto:osi.vijay@gmail.com). Originally by [Vijay Patoliya](https://github.com/vijaypatoliya).
 
+Are you finding a developer or team for your world-class enterprise product development? If yes, please send email to. Submit your project request [here](mailto:osi.vijay@gmail.com). Originally by [Vijay Patoliya](https://github.com/vijaypatoliya).
 
 ## Get Access Token From Using Below Link and Overview Details
 
@@ -63,9 +62,7 @@ var pinterest = new PinterestAPI();
 pinterest.setUserToken("YOUR_ACCESS_TOKEN");
 ```
 
-
 Originally by osi.vijay@gmail.com : [Vijay Patoliya](https://github.com/vijaypatoliya)
-
 
 ## Examples
 
@@ -128,9 +125,7 @@ var payload = {
 
 try {
   var response = await pinterest.ad_accounts.create(payload);
-  
 } catch (error) {
-  
   return;
 }
 ```
@@ -168,9 +163,7 @@ try {
     ad_account_id,
     payload
   );
-  
 } catch (error) {
-  
   return;
 }
 ```
@@ -181,9 +174,7 @@ try {
 var ad_account_id = 12345;
 try {
   var response = await pinterest.ad_accounts.get(ad_account_id);
-  
 } catch (error) {
-  
   return;
 }
 ```
@@ -198,7 +189,6 @@ var query = {
 };
 try {
   var response = await pinterest.ad_accounts.getAll({ query });
-  
 } catch (error) {
   return;
 }
@@ -221,7 +211,6 @@ try {
   var response = await pinterest.ad_accounts.getAnalytics(ad_account_id, {
     query,
   });
-  
 } catch (error) {
   return;
 }
@@ -236,9 +225,7 @@ try {
   var response = await pinterest.ad_accounts.getReport(ad_account_id, {
     query,
   });
-  
 } catch (error) {
-  
   return;
 }
 ```
@@ -264,9 +251,7 @@ try {
     ad_account_id,
     { query }
   );
-  
 } catch (error) {
-  
   return;
 }
 ```
@@ -345,9 +330,7 @@ var payload = [
 var ad_account_id = 12345;
 try {
   var response = await pinterest.ad_groups.create(ad_account_id, payload);
-  
 } catch (error) {
-  
   return;
 }
 ```
@@ -359,9 +342,7 @@ var ad_account_id = 12345;
 var ad_group_id = 12345;
 try {
   var response = await pinterest.ad_groups.get(ad_account_id, ad_group_id);
-  
 } catch (error) {
-  
   return;
 }
 ```
@@ -380,9 +361,7 @@ var query = {
 };
 try {
   var response = await pinterest.ad_groups.getAll(ad_account_id, { query });
-  
 } catch (error) {
-  
   return;
 }
 ```
@@ -405,9 +384,7 @@ try {
   var response = await pinterest.ad_groups.getAnalytics(ad_account_id, {
     query,
   });
-  
 } catch (error) {
-  
   return;
 }
 ```
@@ -499,9 +476,7 @@ var payload = {
 };
 try {
   var response = await pinterest.ad_groups.getBidFloors(ad_account_id, payload);
-  
 } catch (error) {
-  
   return;
 }
 ```
@@ -526,9 +501,7 @@ try {
   var response = await pinterest.ad_groups.getTargetedAnalytics(ad_account_id, {
     query,
   });
-  
 } catch (error) {
-  
   return;
 }
 ```
@@ -589,9 +562,7 @@ var payload = [
 var ad_account_id = 12345;
 try {
   var response = await pinterest.ad_groups.update(ad_account_id, payload);
-  
 } catch (error) {
-  
   return;
 }
 ```
@@ -1026,9 +997,7 @@ var query = {
 };
 try {
   var response = await pinterest.boards.getAll({ query });
-  
 } catch (error) {
-  
   return;
 }
 ```
@@ -2433,20 +2402,30 @@ try {
 > ### [OAUTH](#index)
 
 ```js
+var pinterest = require("pinterest-node-api")();
+
 /** Create oauth access token */
 var refresh_token_payload = {
   grant_type: "refresh_token",
-  refresh_token: "your refresh token",
+  refresh_token: "your app refresh token",
 };
+
+/**
+ * code: Call below https request into browser so you would got code into redirect url
+ *
+ * fetch(
+ * https://www.pinterest.com/oauth/?client_id={YOUR_CLIENT_ID}&redirect_uri={YOUR_REDIRECT_URI}&response_type=code&scope=boards:read,pins:read&state={YOUR_OPTIONAL_STRING})
+ *
+ */
 
 var authorization_code_payload = {
   grant_type: "authorization_code",
-  code: "code",
-  redirect_uri: "redirect_uri",
+  code: "code would got from https request call",
+  redirect_uri: "Your app redirect uri",
 };
 
 /** Set pinterest clientId and clientSecret */
-pinterest.setApiKey('clientId', 'clientSecret');
+pinterest.setApiKey("clientId", "clientSecret");
 
 try {
   var response = await pinterest.oauth.createAccessToken(
@@ -2605,9 +2584,7 @@ try {
     ad_account_id,
     payload
   );
-  
 } catch (error) {
-  
   return;
 }
 ```
@@ -2621,9 +2598,7 @@ try {
     ad_account_id,
     product_group_promotion_id
   );
-  
 } catch (error) {
-  
   return;
 }
 ```
@@ -2644,9 +2619,7 @@ try {
     ad_account_id,
     { query }
   );
-  
 } catch (error) {
-  
   return;
 }
 ```
@@ -2670,9 +2643,7 @@ try {
     ad_account_id,
     { query }
   );
-  
 } catch (error) {
-  
   return;
 }
 ```
@@ -2714,9 +2685,7 @@ try {
     ad_account_id,
     payload
   );
-  
 } catch (error) {
-  
   return;
 }
 ```
@@ -2730,9 +2699,7 @@ var query = {
 };
 try {
   var response = await pinterest.resources.getAdAccountCountries({ query });
-  
 } catch (error) {
-  
   return;
 }
 ```
@@ -2744,9 +2711,7 @@ try {
     report_type: String(),
   };
   var response = await pinterest.resources.getAvailableMetrics({ query });
-  
 } catch (error) {
-  
   return;
 }
 ```
@@ -2756,9 +2721,7 @@ try {
 try {
   var interest_id = 12345;
   var response = await pinterest.resources.getInterest(interest_id);
-  
 } catch (error) {
-  
   return;
 }
 ```
@@ -2770,9 +2733,7 @@ try {
     date: String(),
   };
   var response = await pinterest.resources.getMetricsReadyState({ query });
-  
 } catch (error) {
-  
   return;
 }
 ```
@@ -2790,9 +2751,7 @@ try {
   var response = await pinterest.resources.getTargetingOptions(targeting_type, {
     query,
   });
-  
 } catch (error) {
-  
   return;
 }
 ```
@@ -2806,9 +2765,7 @@ try {
     terms: Array(String()),
   };
   var response = await pinterest.terms.getRelated({ query });
-  
 } catch (error) {
-  
   return;
 }
 ```
@@ -2821,9 +2778,7 @@ try {
     limit: Number(),
   };
   var response = await pinterest.terms.getSuggested({ query });
-  
 } catch (error) {
-  
   return;
 }
 ```
@@ -2839,9 +2794,7 @@ try {
     tos_type: String(),
   };
   var response = await pinterest.terms_of_service.get(ad_account_id, { query });
-  
 } catch (error) {
-  
   return;
 }
 ```
@@ -2855,9 +2808,7 @@ var query = {
 };
 try {
   var response = await pinterest.user_account.get({ query });
-  
 } catch (error) {
-  
   return;
 }
 ```
@@ -2876,9 +2827,7 @@ try {
     ad_account_id: String(),
   };
   var response = await pinterest.user_account.getAnalytics({ query });
-  
 } catch (error) {
-  
   return;
 }
 ```
@@ -2899,9 +2848,7 @@ try {
     ad_account_id: String(),
   };
   var response = await pinterest.user_account.getTopPinsAnalytics({ query });
-  
 } catch (error) {
-  
   return;
 }
 ```
@@ -2924,9 +2871,7 @@ try {
   var response = await pinterest.user_account.getTopVideoPinsAnalytics({
     query,
   });
-  
 } catch (error) {
-  
   return;
 }
 ```
