@@ -8,7 +8,7 @@ var expect = chai.expect;
 
 var pinterest = require("../../../lib")(userToken);
 
-describe("order_lines.getAll()", function () {
+describe("order_lines.list()", function () {
   it("It should get all", async function () {
     try {
       var ad_account_id = 12345;
@@ -18,7 +18,7 @@ describe("order_lines.getAll()", function () {
         bookmark: String(),
       };
       var response = await pinterest.order_lines
-        .getAll(ad_account_id, { query })
+        .list(ad_account_id, { query })
         .catch((error) => {
           if (error) {
             

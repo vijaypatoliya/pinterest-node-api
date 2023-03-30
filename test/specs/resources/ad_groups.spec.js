@@ -41,7 +41,7 @@ describe("ad_groups.getTargetedAnalytics()", function () {
   });
 });
 
-describe("ad_groups.getAll()", function () {
+describe("ad_groups.list()", function () {
   it("It should get all", async function () {
     try {
       var ad_account_id = 12345;
@@ -55,7 +55,7 @@ describe("ad_groups.getAll()", function () {
         translate_interests_to_names: Boolean(),
       };
       var response = await pinterest.ad_groups
-        .getAll(ad_account_id, { query })
+        .list(ad_account_id, { query })
         .catch((error) => {
           if (error) {
             

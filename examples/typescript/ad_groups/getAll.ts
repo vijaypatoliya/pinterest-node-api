@@ -28,7 +28,7 @@ var pinsRequest = async function () {
     translate_interests_to_names: Boolean()
   }
   try {
-    var response = await pinterest.ad_groups.getAll(ad_account_id, { query });
+    var response = await pinterest.ad_groups.list(ad_account_id, { query });
    } catch (error) {
     return;
   }

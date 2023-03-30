@@ -34,8 +34,8 @@ describe("customer_list.create()", function () {
   });
 });
 
-describe("customer_list.getAll()", function () {
-  it("It should getAll", async function () {
+describe("customer_list.list()", function () {
+  it("It should list", async function () {
     try {
       var ad_account_id = 12345;
       var query = {
@@ -44,7 +44,7 @@ describe("customer_list.getAll()", function () {
         bookmark: String(),
       };
       var response = await pinterest.customer_lists
-        .getAll(ad_account_id, { query })
+        .list(ad_account_id, { query })
         .catch((error) => {
           if (error) {
             

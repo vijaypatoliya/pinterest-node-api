@@ -1,6 +1,6 @@
 {
   "name": "pinterest-node-api",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "pinterest v5 api wrapper",
   "keywords": [
     "pinterest",
