@@ -8,15 +8,15 @@ var expect = chai.expect;
 
 var pinterest = require("../../../lib")(userToken);
 
-describe("conversion_tags.getAll()", function () {
-  it("It should getAll", async function () {
+describe("conversion_tags.list()", function () {
+  it("It should list", async function () {
     try {
       var ad_account_id = 12345;
       var query = {
         filter_deleted: Boolean(),
       };
       var response = await pinterest.conversion_tags
-        .getAll(ad_account_id, { query })
+        .list(ad_account_id, { query })
         .catch((error) => {
           if (error) {
             

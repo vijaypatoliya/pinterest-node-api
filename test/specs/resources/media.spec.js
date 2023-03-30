@@ -8,14 +8,14 @@ var expect = chai.expect;
 
 var pinterest = require("../../../lib")(userToken);
 
-describe("media.getAll()", function () {
+describe("media.list()", function () {
   it("It should get all", async function () {
     try {
       var query = {
         bookmark: String(),
         page_size: Number(),
       };
-      var response = await pinterest.media.getAll({ query }).catch((error) => {
+      var response = await pinterest.media.list({ query }).catch((error) => {
         if (error) {
           
           return;

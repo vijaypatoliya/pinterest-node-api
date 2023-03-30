@@ -8,7 +8,7 @@ var expect = chai.expect;
 
 var pinterest = require("../../../lib")(userToken);
 
-describe("ad_accounts.getAll()", function () {
+describe("ad_accounts.list()", function () {
   it("It should get all", async function () {
     try {
       var query = {
@@ -17,7 +17,7 @@ describe("ad_accounts.getAll()", function () {
         include_shared_accounts: Boolean(),
       };
       var response = await pinterest.ad_accounts
-        .getAll({ query })
+        .list({ query })
         .catch((error) => {
           if (error) {
             

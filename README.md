@@ -66,54 +66,53 @@ Originally by osi.vijay@gmail.com : [Vijay Patoliya](https://github.com/vijaypat
 
 ## Examples
 
+1. [AD_ACCOUNTS](#ad_accounts)
 
-1) [AD_ACCOUNTS](#ad_accounts)
+2. [AD_GROUPS](#ad_groups)
 
-2) [AD_GROUPS](#ad_groups)
+3. [ADS](#ads)
 
-3) [ADS](#ads)
+4. [AUDIENCE_INSIGHTS](#audience_insights)
 
-4) [AUDIENCE_INSIGHTS](#audience_insights)
+5. [AUDIENCES](#audiences)
 
-5) [AUDIENCES](#audiences)
+6. [BOARD](#board)
 
-6) [BOARD](#board)
+7. [BULK](#bulk)
 
-7) [BULK](#bulk)
+8. [CAMPAIGNS](#campaigns)
 
-8) [CAMPAIGNS](#campaigns)
+9. [CATALOGS](#catalogs)
 
-9) [CATALOGS](#catalogs)
+10. [CONVERSION_EVENTS](#conversion_events)
 
-10) [CONVERSION_EVENTS](#conversion_events)
+11. [CONVERSION_TAGS](#conversion_tags)
 
-11) [CONVERSION_TAGS](#conversion_tags)
+12. [CUSTOMER_LISTS](#customer_lists)
 
-12) [CUSTOMER_LISTS](#customer_lists)
+13. [KEYWORDS](#keywords)
 
-13) [KEYWORDS](#keywords)
+14. [MEDIA](#media)
 
-14) [MEDIA](#media)
+15. [OAUTH](#oauth)
 
-15) [OAUTH](#oauth)
+16. [ORDER_LINES](#order_lines)
 
-16) [ORDER_LINES](#order_lines)
+17. [PINS](#pins)
 
-17) [PINS](#pins)
+18. [PRODUCT_GROUP_PROMOTIONS](#product_group_promotions)
 
-18) [PRODUCT_GROUP_PROMOTIONS](#product_group_promotions)
+19. [RESOURCES](#resources)
 
-19) [RESOURCES](#resources)
+20. [TERMS](#terms)
 
-20) [TERMS](#terms)
+21. [TERMS_OF_SERVICE](#terms_of_service)
 
-21) [TERMS_OF_SERVICE](#terms_of_service)
-
-22) [USER_ACCOUNT](#user_account)
-
+22. [USER_ACCOUNT](#user_account)
 
 ---
-> ### [AD_ACCOUNTS](#index)
+
+> ### [AD_ACCOUNTS](#examples)
 
 ```js
 /** Create ad account */
@@ -188,7 +187,7 @@ var query = {
   include_shared_accounts: Boolean(),
 };
 try {
-  var response = await pinterest.ad_accounts.getAll({ query });
+  var response = await pinterest.ad_accounts.list({ query });
 } catch (error) {
   return;
 }
@@ -256,7 +255,7 @@ try {
 }
 ```
 
-> ### [AD_GROUPS](#index)
+> ### [AD_GROUPS](#examples)
 
 ```js
 /** Create ad group */
@@ -360,7 +359,7 @@ var query = {
   translate_interests_to_names: Boolean(),
 };
 try {
-  var response = await pinterest.ad_groups.getAll(ad_account_id, { query });
+  var response = await pinterest.ad_groups.list(ad_account_id, { query });
 } catch (error) {
   return;
 }
@@ -567,7 +566,7 @@ try {
 }
 ```
 
-> ### [ADS](#index)
+> ### [ADS](#examples)
 
 ```js
 /** Create ads */
@@ -657,7 +656,7 @@ try {
     order: String(),
     bookmark: String(),
   };
-  var response = await pinterest.ads.getAll(ad_account_id, { query });
+  var response = await pinterest.ads.list(ad_account_id, { query });
 } catch (error) {
   return;
 }
@@ -747,7 +746,7 @@ try {
 }
 ```
 
-> ### [AUDIENCE_INSIGHTS](#index)
+> ### [AUDIENCE_INSIGHTS](#examples)
 
 ```js
 /** Get audience insight */
@@ -764,7 +763,7 @@ try {
 }
 ```
 
-> ### [AUDIENCES](#index)
+> ### [AUDIENCES](#examples)
 
 ```js
 /** Create audiences */
@@ -851,7 +850,7 @@ try {
     page_size: Number(),
   };
 
-  var response = await pinterest.audiences.getAll(ad_account_id, { query });
+  var response = await pinterest.audiences.list(ad_account_id, { query });
 } catch (error) {
   return;
 }
@@ -926,7 +925,7 @@ try {
 }
 ```
 
-> ### [BOARD](#index)
+> ### [BOARD](#examples)
 
 ```js
 /** Create board */
@@ -996,7 +995,7 @@ var query = {
   privacy: String(),
 };
 try {
-  var response = await pinterest.boards.getAll({ query });
+  var response = await pinterest.boards.list({ query });
 } catch (error) {
   return;
 }
@@ -1083,7 +1082,7 @@ try {
 }
 ```
 
-> ### [BULK](#index)
+> ### [BULK](#examples)
 
 ```js
 /** Download bulk */
@@ -1435,7 +1434,7 @@ try {
 }
 ```
 
-> ### [CAMPAIGNS](#index)
+> ### [CAMPAIGNS](#examples)
 
 ```js
 /** Create campaign */
@@ -1494,7 +1493,7 @@ var query = {
   bookmark: String(),
 };
 try {
-  var response = await pinterest.campaigns.getAll(ad_account_id, { query });
+  var response = await pinterest.campaigns.list(ad_account_id, { query });
 } catch (error) {
   return;
 }
@@ -1583,7 +1582,7 @@ try {
 }
 ```
 
-> ### [CATALOGS](#index)
+> ### [CATALOGS](#examples)
 
 ```js
 /** Create catalogs feed */
@@ -2079,7 +2078,7 @@ try {
 }
 ```
 
-> ### [CONVERSION_EVENTS](#index)
+> ### [CONVERSION_EVENTS](#examples)
 
 ```js
 /** Send conversion events */
@@ -2142,7 +2141,7 @@ try {
 }
 ```
 
-> ### [CONVERSION_TAGS](#index)
+> ### [CONVERSION_TAGS](#examples)
 
 ```js
 /** Create conversion tags */
@@ -2178,7 +2177,7 @@ var query = {
   filter_deleted: Boolean(),
 };
 try {
-  var response = await pinterest.conversion_tags.getAll(ad_account_id, {
+  var response = await pinterest.conversion_tags.list(ad_account_id, {
     query,
   });
 } catch (error) {
@@ -2213,7 +2212,7 @@ try {
 }
 ```
 
-> ### [CUSTOMER_LISTS](#index)
+> ### [CUSTOMER_LISTS](#examples)
 
 ```js
 /** Create customer lists */
@@ -2254,7 +2253,7 @@ var query = {
   bookmark: String(),
 };
 try {
-  var response = await pinterest.customer_lists.getAll(ad_account_id, {
+  var response = await pinterest.customer_lists.list(ad_account_id, {
     query,
   });
 } catch (error) {
@@ -2285,7 +2284,7 @@ try {
 }
 ```
 
-> ### [KEYWORDS](#index)
+> ### [KEYWORDS](#examples)
 
 ```js
 /** Create keyword */
@@ -2362,7 +2361,7 @@ try {
 }
 ```
 
-> ### [MEDIA](#index)
+> ### [MEDIA](#examples)
 
 ```js
 /** Get media */
@@ -2381,7 +2380,7 @@ try {
     bookmark: String(),
     page_size: Number(),
   };
-  var response = await pinterest.media.getAll({ query });
+  var response = await pinterest.media.list({ query });
 } catch (error) {
   return;
 }
@@ -2399,7 +2398,7 @@ try {
 }
 ```
 
-> ### [OAUTH](#index)
+> ### [OAUTH](#examples)
 
 ```js
 var pinterest = require("pinterest-node-api")();
@@ -2436,7 +2435,7 @@ try {
 }
 ```
 
-> ### [ORDER_LINES](#index)
+> ### [ORDER_LINES](#examples)
 
 ```js
 /** Get order lines */
@@ -2458,13 +2457,13 @@ var query = {
   bookmark: String(),
 };
 try {
-  var response = await pinterest.order_lines.getAll(ad_account_id, { query });
+  var response = await pinterest.order_lines.list(ad_account_id, { query });
 } catch (error) {
   return;
 }
 ```
 
-> ### [PINS](#index)
+> ### [PINS](#examples)
 
 ```js
 /** Create pin */
@@ -2514,6 +2513,22 @@ try {
 ```
 
 ```js
+/** GET ALL PINS BY FILTER */
+var query = {
+  bookmark: String(),
+  pin_filter: String(),
+  include_protected_pins: Boolean(),
+  pin_type: String(),
+  ad_account_id: String(),
+};
+try {
+  var response = await pinterest.pins.list({ query });
+} catch (error) {
+  return;
+}
+```
+
+```js
 /** Get pin analytics */
 var pin_id = 12345;
 var query = {
@@ -2546,7 +2561,7 @@ try {
 }
 ```
 
-> ### [PRODUCT_GROUP_PROMOTIONS](#index)
+> ### [PRODUCT_GROUP_PROMOTIONS](#examples)
 
 ```js
 /** Create product group promotions */
@@ -2615,7 +2630,7 @@ var query = {
   bookmark: String(),
 };
 try {
-  var response = await pinterest.product_group_promotions.getAll(
+  var response = await pinterest.product_group_promotions.list(
     ad_account_id,
     { query }
   );
@@ -2690,7 +2705,7 @@ try {
 }
 ```
 
-> ### [RESOURCES](#index)
+> ### [RESOURCES](#examples)
 
 ```js
 /** Get resources account countries */
@@ -2756,7 +2771,7 @@ try {
 }
 ```
 
-> ### [TERMS](#index)
+> ### [TERMS](#examples)
 
 ```js
 /** Get related terms */
@@ -2783,7 +2798,7 @@ try {
 }
 ```
 
-> ### [TERMS_OF_SERVICE](#index)
+> ### [TERMS_OF_SERVICE](#examples)
 
 ```js
 /** Get terms of service */
@@ -2799,7 +2814,7 @@ try {
 }
 ```
 
-> ### [USER_ACCOUNT](#index)
+> ### [USER_ACCOUNT](#examples)
 
 ```js
 /** Get user account */

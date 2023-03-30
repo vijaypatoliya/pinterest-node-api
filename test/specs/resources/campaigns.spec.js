@@ -8,7 +8,7 @@ var expect = chai.expect;
 
 var pinterest = require("../../../lib")(userToken);
 
-describe("campaigns.getAll()", function () {
+describe("campaigns.list()", function () {
   it("It should get all", async function () {
     try {
       var ad_account_id = 12345;
@@ -20,7 +20,7 @@ describe("campaigns.getAll()", function () {
         bookmark: String(),
       };
       var response = await pinterest.campaigns
-        .getAll(ad_account_id, { query })
+        .list(ad_account_id, { query })
         .catch((error) => {
           if (error) {
             

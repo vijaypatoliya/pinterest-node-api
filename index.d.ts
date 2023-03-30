@@ -5,7 +5,7 @@ declare class BaseClient {
 }
 
 declare class AdAccounts extends BaseClient {
-  getAll(params: any): Promise<any>;
+  list(params: any): Promise<any>;
   create(params: any): Promise<any>;
   get(params: any): Promise<any>;
   getAnalytics(params: any): Promise<any>;
@@ -16,7 +16,7 @@ declare class AdAccounts extends BaseClient {
 
 declare class AdGroups extends BaseClient {
   getTargetedAnalytics(ad_account_id: string): Promise<any>;
-  getAll(ad_account_id: string): Promise<any>;
+  list(ad_account_id: string): Promise<any>;
   create(id: string, params: any): Promise<any>;
   update(ad_account_id: string, params: any): Promise<any>;
   get(ad_account_id: string, ad_group_id: string): Promise<any>;
@@ -26,7 +26,7 @@ declare class AdGroups extends BaseClient {
 
 declare class Ads extends BaseClient {
   getTargetedAnalytics(ad_account_id: string): Promise<any>;
-  getAll(ad_account_id: string): Promise<any>;
+  list(ad_account_id: string): Promise<any>;
   create(ad_account_id: string, body: any): Promise<any>;
   update(params: any): Promise<any>;
   get(ad_account_id: string, ads_id: string): Promise<any>;
@@ -40,13 +40,13 @@ declare class AudienceInsights extends BaseClient {
 
 declare class Audiences extends BaseClient {
   get(ad_account_id: string, audience_id: string): Promise<any>;
-  getAll(ad_account_id: any): Promise<any>;
+  list(ad_account_id: any): Promise<any>;
   create(ad_account_id: string, payload: any): Promise<any>;
   update(ad_account_id: string, audience_id: string, payload: any): Promise<any>;
 }
 
 declare class Boards extends BaseClient {
-  getAll(params: any): Promise<any>;
+  list(params: any): Promise<any>;
   create(params: any): Promise<any>;
   get(params: string): Promise<any>;
   update(board_id: string, params: any): Promise<any>;
@@ -66,7 +66,7 @@ declare class Bulk extends BaseClient {
 }
 
 declare class Campaigns extends BaseClient {
-  getAll(ad_account_id: string): Promise<any>;
+  list(ad_account_id: string): Promise<any>;
   create(ad_account_id: string, params: any): Promise<any>;
   update(ad_account_id: string): Promise<any>;
   get(ad_account_id: string, campaign_id: string): Promise<any>;
@@ -100,7 +100,7 @@ declare class ConversionEvents extends BaseClient {
 }
 
 declare class ConversionTags extends BaseClient {
-  getAll(ad_account_id: string): Promise<any>;
+  list(ad_account_id: string): Promise<any>;
   create(payload: string): Promise<any>;
   getPageVisit(ad_account_id: string): Promise<any>;
   get(ad_account_id: string, conversion_tag_id: string): Promise<any>;
@@ -109,7 +109,7 @@ declare class ConversionTags extends BaseClient {
 
 declare class CustomerLists extends BaseClient {
   get(ad_account_id: string, customer_list_id: string): Promise<any>;
-  getAll(ad_account_id: string): Promise<any>;
+  list(ad_account_id: string): Promise<any>;
   create(ad_account_id: string, payload: any): Promise<any>;
   update(ad_account_id: string, customer_list_id: string, payload: any): Promise<any>;
 }
@@ -121,7 +121,7 @@ declare class Keywords extends BaseClient {
 }
 
 declare class Media extends BaseClient {
-  getAll(): Promise<any>;
+  list(): Promise<any>;
   register(payload: any): Promise<any>;
   get(media_id: string): Promise<any>;
 }
@@ -131,7 +131,7 @@ declare class OAuth extends BaseClient {
 }
 
 declare class OrderLines extends BaseClient {
-  getAll(ad_account_id: string): Promise<any>;
+  list(ad_account_id: string): Promise<any>;
   get(ad_account_id: string, order_line_id: string): Promise<any>;
 }
 
@@ -139,6 +139,7 @@ declare class Pins extends BaseClient {
 
   create(payload: any): Promise<any>;
   get(pin_id: string): Promise<any>;
+  list(query: any): Promise<any>;
   delete(pin_id: string): Promise<any>;
   save(pin_id: string, payload: any): Promise<any>;
   getAnalytics(params: string): Promise<any>;
@@ -150,7 +151,7 @@ declare class ProductGroupPromotions extends BaseClient {
   getAnalytics(ad_account_id: string): Promise<any>;
   create(ad_account_id: string, payload: any): Promise<any>;
   update(ad_account_id: string, payload: string): Promise<any>;
-  getAll(ad_account_id: string): Promise<any>;
+  list(ad_account_id: string): Promise<any>;
   get(ad_account_id: string, product_group_promotion_id: string): Promise<any>;
 
 }

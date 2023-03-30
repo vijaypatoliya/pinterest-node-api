@@ -25,7 +25,7 @@ var usersRequest = async function () {
     bookmark: String(),
   };
   try {
-    var response = await pinterest.product_group_promotions.getAll(ad_account_id, { query });
+    var response = await pinterest.product_group_promotions.list(ad_account_id, { query });
    } catch (error) {
     return;
   }

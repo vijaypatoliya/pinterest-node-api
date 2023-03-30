@@ -25,7 +25,7 @@ var pinsRequest = async function () {
   };
 
   try {
-    var response = await pinterest.audiences.getAll(ad_account_id, { query });
+    var response = await pinterest.audiences.list(ad_account_id, { query });
 } catch (error) {
     return;
   }
