@@ -41,7 +41,7 @@ describe("ads.getTargetedAnalytics()", function () {
   });
 });
 
-describe("ads.getAll()", function () {
+describe("ads.list()", function () {
   it("It should get all", async function () {
     try {
       var ad_account_id = 12345;
@@ -56,7 +56,7 @@ describe("ads.getAll()", function () {
         bookmark: String(),
       };
       var response = await pinterest.ads
-        .getAll(ad_account_id, { query })
+        .list(ad_account_id, { query })
         .catch((error) => {
           if (error) {
             return;

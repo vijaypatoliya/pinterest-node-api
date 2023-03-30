@@ -21,7 +21,7 @@ var pinsRequest = async function () {
   };
 
   try {
-    var response = await pinterest.conversion_tags.getAll(ad_account_id, {
+    var response = await pinterest.conversion_tags.list(ad_account_id, {
       query,
     });
 } catch (error) {

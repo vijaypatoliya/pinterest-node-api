@@ -17,7 +17,7 @@ var pinsRequest = async function () {
   };
 
   try {
-    var response = await pinterest.media.getAll({ query });
+    var response = await pinterest.media.list({ query });
 } catch (error) {
     return;
   }

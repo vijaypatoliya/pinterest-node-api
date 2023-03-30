@@ -58,6 +58,30 @@ describe("pins.get()", function () {
   });
 });
 
+describe("pins.list()", function () {
+  it("It should list", async function () {
+    try {
+      var query = {
+        bookmark: String(),
+        pin_filter: String(),
+        include_protected_pins: Boolean(),
+        pin_type: String(),
+        ad_account_id: String(),
+      };
+      var response = await pinterest.pins.list({ query }).catch((error) => {
+        if (error) {
+          
+          return;
+        }
+      });
+      
+      expect(response).to.be.a("object");
+ } catch (error) {
+      expect(response).to.be.a(undefined);
+    }
+  });
+});
+
 describe("pins.delete()", function () {
   it("It should delete", async function () {
     try {

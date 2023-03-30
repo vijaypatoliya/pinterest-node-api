@@ -8,7 +8,7 @@ var expect = chai.expect;
 
 var pinterest = require("../../../lib")(userToken);
 
-describe("boards.getAll()", function () {
+describe("boards.list()", function () {
   it("It should get all", async function () {
     try {
       var query = {
@@ -16,7 +16,7 @@ describe("boards.getAll()", function () {
         page_size: Number(),
         privacy: String(),
       };
-      var response = await pinterest.boards.getAll({ query }).catch((error) => {
+      var response = await pinterest.boards.list({ query }).catch((error) => {
         if (error) {
           
           return;

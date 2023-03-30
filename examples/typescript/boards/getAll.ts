@@ -21,7 +21,7 @@ var boardsRequest = async function () {
   };
 
   try {
-    var response = await pinterest.boards.getAll({ query });
+    var response = await pinterest.boards.list({ query });
    } catch (error) {
     return;
   }

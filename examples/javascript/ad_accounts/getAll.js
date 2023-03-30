@@ -14,7 +14,7 @@ var pinsRequest = async function () {
   }
 
   try {
-    var response = await pinterest.ad_accounts.getAll({ query })
+    var response = await pinterest.ad_accounts.list({ query })
    } catch (error) {
     return;
   }

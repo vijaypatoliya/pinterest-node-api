@@ -137,8 +137,8 @@ describe("product_group_promotions.update()", function () {
   });
 });
 
-describe("product_group_promotions.getAll()", function () {
-  it("It should getAll", async function () {
+describe("product_group_promotions.list()", function () {
+  it("It should list", async function () {
     try {
       var ad_account_id = 12345;
       var query = {
@@ -150,7 +150,7 @@ describe("product_group_promotions.getAll()", function () {
         bookmark: String(),
       };
       var response = await pinterest.product_group_promotions
-        .getAll(ad_account_id, { query })
+        .list(ad_account_id, { query })
         .catch((error) => {
           if (error) {
             

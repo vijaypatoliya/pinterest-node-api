@@ -29,7 +29,7 @@ var pinsRequest = async function () {
   }
 
   try {
-    var response = await pinterest.campaigns.getAll(ad_account_id, { query });
+    var response = await pinterest.campaigns.list(ad_account_id, { query });
 } catch (error) {
     return;
   }

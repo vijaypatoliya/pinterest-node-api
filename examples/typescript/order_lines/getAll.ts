@@ -27,7 +27,7 @@ var pinsRequest = async function () {
   }
 
   try {
-    var response = await pinterest.order_lines.getAll(ad_account_id, { query });
+    var response = await pinterest.order_lines.list(ad_account_id, { query });
 } catch (error) {
     return;
   }
