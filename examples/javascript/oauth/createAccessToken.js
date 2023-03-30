@@ -1,8 +1,6 @@
 "use strict";
 
-var userToken = process.env.PINTEREST_USER_TOKEN;
-
-var pinterest = require("../../../lib")(userToken);
+var pinterest = require("../../../lib")();
 
 var pinsRequest = async function () {
 
@@ -15,13 +13,21 @@ var pinsRequest = async function () {
   var clientSecret = process.env.PINTREST_CLIENT_SECRET;
   var refresh_token_payload = {
     grant_type: "refresh_token",
-    refresh_token: "refresh_token",
+    refresh_token: "your app refresh token",
   };
+
+  /**
+   * code: Call below https request into browser so you would got code into redirect url 
+   * 
+   * fetch(
+   * https://www.pinterest.com/oauth/?client_id={YOUR_CLIENT_ID}&redirect_uri={YOUR_REDIRECT_URI}&response_type=code&scope=boards:read,pins:read&state={YOUR_OPTIONAL_STRING})
+   * 
+   */
 
   var authorization_code_payload = {
     grant_type: "authorization_code",
-    code: "code",
-    redirect_uri: "redirect_uri",
+    code: "code would got from https request call",
+    redirect_uri: "Your app redirect uri",
   };
 
   /** Set pinterest clientId and clientSecret */

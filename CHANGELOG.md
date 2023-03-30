@@ -1,3 +1,6 @@
+0.0.8 March 30, 2023
+  - Fixes #13
+
 0.0.7 February 9, 2023
   - Update documentation
 
