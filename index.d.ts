@@ -46,7 +46,7 @@ declare class Audiences extends BaseClient {
 }
 
 declare class Boards extends BaseClient {
-  list(params: string): Promise<any>;
+  list(params: any): Promise<any>;
   create(params: any): Promise<any>;
   get(params: string): Promise<any>;
   update(board_id: string, params: any): Promise<any>;
