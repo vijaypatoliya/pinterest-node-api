@@ -198,6 +198,8 @@ declare class pinterestNodeClient {
 
   setUserToken(userToken: string): void;
 
+  setApiToken(clientId: string, clientSecret: string): void;
+
   ads: Ads;
   pins: Pins;
   bulk: Bulk;
