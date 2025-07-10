@@ -1,6 +1,6 @@
 # pinterest-node-api (Pinterest Node Rest API)
 
-[![Build Status](https://travis-ci.org/vijaypatoliya/pinterest-node-api.svg?branch=master)](https://travis-ci.org/vijaypatoliya/pinterest-node-api) [![Stackoverflow Thread](https://img.shields.io/badge/stackoverflow-pinterest--node--api-yellowgreen.svg)](https://stackoverflow.com/search?q=nodejs-pinterest-node-api)
+[![Stackoverflow Thread](https://img.shields.io/badge/stackoverflow-pinterest--node--api-yellowgreen.svg)](https://stackoverflow.com/search?q=nodejs-pinterest-node-api)
 
 This API supported Pinterest's standard REST API that accepts/returns JSON requests. Here is the [API reference](https://developers.pinterest.com/docs/api/v5/)
 
