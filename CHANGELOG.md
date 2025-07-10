@@ -1,3 +1,6 @@
+0.0.10 July 10, 2025
+  - Update vulnerabilities
+
 0.0.9 March 30, 2023
   - Fixes #14
 
